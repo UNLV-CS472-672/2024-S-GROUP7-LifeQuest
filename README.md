@@ -1,4 +1,4 @@
-# 2024-S-GROUP7-LifeQuest
+# LifeQuest
 ## Overview
 LifeQuest is a web app designed to motivate users to improve their life across various aspects through gamification. Users set goals, earn rewards, and access resources to foster a balanced life.
 Certainly, let's condense the README for the LifeQuest project to cover only the essentials while still providing a clear overview:

@@ -2,10 +2,6 @@
 
 Welcome to LifeQuest, a web application built with Express.js!
 
-No problem! If the workflow you're aiming for involves contributors forking the repository before making changes, this adjusted `GETTING_STARTED.md` guide will emphasize forking and then branching within the contributor's fork. This approach is common in open-source projects where contributors do not have direct write access to the original repository.
-
----
-
 # Getting Started
 
 Welcome to our project! This document will guide you through the process of setting up your development environment by forking our repository, cloning your fork, and contributing back with pull requests.
@@ -87,5 +83,4 @@ git pull upstream main
 
 If you encounter any issues or have questions, don't hesitate to open an issue in the original repository or reach out to the community.
 
----
 
