@@ -9,9 +9,7 @@ Certainly, let's condense the README for the LifeQuest project to cover only the
 - **Personalized Experience:** Focus on life aspects most important to you.
 
 ## Getting Started
-1. Clone the repo: `git clone [repository link]`
-2. Install dependencies: `npm install`
-3. Start the app: `npm start`
+https://github.com/UNLV-CS472-672/2024-S-GROUP7-LifeQuest/blob/main/START_HERE.md
 
 ## License
 LifeQuest is available under the MIT License. See the LICENSE file for more info.
