@@ -10,6 +10,9 @@ Welcome to our project! This document will guide you through the process of sett
 
 Ensure you have the following installed on your system:
 - **Node.js** (version 12.x or later recommended)
+  - https://nodejs.org/en
+- **Express.js** 
+  - https://expressjs.com/en/starter/installing.html
 
 ## Fork the Repository
 
