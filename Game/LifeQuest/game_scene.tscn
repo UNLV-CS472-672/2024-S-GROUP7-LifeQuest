@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ccuoxmewdujb4"]
+
+[node name="GameScene" type="Node2D"]
+
+[node name="PlaceHolder" type="Label" parent="."]
+offset_left = 375.0
+offset_top = 236.0
+offset_right = 638.0
+offset_bottom = 308.0
+text = "This is the game level placeholder"

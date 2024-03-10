@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dutar8wxmt05x"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_jqe2l"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_jqe2l")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 341.0
+offset_top = 188.0
+offset_right = 717.0
+offset_bottom = 293.0
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 342.0
+offset_top = 316.0
+offset_right = 718.0
+offset_bottom = 421.0
+text = "Quit"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
