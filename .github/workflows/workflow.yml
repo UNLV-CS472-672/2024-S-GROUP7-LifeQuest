@@ -20,7 +20,6 @@ jobs:
                     flake8 app/src --count --max-complexity=10 --max-line-length=127 --statistics
             - name: Testing coverage with nosetests
               run: |
-                    pip install nose-spec
                     nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
 
 

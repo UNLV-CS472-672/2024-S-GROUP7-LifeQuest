@@ -1,4 +1,6 @@
 # Dependencies for this project
+Flask
 nose
-flake8
+pinocchio
 coverage
+pylint
