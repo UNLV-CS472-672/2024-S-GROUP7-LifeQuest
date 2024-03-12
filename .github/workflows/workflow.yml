@@ -13,7 +13,7 @@ jobs:
             cd app
             npm install
       - name: Run tests
-        run:  |
+        run: |
             cd app
             npm test
       - name: Upload coverage report
