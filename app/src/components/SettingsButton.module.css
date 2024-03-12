@@ -1,0 +1,35 @@
+.settingsButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-gainsboro);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 134px;
+  height: 129px;
+}
+.settingsIcon {
+  position: absolute;
+  height: 57.36%;
+  width: 57.46%;
+  top: 21.71%;
+  right: 21.64%;
+  bottom: 20.93%;
+  left: 20.9%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.settingsnav {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 100%;
+  width: 34.1%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 65.9%;
+}

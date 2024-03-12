@@ -1,0 +1,35 @@
+.questsButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-gainsboro);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 124px;
+  height: 129px;
+}
+.questsIcon {
+  position: absolute;
+  height: 57.05%;
+  width: 53.15%;
+  top: 19.92%;
+  right: 23.79%;
+  bottom: 23.02%;
+  left: 23.06%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.questsnav {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 100%;
+  width: 31.55%;
+  top: 0;
+  right: 34.1%;
+  bottom: 0;
+  left: 34.35%;
+}

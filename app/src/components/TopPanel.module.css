@@ -1,0 +1,20 @@
+.frame,
+.topPanel {
+  width: 366px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.topPanel {
+  height: 69px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.frame {
+  position: absolute;
+  top: 18px;
+  left: 17px;
+  align-items: center;
+  justify-content: flex-start;
+}
