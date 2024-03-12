@@ -1,7 +1,0 @@
-# Dependencies for this project
-Flask
-nose
-pinocchio
-coverage
-pylint
-flake8
