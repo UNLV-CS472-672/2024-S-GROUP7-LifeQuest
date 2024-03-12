@@ -1,0 +1,35 @@
+.gameButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-gainsboro);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 135px;
+  height: 129px;
+}
+.gameIcon {
+  position: absolute;
+  height: 56.59%;
+  width: 56.89%;
+  top: 17.83%;
+  right: 25.33%;
+  bottom: 25.58%;
+  left: 17.78%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.gamenav {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 100%;
+  width: 34.35%;
+  top: 0;
+  right: 65.65%;
+  bottom: 0;
+  left: 0;
+}

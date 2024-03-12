@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-roboto: Roboto;
+
+  /* Colors */
+  --color-black: #000;
+  --color-gainsboro: rgba(217, 217, 217, 0.5);
+}

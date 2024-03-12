@@ -1,0 +1,21 @@
+.groupIcon {
+  position: absolute;
+  height: 87.14%;
+  width: 87.14%;
+  top: 5.71%;
+  right: 5.71%;
+  bottom: 7.14%;
+  left: 7.14%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.backButton {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+}
