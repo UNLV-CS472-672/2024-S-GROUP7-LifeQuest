@@ -1,26 +1,16 @@
 name: CI workflow
+# Run this workflow every time a new push or pull request is made to the repository
 on:
   push:
   pull_request:
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        container: python:3.9-slim
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v3
-
-            - name: Install dependencies
-              run: |
-                    python -m pip install --upgrade pip
-                    pip install -r requirements.txt
-            - name: Linting with Flake8
-              run: |
-                    flake8 app/src --count --select=E9,F63,F7,F82 --show-source --statistics
-                    flake8 app/src --count --max-complexity=10 --max-line-length=127 --statistics
-            - name: Testing coverage with nosetests
-              run: |
-                    nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
-
-
-                    
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm install
+      - name: Run tests
+        run: npm test
+      - name: Upload coverage report
+        uses: codecov/codecov-action@v3
