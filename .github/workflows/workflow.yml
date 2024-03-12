@@ -1,5 +1,4 @@
 name: CI workflow
-# Run this workflow every time a new push or pull request is made to the repository
 on:
   push:
   pull_request:
