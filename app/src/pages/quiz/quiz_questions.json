@@ -1,0 +1,194 @@
+[
+  {
+    "category": "health",
+    "question": "I engage in regular physical exercise.",
+  },
+  {
+    "category": "health",
+    "question": "I prioritize getting enough sleep each night.",
+  },
+  {
+    "category": "health",
+    "question": "I maintain a balanced and nutritious diet.",
+  },
+  {
+    "category": "health",
+    "question": "I actively manage stress through healthy coping mechanisms.",
+  },
+  {
+    "category": "health",
+    "question": "I stay hydrated by drinking enough water throughout the day.",
+  },
+  {
+    "category": "health",
+    "question": "I avoid harmful habits such as smoking and excessive alcohol consumption.",
+  },
+  {
+    "category": "health",
+    "question": "I regularly go for health check-ups and screenings.",
+  },
+  {
+    "category": "health",
+    "question": "I practice good hygiene and cleanliness.",
+  },
+  {
+    "category": "health",
+    "question": "I take breaks to stretch and move during long periods of sitting.",
+  },
+  {
+    "category": "health",
+    "question": "I engage in activities that promote mental well-being, such as meditation or mindfulness.",
+  },
+  {
+    "category": "health",
+    "question": "I limit my intake of processed and unhealthy foods.",
+  },
+  {
+    "category": "health",
+    "question": "I actively pursue hobbies or activities that bring me joy and relaxation.",
+  },
+  {
+    "category": "health",
+    "question": "I proactively manage any health conditions or concerns.",
+  },
+  {
+    "category": "health",
+    "question": "I practice safe behaviors to prevent accidents and injuries.",
+  },
+  {
+    "category": "health",
+    "question": "I strive to maintain a healthy work-life balance.",
+  },
+  {
+    "category": "health",
+    "question": "I take proactive steps to address any mental health concerns.",
+  },
+  {
+    "category": "health",
+    "question": "I consistently practice safe and protected intimate relationships.",
+  },
+  {
+    "category": "health",
+    "question": "I actively seek information on maintaining a healthy lifestyle.",
+  },
+  {
+    "category": "health",
+    "question": "I incorporate physical activity into my daily routine.",
+  },
+  {
+    "category": "health",
+    "question": "I ensure adequate relaxation and downtime in my schedule.",
+  },
+  {
+    "category": "health",
+    "question": "I actively participate in activities that promote cardiovascular health.",
+  },
+  {
+    "category": "health",
+    "question": "I prioritize my mental and emotional well-being.",
+  },
+  {
+	"category": "health",
+    "question": "I consistently practice proper handwashing and cleanliness habits.",
+  },
+  {
+	"category": "health",
+    "question": "I make informed and health-conscious choices in my daily life.",
+  },
+  {
+    "category": "professional",
+    "question": "I actively seek opportunities for professional development."
+  },
+  {
+    "category": "professional",
+    "question": "I set clear career goals and actively work towards achieving them."
+  },
+  {
+    "category": "professional",
+    "question": "I maintain a healthy work-life balance to avoid burnout."
+  },
+  {
+    "category": "professional",
+    "question": "I effectively communicate and collaborate with colleagues and team members."
+  },
+  {
+    "category": "professional",
+    "question": "I continuously update my skills to stay relevant in my field."
+  },
+  {
+    "category": "professional",
+    "question": "I take on challenging tasks to expand my professional capabilities."
+  },
+  {
+    "category": "professional",
+    "question": "I actively participate in networking events and build professional relationships."
+  },
+  {
+    "category": "professional",
+    "question": "I seek feedback from peers and supervisors to improve my professional performance."
+  },
+  {
+    "category": "professional",
+    "question": "I mentor and support colleagues in their professional growth."
+  },
+  {
+    "category": "professional",
+    "question": "I adapt well to changes in the professional environment."
+  },
+  {
+    "category": "professional",
+    "question": "I take initiative in proposing and implementing process improvements at work."
+  },
+  {
+    "category": "professional",
+    "question": "I stay informed about industry trends and advancements."
+  },
+  {
+    "category": "professional",
+    "question": "I effectively manage my time and prioritize tasks to meet professional deadlines."
+  },
+  {
+    "category": "professional",
+    "question": "I proactively identify and solve challenges in the workplace."
+  },
+  {
+    "category": "professional",
+    "question": "I attend relevant conferences and workshops to enhance my professional knowledge."
+  },
+  {
+    "category": "professional",
+    "question": "I collaborate with cross-functional teams to achieve common professional goals."
+  },
+  {
+    "category": "professional",
+    "question": "I actively seek feedback from clients and stakeholders to improve professional outcomes."
+  },
+  {
+    "category": "professional",
+    "question": "I stay resilient and positive in the face of professional challenges."
+  },
+  {
+    "category": "professional",
+    "question": "I contribute innovative ideas and solutions to professional projects."
+  },
+  {
+    "category": "professional",
+    "question": "I pursue certifications and qualifications to enhance my professional credentials."
+  },
+  {
+    "category": "professional",
+    "question": "I foster a collaborative and inclusive professional work environment."
+  },
+  {
+    "category": "professional",
+    "question": "I actively participate in professional communities and forums."
+  },
+  {
+    "category": "professional",
+    "question": "I stay adaptable to changes in professional technologies and methodologies."
+  },
+  {
+    "category": "professional",
+    "question": "I effectively manage professional tasks and projects to successful completion."
+  }
+]
