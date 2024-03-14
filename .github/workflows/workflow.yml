@@ -6,6 +6,9 @@ jobs:
     build:
         runs-on: ubuntu-latest
         container: python:3.9-slim
+        env:
+          PIP_CACHE_DIR: /cache/pip  # Set custom cache directory
+    
         steps:
 
             - name: Checkout
