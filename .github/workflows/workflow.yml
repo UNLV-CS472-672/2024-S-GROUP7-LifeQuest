@@ -10,6 +10,10 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v3
 
+            # Check if dependencies cached before run
+            - name: List cached directories before dependency installation
+              run: ls ~/.cache/pip || true
+
             # Cache dependencies
             - name: Set up cache
               uses: actions/cache@v3
@@ -32,3 +36,9 @@ jobs:
                     nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
 
                     
+            # Check if dependencies cached after run
+            - name: List cached directories after dependency installation
+              run: ls ~/.cache/pip || true
+
+
+
