@@ -36,7 +36,7 @@ jobs:
                     
             # Check if dependencies cached after run
             - name: List cached directories after dependency installation
-              run: ls ~/.cache/pip || true
+              run: ls ~/cache/pip || true
 
 
 
