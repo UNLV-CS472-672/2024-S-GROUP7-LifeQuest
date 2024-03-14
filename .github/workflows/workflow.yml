@@ -15,14 +15,12 @@ jobs:
               run: ls ~/.cache/pip || true
 
             # Cache dependencies
-            - name: Set up cache
+            - name: Set up Dependencies Cache
               uses: actions/cache@v3
               with:
-                path: |
-                  %APPDATA%\pip\Cache  # This is the path where pip stores dependencies
-                key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-                restore-keys: |
-                  ${{ runner.os }}-pip-
+                path: /github/home/.cache/pip  # Adjust this path according to your setup
+                key: Linux-pip-5a10801b288f9708023ca35be6b49ba1ed92ff245458982f0b7795057b587f54
+                restore-keys: Linux-pip-
 
             - name: Install dependencies
               run: |
