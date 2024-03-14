@@ -18,7 +18,8 @@ jobs:
             - name: Set up cache
               uses: actions/cache@v3
               with:
-                path: ~/.cache/pip  # This is the path where pip stores dependencies
+                path: |
+                  %APPDATA%\pip\Cache  # This is the path where pip stores dependencies
                 key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
                 restore-keys: |
                   ${{ runner.os }}-pip-
