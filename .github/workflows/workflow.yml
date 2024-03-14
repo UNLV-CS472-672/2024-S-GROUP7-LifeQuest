@@ -7,6 +7,12 @@ jobs:
         runs-on: ubuntu-latest
         container: python:3.9-slim
         steps:
+            - name: Create pip cache directory
+              run: mkdir -p /github/home/.cache/pip
+              
+            - name: Display directory structure
+              run: ls -R /github/home/.cache
+        
             - name: Checkout
               uses: actions/checkout@v3
 
