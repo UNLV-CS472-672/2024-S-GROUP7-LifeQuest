@@ -16,7 +16,7 @@ jobs:
 
             # Check if dependencies cached before run
             - name: List cached directories before dependency installation
-              run: ls ~/.cache/pip || true
+              run: ls ~/cache/pip || true
 
             # Cache dependencies
             - name: Set up Dependencies Cache
