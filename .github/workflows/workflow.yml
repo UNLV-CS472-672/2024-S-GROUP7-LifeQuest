@@ -19,7 +19,7 @@ jobs:
               with:
                 path: /cache/pip
                 key: Linux-pip-5a10801b288f9708023ca35be6b49ba1ed92ff245458982f0b7795057b587f54
-                restore-keys: Linux-pip-
+                restore-keys: Linux-pip-24.0-
 
             # Check if cache hit occurred
             - name: Check if cache hit
