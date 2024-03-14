@@ -17,7 +17,7 @@ jobs:
             - name: Set up Dependencies Cache
               uses: actions/cache@v3
               with:
-                path: /github/home/cache/pip  # Adjust this path according to your setup
+                path: /cache/pip
                 key: Linux-pip-5a10801b288f9708023ca35be6b49ba1ed92ff245458982f0b7795057b587f54
                 restore-keys: Linux-pip-
 
@@ -36,7 +36,7 @@ jobs:
                     
             # Check if dependencies cached after run
             - name: List cached directories after dependency installation
-              run: ls ~/cache/pip || true
+              run: ls /cache/pip || true
 
 
 
