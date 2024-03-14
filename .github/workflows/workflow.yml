@@ -13,7 +13,7 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v3
 
-            # Cache dependencies
+            # Cache Dependencies
             - name: Set up Dependencies Cache
               uses: actions/cache@v3
               with:
@@ -21,21 +21,30 @@ jobs:
                 key: Linux-pip-5a10801b288f9708023ca35be6b49ba1ed92ff245458982f0b7795057b587f54
                 restore-keys: Linux-pip-
 
-            # Check if cache hit occurred
+            # Check for Cache Hit
             - name: Check if cache hit
               id: cache-check
               run: echo "::set-output name=cache-hit::$(echo ${{ steps.cache-check.outputs.cache-hit }})"
       
-            # Install dependencies only if cache was not hit
+            # Install Dependencies (on No Cache Hit)
             - name: Install dependencies
               if: steps.cache-check.outputs.cache-hit != 'true'
               run: |
                 python -m pip install --upgrade pip
                 pip install -r requirements.txt
 
+            # Flake8
+            - name: Linting with Flake8
+              run: |
+                    flake8 src --count --select=E9,F63,F7,F82 --show-source --statistics
+                    flake8 src --count --max-complexity=10 --max-line-length=127 --statistics
 
-                    
-            # Check if dependencies cached after run
+            # Nodetests        
+            - name: Testing coverage with Nodetests
+              run: |
+                    nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
+
+            # Check for Cached Dependencies
             - name: List cached directories after dependency installation
               run: ls /cache/pip || true
 
