@@ -10,19 +10,14 @@ jobs:
           PIP_CACHE_DIR: /cache/pip  # Set custom cache directory
     
         steps:
-
             - name: Checkout
               uses: actions/checkout@v3
-
-            # Check if dependencies cached before run
-            - name: List cached directories before dependency installation
-              run: ls ~/cache/pip || true
 
             # Cache dependencies
             - name: Set up Dependencies Cache
               uses: actions/cache@v3
               with:
-                path: /github/home/.cache/pip  # Adjust this path according to your setup
+                path: /github/home/cache/pip  # Adjust this path according to your setup
                 key: Linux-pip-5a10801b288f9708023ca35be6b49ba1ed92ff245458982f0b7795057b587f54
                 restore-keys: Linux-pip-
 
