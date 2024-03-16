@@ -1,99 +1,103 @@
 [
   {
     "category": "health",
-    "question": "I engage in regular physical exercise.",
+    "question": "I engage in regular physical exercise."
   },
   {
     "category": "health",
-    "question": "I prioritize getting enough sleep each night.",
+    "question": "I prioritize getting enough sleep each night."
   },
   {
     "category": "health",
-    "question": "I maintain a balanced and nutritious diet.",
+    "question": "I maintain a balanced and nutritious diet."
   },
   {
     "category": "health",
-    "question": "I actively manage stress through healthy coping mechanisms.",
+    "question": "I actively manage stress through healthy coping mechanisms."
   },
   {
     "category": "health",
-    "question": "I stay hydrated by drinking enough water throughout the day.",
+    "question": "I stay hydrated by drinking enough water throughout the day."
   },
   {
     "category": "health",
-    "question": "I avoid harmful habits such as smoking and excessive alcohol consumption.",
+    "question": "I avoid harmful habits such as smoking and excessive alcohol consumption."
   },
   {
     "category": "health",
-    "question": "I regularly go for health check-ups and screenings.",
+    "question": "I regularly go for health check-ups and screenings."
   },
   {
     "category": "health",
-    "question": "I practice good hygiene and cleanliness.",
+    "question": "I practice good hygiene and cleanliness."
   },
   {
     "category": "health",
-    "question": "I take breaks to stretch and move during long periods of sitting.",
+    "question": "I take breaks to stretch and move during long periods of sitting."
   },
   {
     "category": "health",
-    "question": "I engage in activities that promote mental well-being, such as meditation or mindfulness.",
+    "question": "I engage in activities that promote mental well-being, such as meditation or mindfulness."
   },
   {
     "category": "health",
-    "question": "I limit my intake of processed and unhealthy foods.",
+    "question": "I limit my intake of processed and unhealthy foods."
   },
   {
     "category": "health",
-    "question": "I actively pursue hobbies or activities that bring me joy and relaxation.",
+    "question": "I actively pursue hobbies or activities that bring me joy and relaxation."
   },
   {
     "category": "health",
-    "question": "I proactively manage any health conditions or concerns.",
+    "question": "I proactively manage any health conditions or concerns."
   },
   {
     "category": "health",
-    "question": "I practice safe behaviors to prevent accidents and injuries.",
+    "question": "I practice safe behaviors to prevent accidents and injuries."
   },
   {
     "category": "health",
-    "question": "I strive to maintain a healthy work-life balance.",
+    "question": "I strive to maintain a healthy work-life balance."
   },
   {
     "category": "health",
-    "question": "I take proactive steps to address any mental health concerns.",
+    "question": "I take proactive steps to address any mental health concerns."
   },
   {
     "category": "health",
-    "question": "I consistently practice safe and protected intimate relationships.",
+    "question": "I consistently practice safe and protected intimate relationships."
   },
   {
     "category": "health",
-    "question": "I actively seek information on maintaining a healthy lifestyle.",
+    "question": "I actively seek information on maintaining a healthy lifestyle."
   },
   {
     "category": "health",
-    "question": "I incorporate physical activity into my daily routine.",
+    "question": "I incorporate physical activity into my daily routine."
   },
   {
     "category": "health",
-    "question": "I ensure adequate relaxation and downtime in my schedule.",
+    "question": "I ensure adequate relaxation and downtime in my schedule."
   },
   {
     "category": "health",
-    "question": "I actively participate in activities that promote cardiovascular health.",
+    "question": "I actively participate in activities that promote cardiovascular health."
   },
   {
     "category": "health",
-    "question": "I prioritize my mental and emotional well-being.",
+    "question": "I prioritize my mental and emotional well-being."
   },
   {
 	"category": "health",
-    "question": "I consistently practice proper handwashing and cleanliness habits.",
+    "question": "I consistently practice proper handwashing and cleanliness habits."
   },
   {
 	"category": "health",
-    "question": "I make informed and health-conscious choices in my daily life.",
+    "question": "I make informed and health-conscious choices in my daily life."
+  },
+  {
+	"category": "health",
+	"question": "I engage in regular relaxation techniques, such as deep breathing or progressive muscle relaxation, to manage stress."
   },
   {
     "category": "professional",
@@ -190,5 +194,109 @@
   {
     "category": "professional",
     "question": "I effectively manage professional tasks and projects to successful completion."
+  },
+  {
+	"category": "professional",
+	"question": "I actively seek mentorship from experienced professionals to guide my career growth."
+  },
+  {
+    "category": "relationship",
+    "question": "I maintain open and honest communication with my friends."
+  },
+  {
+    "category": "relationship",
+    "question": "I prioritize spending quality time with my family members."
+  },
+  {
+    "category": "relationship",
+    "question": "I support my friends in achieving their personal goals and aspirations."
+  },
+  {
+    "category": "relationship",
+    "question": "I show appreciation towards my coworkers for their contributions."
+  },
+  {
+    "category": "relationship",
+    "question": "I actively listen to the concerns of my friends and offer support."
+  },
+  {
+    "category": "relationship",
+    "question": "I maintain boundaries in my relationships to ensure mutual respect."
+  },
+  {
+    "category": "relationship",
+    "question": "I nurture my relationships with extended family members."
+  },
+  {
+    "category": "relationship",
+    "question": "I forgive friends and family for their mistakes and shortcomings."
+  },
+  {
+    "category": "relationship",
+    "question": "I express gratitude towards my mentors for their guidance and support."
+  },
+  {
+    "category": "relationship",
+    "question": "I show empathy towards my colleagues during challenging times."
+  },
+  {
+    "category": "relationship",
+    "question": "I celebrate the successes and achievements of my loved ones."
+  },
+  {
+    "category": "relationship",
+    "question": "I maintain healthy boundaries in my relationships with coworkers."
+  },
+  {
+    "category": "relationship",
+    "question": "I seek to resolve conflicts peacefully in all my relationships."
+  },
+  {
+    "category": "relationship",
+    "question": "I actively participate in community events to build social connections."
+  },
+  {
+    "category": "relationship",
+    "question": "I show kindness and compassion towards strangers and acquaintances."
+  },
+  {
+    "category": "relationship",
+    "question": "I respect the individuality and uniqueness of each person in my life."
+  },
+  {
+    "category": "relationship",
+    "question": "I foster a supportive and inclusive environment in my social circles."
+  },
+  {
+    "category": "relationship",
+    "question": "I prioritize quality time with my partner to strengthen our bond."
+  },
+  {
+    "category": "relationship",
+    "question": "I actively listen to the perspectives and opinions of my colleagues."
+  },
+  {
+    "category": "relationship",
+    "question": "I express love and affection towards my pets by providing care and attention."
+  },
+  {
+    "category": "relationship",
+    "question": "I cultivate meaningful friendships by being a reliable and supportive friend."
+  },
+  {
+    "category": "relationship",
+    "question": "I maintain healthy boundaries in romantic relationships to ensure mutual respect and trust."
+  },
+  {
+    "category": "relationship",
+    "question": "I make time to connect with my loved ones regularly, whether through calls, messages, or spending quality time together."
+  },
+  {
+    "category": "relationship",
+    "question": "I actively seek to resolve conflicts and misunderstandings in my relationships."
+  },
+  {
+	"category": "relationship",
+	"question": "I encourage open and honest communication in all my relationships, fostering an environment where everyone feels comfortable expressing their thoughts and feelings."
   }
 ]
