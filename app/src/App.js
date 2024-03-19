@@ -6,7 +6,10 @@ import {
   useLocation,
 } from "react-router-dom";
 import Skeleton from "./pages/Skeleton";
+import Login from "./pages/Login";
+import Home from "./pages/home/Home";
 import SettingsPage from './pages/SettingsPage';
+
 
 function App() {
   const action = useNavigationType();
@@ -47,6 +50,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Skeleton />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/settings" element={<SettingsPage />} /> 
     </Routes>
   );

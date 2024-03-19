@@ -1,0 +1,101 @@
+.vectorIcon {
+  height: 58.29%;
+  width: 88%;
+  top: 20.28%;
+  right: 8.95%;
+  bottom: 21.43%;
+  left: 3.05%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.meicon,
+.mestat,
+.vectorIcon {
+  position: absolute;
+}
+.mestat {
+  border: 0;
+  background-color: transparent;
+  height: 42px;
+  width: 83px;
+  font-weight: 900;
+  font-family: var(--font-roboto);
+  font-size: var(--font-size-13xl);
+  outline: 0;
+  top: 172px;
+  left: 120px;
+  color: var(--color-black);
+}
+.meicon {
+  height: 15.9%;
+  width: 21.01%;
+  top: 0;
+  right: 42.45%;
+  bottom: 84.1%;
+  left: 36.54%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.workstat {
+  border: 0;
+  background-color: transparent;
+  height: 42px;
+  width: 83px;
+  font-weight: 900;
+  font-family: var(--font-roboto);
+  font-size: var(--font-size-13xl);
+  outline: 0;
+  position: absolute;
+  top: 273px;
+  left: 169px;
+  color: var(--color-black);
+}
+.workicon {
+  position: absolute;
+  height: 15.9%;
+  width: 19.91%;
+  top: 84.1%;
+  right: 0;
+  bottom: 0;
+  left: 80.09%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.lovestat {
+  border: 0;
+  background-color: transparent;
+  height: 42px;
+  width: 83px;
+  font-weight: 900;
+  font-family: var(--font-roboto);
+  font-size: var(--font-size-13xl);
+  outline: 0;
+  position: absolute;
+  top: 273px;
+  left: 58px;
+  color: var(--color-black);
+}
+.loveicon {
+  position: absolute;
+  height: 15.53%;
+  width: 15.96%;
+  top: 84.1%;
+  right: 84.04%;
+  bottom: 0.37%;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.triangle {
+  position: absolute;
+  height: 50.94%;
+  width: 83.56%;
+  top: 25.35%;
+  right: 8.04%;
+  bottom: 23.71%;
+  left: 8.4%;
+}
