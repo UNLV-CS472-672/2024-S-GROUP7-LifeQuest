@@ -6,7 +6,7 @@ jobs:
     build:
         runs-on: ubuntu-latest
         env:
-          PIP_CACHE_DIR: app/cache/pip  # Set custom cache directory
+          PIP_CACHE_DIR: /cache/pip  # Set custom cache directory
     
         steps:
             - name: Checkout
@@ -34,7 +34,7 @@ jobs:
 
             # Check for Cached Dependencies
             - name: List cached directories after dependency installation
-              run: ls app/cache/pip || true
+              run: ls /cache/pip || true
 
             # Upload Coverage Report
             - name: Upload coverage report
