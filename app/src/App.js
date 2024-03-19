@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useState } from 'react';
 import {
   Routes,
   Route,
@@ -7,7 +6,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import Skeleton from "./pages/Skeleton";
-import Login from "./pages/Login";
+import SettingsPage from './pages/SettingsPage';
 
 function App() {
   const action = useNavigationType();
@@ -47,7 +46,8 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
+      <Route path="/" element={<Skeleton />} />
+      <Route path="/settings" element={<SettingsPage />} /> 
     </Routes>
   );
 }
