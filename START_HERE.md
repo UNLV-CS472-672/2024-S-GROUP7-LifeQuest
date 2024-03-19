@@ -11,8 +11,7 @@ Welcome to our project! This document will guide you through the process of sett
 Ensure you have the following installed on your system:
 - **Node.js** (version 12.x or later recommended)
   - https://nodejs.org/en
-- **Express.js** 
-  - https://expressjs.com/en/starter/installing.html
+
 
 ## Fork the Repository
 
@@ -44,6 +43,20 @@ git checkout -b fix/YourFixName
 Navigate to your project directory and install the necessary dependencies:
 ```bash
 npm install
+npm install react-router-dom
+npm install express
+```
+<!--- Express.js install doc can be found here https://expressjs.com/en/starter/installing.html -->
+<hr />
+If you are experiencing the following error with npm:
+
+```
+Error: ENOENT, stat C:\Users\<username>\AppData\Roaming\npm\
+```
+
+Then try running the following command:
+```bash
+npm install npm -g
 ```
 
 ## Set Up Your Environment
@@ -52,11 +65,13 @@ Create a `.env` file in the root of your project and configure the necessary env
 
 ## Running the Application
 
+Navigate to the app directory in order to start the application.
+
 Start the application with:
 ```bash
 npm start
 ```
-Visit `http://localhost:3000` in your browser to see the app running.
+Visit `http://localhost:3000` in your browser to see the app running. Refresh the page to update changes.
 
 ## Contributing Your Changes
 
