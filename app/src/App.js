@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Skeleton from "./pages/Skeleton";
 import Login from "./pages/Login";
+import Home from "./pages/home/Home";
 
 function App() {
   const action = useNavigationType();
@@ -48,6 +49,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
+      <Route path="/home" element={<Home />} />
     </Routes>
   );
 }
