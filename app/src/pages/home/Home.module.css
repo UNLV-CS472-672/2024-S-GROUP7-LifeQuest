@@ -28,7 +28,6 @@
   min-height: 852px;
   max-height: 852px;
   text-align: center;
-  font-size: var(--font-size-13xl);
   color: var(--color-black);
   font-family: var(--font-roboto);
 }
