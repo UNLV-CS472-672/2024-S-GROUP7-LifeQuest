@@ -1,3 +1,0 @@
-# Dependencies for this project
-nose
-flake8
