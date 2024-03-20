@@ -7,32 +7,31 @@
 Answer: 
 
 - **Code Quality**:
-    - [ ] Are there comments explaining complex sections of code?
-    - [ ] Is the programming style consistent with the project's standards?
+    - Are there comments explaining complex sections of code?
+    - Is the programming style consistent with the project's standards?
 
 Answer: 
 
 - **Testing**:
-    - [ ] Is Test coverage still >90%
-    - [ ] Did code pass Github Actions CI system's pass all tests?
+    - Is Test coverage still >90%
+    - Did code pass Github Actions CI system's pass all tests?
 
 Answer:
 
 - **Functionality**:
-    - [ ] Are all changes backwards compatible?
-    - [ ] Does the PR resolve an existing issue?
+    - Are all changes backwards compatible?
+    - Does the PR resolve an existing issue?
 
 Answer: 
 
 - **Housekeeping**:
-    - [ ] Are all files committed free from unnecessary (e.g., logs, 
+    - Are all files committed free from unnecessary (e.g., logs, 
       temporary files)?
-    - [ ] Has any assistance from Generative AI been linked to PR or commented 
+    - Has any assistance from Generative AI been linked to PR or commented 
       below?
 
-Answer: 
+Answer:
 
-
-**Additional Comments?**
+### Additional Comments:
 
 Answer: 
