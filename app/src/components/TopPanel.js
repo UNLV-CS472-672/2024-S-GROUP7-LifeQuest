@@ -5,7 +5,9 @@ const TopPanel = () => {
   return (
     <div className={styles.frame}>
       <div className={styles.topPanel}>
-        <BackButton backButtonPosition="relative" />
+        <a href="/">
+          <BackButton backButtonPosition="relative" />
+        </a>
       </div>
     </div>
   );
