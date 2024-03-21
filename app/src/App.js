@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Home from "./pages/home/Home";
 import SettingsPage from './pages/SettingsPage';
 import QuizPage from "./pages/quiz/QuizPage";
+import QuestsPage from './pages/QuestsPage';
 
 function App() {
   const action = useNavigationType();
@@ -54,6 +55,7 @@ function App() {
       <Route path="/home" element={<Home />} />
       <Route path="/settings" element={<SettingsPage />} /> 
       <Route path="/quiz" element={<QuizPage />} /> 
+      <Route path="/quests" element={<QuestsPage />} /> 
     </Routes>
   );
 }
