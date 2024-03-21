@@ -1,0 +1,116 @@
+.questsPageTitle {
+    text-align: left;
+    font-size: 32px;
+    align-self: stretch;
+    position: relative;
+    font-weight: 900;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.pageLabel {
+    cursor: pointer;
+    position: absolute;
+    top: 128px;
+    left: 17px;
+    width: 366px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.QuestsPage {
+    width: 100%;
+    height: 852px;
+    position: relative;
+    border: 2px solid var(--color-black);
+    box-sizing: border-box;
+    overflow: hidden;
+    min-width: 393px;
+    max-width: 393px;
+    min-height: 852px;
+    max-height: 852px;
+    color: var(--color-black);
+    font-family: var(--font-roboto);
+}
+@media screen and (max-width: 1200px) {
+    .QuestsPage {
+        height: 852px;
+        min-width: 393px;
+        max-width: 393px;
+        min-height: 852px;
+        max-height: 852px;
+    }
+}
+.button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.questSection {
+    padding: 10px;
+  }
+
+.questTitle {
+    text-align: left;
+    font-size: 16px;
+}
+
+.questBlock {
+    background-color: rgb(79, 116, 176);
+    display: block;
+    height: auto; /* allows content to determine height*/
+    margin-top: 20px;
+    margin-right: 1%;
+    margin-left: 1%;
+    overflow: hidden;
+    padding: 10px;
+    box-sizing: border-box; /* adds padding to width and height */
+    border-radius: 25px;
+}
+
+.questBlockTitle {
+
+}
+
+.questBlockText{
+
+}
+
+.inProgressQuests {
+    margin-top: 200px;
+    background-color: rgb(127, 127, 127);
+    display: block;
+    padding: 25px;
+    box-sizing: border-box; /* adds padding to width and height */
+    border-radius: 25px 25px 0px 0px;
+    font-size: smaller;
+    color: white; /* Text color */
+}
+
+.availableQuests {
+    background-color: rgb(137, 136, 176);
+    display: block;
+    padding: 25px;
+    padding-bottom: 100px;
+    box-sizing: border-box; /* adds padding to width and height */
+    border-radius: 0px 0px 25px 25px;
+    font-size: smaller;
+    color: white; /* Text color */
+}
+
+.button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    position: absolute; 
+  }
