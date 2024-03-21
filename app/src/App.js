@@ -10,7 +10,7 @@ import Login from "./pages/Login";
 import Home from "./pages/home/Home";
 import SettingsPage from './pages/SettingsPage';
 import QuizPage from "./pages/quiz/QuizPage";
-import QuestsPage from './pages/quests/QuestsPage';
+import QuestsPage from './pages/QuestsPage';
 
 function App() {
   const action = useNavigationType();
