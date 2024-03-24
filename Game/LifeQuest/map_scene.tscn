@@ -1,0 +1,128 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyfjohh3bf21f"]
+
+[ext_resource type="Script" path="res://Scripts/MapScene/map_scene.gd" id="1_pnhu3"]
+[ext_resource type="Script" path="res://Scripts/MapScene/Level1.gd" id="2_d7lq7"]
+[ext_resource type="ButtonGroup" uid="uid://bu7cyxjou55h6" path="res://Scripts/MapScene/MapButtons.tres" id="2_hisu1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d8t2f"]
+bg_color = Color(0.239216, 0.662745, 0.756863, 1)
+
+[sub_resource type="Theme" id="Theme_pyi5q"]
+
+[node name="map_scene" type="Node2D"]
+script = ExtResource("1_pnhu3")
+
+[node name="Level1" type="Button" parent="."]
+offset_left = 237.0
+offset_top = 473.0
+offset_right = 322.0
+offset_bottom = 545.0
+toggle_mode = true
+button_group = ExtResource("2_hisu1")
+text = "Level 1"
+script = ExtResource("2_d7lq7")
+
+[node name="PopMenu" type="PanelContainer" parent="Level1"]
+visible = false
+layout_mode = 0
+offset_left = -7.0
+offset_top = -87.0
+offset_right = 89.0
+offset_bottom = 6.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d8t2f")
+
+[node name="GridContainer" type="GridContainer" parent="Level1/PopMenu"]
+layout_mode = 2
+theme = SubResource("Theme_pyi5q")
+
+[node name="levelDesc" type="Label" parent="Level1/PopMenu/GridContainer"]
+layout_mode = 2
+text = "Goto Level 1"
+
+[node name="yes" type="Button" parent="Level1/PopMenu/GridContainer"]
+layout_mode = 2
+text = "Yes"
+
+[node name="no" type="Button" parent="Level1/PopMenu/GridContainer"]
+layout_mode = 2
+text = "No"
+
+[node name="Level2" type="Button" parent="."]
+offset_left = 379.0
+offset_top = 377.0
+offset_right = 464.0
+offset_bottom = 449.0
+toggle_mode = true
+button_group = ExtResource("2_hisu1")
+text = "Level 2"
+script = ExtResource("2_d7lq7")
+
+[node name="PopMenu" type="PanelContainer" parent="Level2"]
+visible = false
+layout_mode = 0
+offset_left = -7.0
+offset_top = -87.0
+offset_right = 89.0
+offset_bottom = 6.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d8t2f")
+
+[node name="GridContainer" type="GridContainer" parent="Level2/PopMenu"]
+layout_mode = 2
+theme = SubResource("Theme_pyi5q")
+
+[node name="levelDesc" type="Label" parent="Level2/PopMenu/GridContainer"]
+layout_mode = 2
+text = "Goto Level 2"
+
+[node name="yes" type="Button" parent="Level2/PopMenu/GridContainer"]
+layout_mode = 2
+text = "Yes"
+
+[node name="no" type="Button" parent="Level2/PopMenu/GridContainer"]
+layout_mode = 2
+text = "No"
+
+[node name="Level3" type="Button" parent="."]
+offset_left = 546.0
+offset_top = 263.0
+offset_right = 631.0
+offset_bottom = 335.0
+toggle_mode = true
+button_group = ExtResource("2_hisu1")
+text = "Level 3"
+script = ExtResource("2_d7lq7")
+
+[node name="PopMenu" type="PanelContainer" parent="Level3"]
+visible = false
+layout_mode = 0
+offset_left = -7.0
+offset_top = -87.0
+offset_right = 89.0
+offset_bottom = 6.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d8t2f")
+
+[node name="GridContainer" type="GridContainer" parent="Level3/PopMenu"]
+layout_mode = 2
+theme = SubResource("Theme_pyi5q")
+
+[node name="levelDesc" type="Label" parent="Level3/PopMenu/GridContainer"]
+layout_mode = 2
+text = "Goto Level 3"
+
+[node name="yes" type="Button" parent="Level3/PopMenu/GridContainer"]
+layout_mode = 2
+text = "Yes"
+
+[node name="no" type="Button" parent="Level3/PopMenu/GridContainer"]
+layout_mode = 2
+text = "No"
+
+[connection signal="toggled" from="Level1" to="Level1" method="_on_toggled"]
+[connection signal="pressed" from="Level1/PopMenu/GridContainer/yes" to="Level1" method="_on_yes_pressed"]
+[connection signal="pressed" from="Level1/PopMenu/GridContainer/no" to="Level1" method="_on_no_pressed"]
+[connection signal="toggled" from="Level2" to="Level2" method="_on_toggled"]
+[connection signal="pressed" from="Level2/PopMenu/GridContainer/yes" to="Level2" method="_on_yes_pressed"]
+[connection signal="pressed" from="Level2/PopMenu/GridContainer/no" to="Level2" method="_on_no_pressed"]
+[connection signal="toggled" from="Level3" to="Level3" method="_on_toggled"]
+[connection signal="pressed" from="Level3/PopMenu/GridContainer/yes" to="Level3" method="_on_yes_pressed"]
+[connection signal="pressed" from="Level3/PopMenu/GridContainer/no" to="Level3" method="_on_no_pressed"]
