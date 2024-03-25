@@ -12,13 +12,13 @@ func _physics_process(delta):
 	pass 
 	# player automatically moves toward enemy?
 
-func _on_player_hitbox_body_entered(body):
-	if body.has.method("enemy"):
-		inPlayerHitbox = true # enemy can hit player if within their hitbox
-
-func _on_player_hitbox_body_exited(body):
-	if body.has.method("enemy"):
-		inPlayerHitbox = false # enemy can no longer hit player
+#func _on_player_hitbox_body_entered(body):
+	#if body.has.method("enemy"):
+		#inPlayerHitbox = true # enemy can hit player if within their hitbox
+#
+#func _on_player_hitbox_body_exited(body):
+	#if body.has.method("enemy"):
+		#inPlayerHitbox = false # enemy can no longer hit player
 
 # Method that handles enemy attacks/health calculations
 func _on_player_hit():

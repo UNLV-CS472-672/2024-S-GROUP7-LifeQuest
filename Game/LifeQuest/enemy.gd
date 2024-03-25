@@ -13,13 +13,13 @@ func _physics_process(delta):
 	chasePlayer = true
 	# call method that chases player
 	
-func _on_enemy_hitbox_body_entered(body):
-	if body.has.method("player"):
-		inEnemyHitbox = true # player can hit enemy if within their hitbox
-
-func _on_enemy_hitbox_body_exited(body):
-	if body.has.method("player"):
-		inEnemyHitbox = false # player can no longer hit enemy
+#func _on_enemy_hitbox_body_entered(body):
+	#if body.has.method("player"):
+		#inEnemyHitbox = true # player can hit enemy if within their hitbox
+#
+#func _on_enemy_hitbox_body_exited(body):
+	#if body.has.method("player"):
+		#inEnemyHitbox = false # player can no longer hit enemy
 
 # Method that handles player attacks/health calculations
 func _on_enemy_hit():
@@ -31,4 +31,3 @@ func _on_enemy_hit():
 		if enemyHealthStat <= 0:
 			self.queue_free() 
 	
-# Method that handles movement towards player's current position
