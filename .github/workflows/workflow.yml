@@ -4,40 +4,29 @@ on:
   pull_request:
 jobs:
     build:
-        runs-on: ubuntu-latest
-        env:
-          PIP_CACHE_DIR: /cache/pip  # Set custom cache directory
-    
+        runs-on: ubuntu-latest    
         steps:
-            - name: Checkout
-              uses: actions/checkout@v3
+        - name: Checkout
+          uses: actions/checkout@v3
 
-            # Cache Dependencies
-            - name: Set up Dependencies Cache
-              uses: actions/cache@v3
-              with:
-                path: app/cache/pip
-                key: Linux-pip-5a10801b288f9708023ca35be6b49ba1ed92ff245458982f0b7795057b587f54
-                restore-keys: Linux-pip-
+        # Set up Node Version
+        - name: Setup Node
+          uses: actions/setup-node@v3.1.1
+          with:
+            node-version: v16.14.2
+            cache: 'yarn'
+            cache-dependency-path: app/yarn.lock  # <- This is needed for some reason, but the file is empty when I open it (Antonio)
 
-            # Check for Cache Hit
-            - name: Check if cache hit
-              id: cache-check
-              run: echo "::set-output name=cache-hit::$(echo ${{ steps.cache-check.outputs.cache-hit }})"
+        # Install yarn and npm
+        - name: Install Dependencies
+          run: |
+               cd app
+               yarn install  # <- yarn manages caching
+               npm install
       
-            # Install Dependencies (on No Cache Hit)
-            - name: Install dependencies
-              if: steps.cache-check.outputs.cache-hit != 'true'
-              run: |
-                cd app
-                npm install
+        # Print Coverage Report
+        - name: Print coverage report
+          run: |
+            cd app
+            npm run coverage
 
-            # Check for Cached Dependencies
-            - name: List cached directories after dependency installation
-              run: ls /cache/pip || true
-
-            # Upload Coverage Report
-            - name: Upload coverage report
-              run: |
-                  cd app
-                  npm run coverage
