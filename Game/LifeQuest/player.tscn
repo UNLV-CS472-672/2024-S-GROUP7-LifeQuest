@@ -19,5 +19,9 @@ texture = ExtResource("2_jk87f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerHitbox"]
 shape = SubResource("CircleShape2D_kyxv3")
 
+[node name="cooldown" type="Timer" parent="."]
+wait_time = 2.0
+
 [connection signal="body_entered" from="playerHitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="playerHitbox" to="." method="_on_player_hitbox_body_exited"]
+[connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]
