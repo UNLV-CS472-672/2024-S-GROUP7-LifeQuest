@@ -2,12 +2,22 @@
 body {
   margin: 0;
   line-height: normal;
+  font-size: var(--dynamic-font-size);
 }
 :root {
   /* fonts */
   --font-roboto: Roboto;
 
+  /* default font size */
+  --title-font-size: 24px; 
+  --text-font-size: 18px; 
+  --button-font-size: 16px;
+
   /* Colors */
   --color-black: #000;
   --color-gainsboro: rgba(217, 217, 217, 0.5);
+  --background-color-light: #ffffff; /* Light mode background color */
+  --text-color-light: #000000; /* Light mode text color */
+  --background-color-dark: #333333; /* Dark mode background color */
+  --text-color-dark: #ffffff; /* Dark mode text color */
 }

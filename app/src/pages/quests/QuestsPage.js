@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import NavigationPanel from "../components/NavigationPanel";
-import Frame from "../components/TopPanel";
-import PageContent from "../components/PageContent";
+import NavigationPanel from "../../components/NavigationPanel";
+import Frame from "../../components/TopPanel";
+import PageContent from "../../components/PageContent";
 import styles from "./QuestsPage.module.css";
+import { useFontSize } from '../../contexts/FontSizeContext'; 
 
 const QuestsPage = () => {
+  const { fontSize, darkMode } = useFontSize();
+  const pageClassName = darkMode ? `${styles.QuestsPage} ${styles.darkMode}` : styles.QuestsPage;
+  
   // State to manage all quests
   const [quests, setQuests] = useState([{ title: "Sample Title", text: "Sample Text" }]);
   // State to manage quests in progress
@@ -40,7 +44,7 @@ const QuestsPage = () => {
   };
 
   return (
-    <div className={styles.QuestsPage}>
+    <div className={pageClassName} style={{ fontSize: `${fontSize}px` }}>
       <NavigationPanel />
       <label className={styles.pageLabel} htmlFor="page_label">
         <div className={styles.questsPageTitle}>Quests Page</div>
