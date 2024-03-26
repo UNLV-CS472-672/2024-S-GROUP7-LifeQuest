@@ -5,91 +5,124 @@ import PageContent from "../components/PageContent";
 import styles from "./QuestsPage.module.css";
 
 const QuestsPage = () => {
-  // State to manage all quests
-  const [quests, setQuests] = useState([{ title: "Sample Title", text: "Sample Text" }]);
+  // State to manage available quests
+  const [availableQuests, setAvailableQuests] = useState([
+    { id: 1, title: "Quest 1", text: "Quest 1 Description" },
+    { id: 2, title: "Quest 2", text: "Quest 2 Description" },
+    { id: 3, title: "Quest 3", text: "Quest 3 Description" }
+  ]);
   // State to manage quests in progress
   const [inProgressQuests, setInProgressQuests] = useState([]);
+  // State to manage completed quests
+  const [completedQuests, setCompletedQuests] = useState([]);
+  // State to toggle visibility of completed quests
+  const [showCompletedQuests, setShowCompletedQuests] = useState(false);
 
-  // Function to add a new empty quest
-  const addQuest = () => {
-    setQuests([...quests, { title: "", text: "" }]);
+  // Function to handle adding a quest to in progress
+  const startQuest = (quest) => {
+    setInProgressQuests([...inProgressQuests, quest]);
+    removeAvailableQuest(quest.id);
   };
 
-  // Function to handle changes in quest title
-  const handleTitleChange = (index, event) => {
-    const newQuests = [...quests];
-    newQuests[index].title = event.target.value;
-    setQuests(newQuests);
+  // Function to handle completing a quest
+  const completeQuest = (quest) => {
+    setCompletedQuests([...completedQuests, quest]);
+    removeInProgressQuest(quest.id);
   };
 
-  // Function to handle changes in quest description
-  const handleTextChange = (index, event) => {
-    const newQuests = [...quests];
-    newQuests[index].text = event.target.value;
-    setQuests(newQuests);
+  // Function to remove a quest from available quests
+  const removeAvailableQuest = (id) => {
+    setAvailableQuests(availableQuests.filter(quest => quest.id !== id));
   };
 
-  // Function to move a quest from available quests to in progress quests
-  const addQuestToInProgress = () => {
-    if (quests.length > 0) {
-      // Move the first quest from available quests to in progress quests
-      setInProgressQuests([quests[0]]);
-      // Remove the first quest from available quests
-      setQuests(quests.slice(1));
-    }
+  // Function to remove a quest from in progress quests
+  const removeInProgressQuest = (id) => {
+    setInProgressQuests(inProgressQuests.filter(quest => quest.id !== id));
+  };
+
+  // Function to toggle visibility of completed quests
+  const toggleCompletedQuests = () => {
+    setShowCompletedQuests(!showCompletedQuests);
   };
 
   return (
     <div className={styles.QuestsPage}>
+      {/* Navigation Panel */}
       <NavigationPanel />
+      {/* Page Label */}
       <label className={styles.pageLabel} htmlFor="page_label">
         <div className={styles.questsPageTitle}>Quests Page</div>
       </label>
+      {/* Frame */}
       <Frame />
+      {/* Page Content */}
       <PageContent
         pageContentHeight="511px"
         pageContentPosition="absolute"
         pageContentTop="178px"
         pageContentLeft="26px"
       />
+
       {/* In progress quests section */}
-      <div className={`${styles.questSection} ${styles.inProgressQuests}`}>
-        <h2 className={styles.questTitle}>In Progress Quests</h2>
-        {inProgressQuests.length === 0 && <p>No quests in progress</p>}
-        {/* Render quests in progress */}
-        {inProgressQuests.map((quest, index) => (
-          <div key={index} className={styles.questBlock}>
-            <h3 className={styles.questBlockTitle}>{quest.title}</h3>
-            <p className={styles.questBlockText}>{quest.text}</p>
-          </div>
-        ))}
-      </div>
+      {!showCompletedQuests && (
+        <div className={`${styles.questSection} ${styles.inProgressQuests}`}>
+          <h2 className={styles.questTitle}>In Progress Quests</h2>
+          {/* Render quests in progress */}
+          {inProgressQuests.length === 0 && <p>No quests in progress</p>}
+          {inProgressQuests.map((quest, index) => (
+            <div key={index} className={styles.questBlock}>
+              <h3 className={styles.questBlockTitle}>{quest.title}</h3>
+              <p className={styles.questBlockText}>{quest.text}</p>
+              {/* Button to complete quest */}
+              <button onClick={() => completeQuest(quest)} className={styles.button}>
+                Complete Quest
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+
       {/* Available quests section */}
-      <div className={`${styles.questSection} ${styles.availableQuests}`}>
-        <h2 className={styles.questTitle}>Available Quests</h2>
-        {quests.length === 0 && <p>No available quests</p>}
-        {/* Render available quests */}
-        {quests.map((quest, index) => (
-          <div key={index} className={styles.questBlock}>
-            <input
-              type="text"
-              value={quest.title}
-              onChange={(event) => handleTitleChange(index, event)}
-              placeholder="Quest Title"
-              className={styles.questBlockTitle}
-            />
-            <textarea
-              value={quest.text}
-              onChange={(event) => handleTextChange(index, event)}
-              placeholder="Quest Description"
-              className={styles.questBlockText}
-            />
-          </div>
-        ))}
-        {/* Button to add a quest to In Progress Quests */}
-        {quests.length > 0 && <button onClick={addQuestToInProgress} className={styles.button}>Add Quest</button>}
-      </div>
+      {!showCompletedQuests && (
+        <div className={`${styles.questSection} ${styles.availableQuests}`}>
+          <h2 className={styles.questTitle}>Available Quests</h2>
+          {/* Render available quests */}
+          {availableQuests.length === 0 && <p>No available quests</p>}
+          {availableQuests.map((quest) => (
+            <div key={quest.id} className={styles.questBlock}>
+              <h3 className={styles.questBlockTitle}>{quest.title}</h3>
+              <p className={styles.questBlockText}>{quest.text}</p>
+              {/* Button to start quest */}
+              <button onClick={() => startQuest(quest)} className={styles.button}>
+                Start Quest
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Completed quests section */}
+      {showCompletedQuests && (
+        <div className={`${styles.questSection} ${styles.completedQuests}`}>
+          <h2 className={styles.questTitle}>Completed Quests</h2>
+          {/* Render completed quests */}
+          {completedQuests.length === 0 && <p>No completed quests</p>}
+          {completedQuests.map((quest, index) => (
+            <div key={index} className={styles.questBlock}>
+              <h3 className={styles.questBlockTitle}>{quest.title}</h3>
+              <p className={styles.questBlockText}>{quest.text}</p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Button to toggle visibility of completed quests */}
+      <button onClick={toggleCompletedQuests} className={styles.button}>
+        {showCompletedQuests ? "Hide Completed Quests" : "Show Completed Quests"}
+      </button>
+
     </div>
   );
 };
+
 export default QuestsPage;
