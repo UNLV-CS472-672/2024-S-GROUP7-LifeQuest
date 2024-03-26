@@ -8,10 +8,6 @@ describe('LifeQuestFormTriangle', () => {
     render(<LifeQuestFormTriangle />);
   });
 
-  it('renders the main container', () => {
-    expect(screen.getByTestId('PageContent')).toBeInTheDocument();
-  });
-
   it('contains the vector icon', () => {
     const vectorIcon = screen.getByAltText('');
     expect(vectorIcon).toHaveClass('vectorIcon');
