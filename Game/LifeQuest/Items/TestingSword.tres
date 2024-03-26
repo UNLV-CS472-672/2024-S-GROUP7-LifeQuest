@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dro5g6dmh7e31"]
+
+[ext_resource type="Script" path="res://Scripts/Items/item.gd" id="1_4nbc1"]
+
+[resource]
+script = ExtResource("1_4nbc1")
+name = "Testing Sword"
+itemType = 1
+equipLocation = 3
+damage = 5
+healthBonus = 0
+defenseBonus = 0
+magicBonus = 6

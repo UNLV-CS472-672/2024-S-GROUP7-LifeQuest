@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://f83w1j385c0o"]
+
+[ext_resource type="Script" path="res://character_scene.gd" id="1_emrmp"]
+[ext_resource type="Texture2D" uid="uid://cptyomp81xx1f" path="res://tempCharOutline.png" id="1_yabyc"]
+
+[node name="characterScene" type="Node2D"]
+position = Vector2(550, 350)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_emrmp")
+
+[node name="BodyModel" type="Sprite2D" parent="."]
+texture = ExtResource("1_yabyc")
+
+[node name="HeadGearStats" type="GridContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -580.0
+offset_right = 49.0
+offset_bottom = -452.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HeadSelect" type="OptionButton" parent="HeadGearStats"]
+layout_mode = 2
+
+[node name="Health" type="Label" parent="HeadGearStats"]
+layout_mode = 2
+text = "Health: "
+
+[node name="Damage" type="Label" parent="HeadGearStats"]
+layout_mode = 2
+text = "Damage: "
+
+[node name="Magic" type="Label" parent="HeadGearStats"]
+layout_mode = 2
+text = "Magic: "
+
+[node name="Defense" type="Label" parent="HeadGearStats"]
+layout_mode = 2
+text = "Defense: "
+
+[connection signal="item_selected" from="HeadGearStats/HeadSelect" to="." method="_on_head_select_item_selected"]
