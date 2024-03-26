@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://dxg7ymgixgo1h"]
+
+[ext_resource type="Script" path="res://Scripts/Items/item.gd" id="1_b50x6"]
+
+[resource]
+script = ExtResource("1_b50x6")
+name = "Testing Chest"
+itemType = 1
+equipLocation = 1
+damage = 0
+healthBonus = 10
+defenseBonus = 10
+magicBonus = 10
