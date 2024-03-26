@@ -9,25 +9,25 @@ var playerIsAlive = true
 var enemyAttack = 5 # Temporary value for enemy attack stat.
 
 func _physics_process(delta):
-	_enemy_is_attacking()
-	
-	# Checking for if player is still alive
-	if playerHealthStat <= 0: # If player health is less than or equal to 0, player is no longer alive
-		print("Player is dead.")
-		playerIsAlive = false
-		self.queue_free()
+	pass
 
 # Method that handles enemy attacks/health calculations
-func _enemy_is_attacking():
+func on_hit():
 	if attackCooldown == false:
 		print("Player is being hit.")
 		attackCooldown = true  # cooldown timer is active, cannot take another hit until timer is up
 		$cooldown.start() # Player cannot be hit for another 3 seconds
-		
 		playerHealthStat = playerHealthStat - enemyAttack
+		print("Player health is: " + str(playerHealthStat))
+		
+	if playerHealthStat <= 0: # If player health is less than or equal to 0, player is no longer alive
+		playerIsAlive = false
 
 func _on_cooldown_timeout():
 	attackCooldown = false # Resetting cooldown flag back to false once timer is up
 
-func _player_health():
+func player_health():
 	return playerHealthStat
+	
+func is_alive():
+	return playerIsAlive

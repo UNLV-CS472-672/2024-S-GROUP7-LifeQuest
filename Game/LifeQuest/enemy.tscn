@@ -20,7 +20,6 @@ texture = ExtResource("1_yq8xx")
 shape = SubResource("CircleShape2D_trdnp")
 
 [node name="enemyCooldown" type="Timer" parent="."]
+wait_time = 0.5
 
-[connection signal="body_entered" from="enemyHitbox" to="." method="_on_enemy_hitbox_body_entered"]
-[connection signal="body_exited" from="enemyHitbox" to="." method="_on_enemy_hitbox_body_exited"]
 [connection signal="timeout" from="enemyCooldown" to="." method="_on_enemy_cooldown_timeout"]
