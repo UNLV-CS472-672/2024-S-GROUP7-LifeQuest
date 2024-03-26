@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://cgd71ihob6xnu"]
+
+[ext_resource type="Script" path="res://Scripts/Items/item.gd" id="1_xpd8c"]
+
+[resource]
+script = ExtResource("1_xpd8c")
+name = "Testing Helmet2"
+itemType = 1
+equipLocation = 0
+damage = 0
+healthBonus = 7
+defenseBonus = 2
+magicBonus = 6
