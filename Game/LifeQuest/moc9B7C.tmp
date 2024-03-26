@@ -12,19 +12,3 @@ position = Vector2(293, 355)
 
 [node name="enemy" parent="." instance=ExtResource("3_wo41g")]
 position = Vector2(966, 360)
-
-[node name="UI" type="Node" parent="."]
-
-[node name="Win" type="Label" parent="UI"]
-offset_left = 556.0
-offset_top = 346.0
-offset_right = 629.0
-offset_bottom = 369.0
-text = "You Win!!"
-
-[node name="Lose" type="Label" parent="UI"]
-offset_left = 542.0
-offset_top = 346.0
-offset_right = 642.0
-offset_bottom = 369.0
-text = "you suck!! >:("
