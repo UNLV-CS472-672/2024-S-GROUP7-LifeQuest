@@ -12,7 +12,7 @@ describe('PageContent', () => {
       pageContentLeft: '100px',
     };
 
-    render(<PageContent {...testProps} />);
+    //render(<PageContent {...testProps} />);
 
     const pageContent = screen.getByTestId('page-content');
     expect(pageContent).toHaveStyle({

@@ -5,9 +5,7 @@ import TopPanel from '../../components/TopPanel';
 import BackButton from '../../components/BackButton';
 
 // Mock BackButton
-jest.mock('../../BackButton', () => (props) => (
-  <div data-testid="mock-back-button" {...props}></div>
-));
+jest.mock('BackButton', () => (props) => (<div data-testid="mock-back-button" {...props}></div>));
 
 describe('TopPanel', () => {
   it('renders the TopPanel component with the BackButton', () => {
