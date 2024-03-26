@@ -5,7 +5,7 @@ const TopPanel = () => {
   return (
     <div className={styles.frame} data-testid="top-panel">
       <div className={styles.topPanel}>
-        <BackButton backButtonPosition="relative" />
+        <BackButton backbuttonposition="relative" />
       </div>
     </div>
   );
