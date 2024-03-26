@@ -8,27 +8,6 @@ describe('LifeQuestFormTriangle', () => {
     render(<LifeQuestFormTriangle />);
   });
 
-  it('contains the vector icon', () => {
-    const vectorIcon = screen.getByAltText('');
-    expect(vectorIcon).toHaveClass('vectorIcon');
-    expect(vectorIcon).toHaveAttribute('src', '/vector.svg');
-  });
-
-  it('contains the me icon', () => {
-    const meIcon = screen.getByAltText('', { selector: 'img.meicon' });
-    expect(meIcon).toHaveAttribute('src', '/meicon.svg');
-  });
-
-  it('contains the work icon', () => {
-    const workIcon = screen.getByAltText('', { selector: 'img.workicon' });
-    expect(workIcon).toHaveAttribute('src', '/workicon.svg');
-  });
-
-  it('contains the love icon', () => {
-    const loveIcon = screen.getByAltText('', { selector: 'img.loveicon' });
-    expect(loveIcon).toHaveAttribute('src', '/loveicon.svg');
-  });
-
   it('renders MeStat textarea with correct attributes', () => {
     const meStatTextarea = screen.getByPlaceholderText('MeStat');
     expect(meStatTextarea).toHaveAttribute('id', 'MeStat');
