@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
     async function sendSubmit(foo) {
         
@@ -27,20 +27,6 @@ const Login = () => {
             .finally(function () {
             // always executed
             });
-
-            //Login, needs to be tested
-            /*
-            await axios.post("http//localhost:9000/login",{
-                email, password
-            })
-            .then(result => {
-                console.log(result)
-                if(result.data === "Success") {
-                    navigate('/home')
-                }
-            })
-            .catch(err => console.log(err))
-            */
         }
         catch(foo){
             console.log(foo)
@@ -49,15 +35,15 @@ const Login = () => {
     }
 
     return (
-    <div className="login_container" data-testid="login-route">
+    <div className="login_container">
         <form onSubmit={sendSubmit} className="login_form">
-            <label htmlFor="email">Email</label>
+            <label htmlFor ="Email">Email</label>
             <input value={email} type="email" onChange={(foo) => setEmail(foo.target.value)} placeholder="Email" name="Email" id="Email" />
-            <label htmlFor="password">Password</label>
-            <input value={password} type="password" onChange={(foo) => setPassword(foo.target.value)} placeholder="********" name="password" id="password" />
-            <button class="login_button" type="submit">Log In</button>
+            <label htmlFor ="Password">Password</label>
+            <input value={password} type="password" onChange={(foo) => setPassword(foo.target.value)} placeholder="********" name="Password" id="Password" />
+            <button className="login_button" type="submit">Log In</button>
         </form>
-        <button class="register_button">Don't have a LifeQuest account? <br/> Register here.</button>
+        <button className="register_button">Don't have a LifeQuest account? <br/> Register here.</button>
     </div>
   );
 };
