@@ -10,14 +10,11 @@
   min-height: 852px;
   max-height: 852px;
   text-align: center;
-  font-size: var(--title-font-size);
+  font-size: 32px;
   color: var(--color-black);
   font-family: var(--font-roboto);
 }
-.quizPage.darkMode {
-    background-color: var(--background-color-dark); /* Use dark mode background color */
-    color: var(--text-color-dark); /* Use dark mode text color */
-}
+
 .pageLabel {
   cursor: pointer;
   position: absolute;
@@ -42,8 +39,8 @@
 
 .answerOptions {
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
+  flex-wrap: wrap; 
+  justify-content: space-around;
 }
 
 .button {
@@ -53,10 +50,10 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: var(--button-font-size);
+  font-size: 18px;
   margin-top: 20px;
   position: absolute; 
-  bottom: -125px; 
+  bottom: -50px; 
   left: 50%; 
   transform: translateX(-50%); 
   z-index: 1; 
@@ -66,10 +63,3 @@
   background-color: green;
   color: white;
 }
-.answerButton {
-  font-size: var(--text-font-size);
-  margin-bottom: 15px;
-}
-/* 
-<button className={userAnswers[currentQuestionIndex]?.answer === 1 ? styles.selected : ""} onClick={() => handleAnswerSelection(1, questionsData[currentQuestionIndex].type)}>Strongly Disagree</button>
-*/

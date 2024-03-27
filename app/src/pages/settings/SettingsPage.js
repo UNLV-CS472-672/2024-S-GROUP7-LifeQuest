@@ -14,7 +14,7 @@ const SettingsPage = () => {
   };
 
   return (
-    <div className={`${styles.settingsPage} ${darkMode ? styles.darkMode : ''}`} style={{ fontSize: `${fontSize}px` }}>
+    <div className={`${styles.settingsPage} ${darkMode ? styles.darkMode : ''}`} style={{ fontSize: `${fontSize}px` }} data-testid="settings-page">
       <NavigationPanel />
       <label className={styles.pageLabel} htmlFor="page_label">
         <div className={styles.settingsPagePage}>

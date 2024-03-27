@@ -10,7 +10,7 @@ const Skeleton = () => {
   const pageClassName = darkMode ? `${styles.skeleton} ${styles.darkMode}` : styles.skeleton;
   
   return (
-    <div className={pageClassName} style={{ fontSize: `${fontSize}px` }}>
+    <div className={pageClassName} style={{ fontSize: `${fontSize}px` }} data-testid="skeleton-route">
       <NavigationPanel />
       <label className={styles.pageLabel} htmlFor="page_label">
         <div className={styles.skeletonPage}>
