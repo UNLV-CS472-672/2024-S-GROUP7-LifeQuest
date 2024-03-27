@@ -51,10 +51,10 @@ const Login = () => {
     return (
     <div className="login_container">
         <form onSubmit={sendSubmit} className="login_form">
-            <label htmlFor ="email">Email</label>
+            <label htmlFor ="Email">Email</label>
             <input value={email} type="email" onChange={(foo) => setEmail(foo.target.value)} placeholder="Email" name="Email" id="Email" />
-            <label htmlFor ="password">Password</label>
-            <input value={password} type="password" onChange={(foo) => setPassword(foo.target.value)} placeholder="********" name="password" id="password" />
+            <label htmlFor ="Password">Password</label>
+            <input value={password} type="password" onChange={(foo) => setPassword(foo.target.value)} placeholder="********" name="Password" id="Password" />
             <button className="login_button" type="submit">Log In</button>
         </form>
         <button className="register_button">Don't have a LifeQuest account? <br/> Register here.</button>
