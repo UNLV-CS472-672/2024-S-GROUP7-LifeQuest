@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import NavigationPanel from "../components/NavigationPanel";
-import Frame from "../components/TopPanel";
-import PageContent from "../components/PageContent";
+import NavigationPanel from "../../components/NavigationPanel";
+import Frame from "../../components/TopPanel";
+import PageContent from "../../components/PageContent";
 import styles from "./QuestsPage.module.css";
+import { useFontSize } from '../../contexts/FontSizeContext'; 
 
 const QuestsPage = () => {
+  // Darkmode and fontSize
+  const { fontSize, darkMode} = useFontSize();	  
+	
   // State to manage available quests
   const [availableQuests, setAvailableQuests] = useState([
     { id: 1, title: "Quest 1", text: "Quest 1 Description" },
@@ -46,7 +50,7 @@ const QuestsPage = () => {
   };
 
   return (
-    <div className={styles.QuestsPage}>
+    <div className={`${styles.QuestsPage} ${darkMode ? styles.darkMode : ''}`} style={{ fontSize: `${fontSize}px` }} data-testid="quests-page">
       {/* Navigation Panel */}
       <NavigationPanel />
       {/* Page Label */}

@@ -5,6 +5,8 @@
     position: relative;
     font-weight: 900;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	font-size: var(--title-font-size);
+	font-size: var(--title-font-size);
 }
 .pageLabel {
     cursor: pointer;
@@ -32,6 +34,10 @@
     color: var(--color-black);
     font-family: var(--font-roboto);
 }
+.QuestsPage.darkMode {
+    background-color: var(--background-color-dark); /* Use dark mode background color */
+    color: var(--text-color-dark); /* Use dark mode text color */
+}
 @media screen and (max-width: 1200px) {
     .QuestsPage {
         height: 852px;
@@ -50,7 +56,7 @@
 
 .questTitle {
     text-align: left;
-    font-size: 16px;
+    font-size: var(--text-font-size);
 }
 
 .questBlock {
@@ -111,6 +117,11 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 15px;
+    font-size: var(--button-font-size);
     position: relative; /* Change position to relative */
+}
+
+.darkMode {
+	background-color: var(--background-color-dark); /* Use dark mode background color */
+	color: var(--text-color-dark); /* Use dark mode text color */
 }
