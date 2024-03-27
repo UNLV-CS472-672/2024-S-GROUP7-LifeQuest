@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     async function sendSubmit(foo) {
         
@@ -49,11 +49,11 @@ const Login = () => {
     }
 
     return (
-    <div className="login_container">
+    <div className="login_container" data-testid="login-route">
         <form onSubmit={sendSubmit} className="login_form">
-            <label for="email">Email</label>
+            <label htmlFor="email">Email</label>
             <input value={email} type="email" onChange={(foo) => setEmail(foo.target.value)} placeholder="Email" name="Email" id="Email" />
-            <label for="password">Password</label>
+            <label htmlFor="password">Password</label>
             <input value={password} type="password" onChange={(foo) => setPassword(foo.target.value)} placeholder="********" name="password" id="password" />
             <button class="login_button" type="submit">Log In</button>
         </form>

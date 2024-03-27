@@ -4,8 +4,12 @@ import Frame from "../../components/TopPanel";
 import PageContent from "../../components/PageContent";
 import styles from "./QuizPage.module.css";
 import questionsData from "./quiz_questions.json"; 
+import { useFontSize } from '../../contexts/FontSizeContext'; 
 
 const QuizPage = () => {
+  const { fontSize, darkMode } = useFontSize();
+  const pageClassName = darkMode ? `${styles.quizPage} ${styles.darkMode}` : styles.quizPage;	
+	
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState({});
   const [quizCompleted, setQuizCompleted] = useState(false); 
@@ -17,23 +21,23 @@ const QuizPage = () => {
   const [professionalScore, setProfessionalScore] = useState(0);
   const [relationshipsScore, setRelationshipsScore] = useState(0);
 
-  const handleAnswerSelection = (answer, type) => {
+  const handleAnswerSelection = (answer, category) => {
     const currentQuestion = questionsData[currentQuestionIndex];
     setUserAnswers({
       ...userAnswers,
-      [currentQuestionIndex]: { answer, type }, 
+      [currentQuestionIndex]: { answer, category }, 
     });
 
     // Update the user scores, based on the category of question
     // Note: This does not work for some reason!!!! Will be fixed at a later date.
-    switch (type) {
+    switch (category) {
       case "health":
         setHealthScore((prevScore) => prevScore + answer);
         break;
       case "professional":
         setProfessionalScore((prevScore) => prevScore + answer);
         break;
-      case "relationships":
+      case "relationship":
         setRelationshipsScore((prevScore) => prevScore + answer);
         break;
       default:
@@ -62,7 +66,7 @@ const QuizPage = () => {
   const relationshipsPercentage = (relationshipsScore / totalPossiblePoints) * 100;
 
   return (
-    <div className={styles.quizPage}>
+    <div className={pageClassName} style={{ fontSize: `${fontSize}px` }} data-testid="quiz-page">
       <NavigationPanel />
       <Frame />
       <PageContent
@@ -79,15 +83,15 @@ const QuizPage = () => {
         )}
         {!quizCompleted && (
           <div className={styles.answerOptions}>
-            <button className={userAnswers[currentQuestionIndex]?.answer === 1 ? styles.selected : ""} onClick={() => handleAnswerSelection(1, questionsData[currentQuestionIndex].type)}>Strongly Disagree</button>
-            <button className={userAnswers[currentQuestionIndex]?.answer === 2 ? styles.selected : ""} onClick={() => handleAnswerSelection(2, questionsData[currentQuestionIndex].type)}>Disagree</button>
-            <button className={userAnswers[currentQuestionIndex]?.answer === 3 ? styles.selected : ""} onClick={() => handleAnswerSelection(3, questionsData[currentQuestionIndex].type)}>Neutral</button>
-            <button className={userAnswers[currentQuestionIndex]?.answer === 4 ? styles.selected : ""} onClick={() => handleAnswerSelection(4, questionsData[currentQuestionIndex].type)}>Agree</button>
-            <button className={userAnswers[currentQuestionIndex]?.answer === 5 ? styles.selected : ""} onClick={() => handleAnswerSelection(5, questionsData[currentQuestionIndex].type)}>Strongly Agree</button>
+            <button className={userAnswers[currentQuestionIndex]?.answer === 1 ? styles.selected : ""} onClick={() => handleAnswerSelection(1, questionsData[currentQuestionIndex].category)}>Strongly Disagree</button>
+            <button className={userAnswers[currentQuestionIndex]?.answer === 2 ? styles.selected : ""} onClick={() => handleAnswerSelection(2, questionsData[currentQuestionIndex].category)}>Disagree</button>
+            <button className={userAnswers[currentQuestionIndex]?.answer === 3 ? styles.selected : ""} onClick={() => handleAnswerSelection(3, questionsData[currentQuestionIndex].category)}>Neutral</button>
+            <button className={userAnswers[currentQuestionIndex]?.answer === 4 ? styles.selected : ""} onClick={() => handleAnswerSelection(4, questionsData[currentQuestionIndex].category)}>Agree</button>
+            <button className={userAnswers[currentQuestionIndex]?.answer === 5 ? styles.selected : ""} onClick={() => handleAnswerSelection(5, questionsData[currentQuestionIndex].category)}>Strongly Agree</button>
           </div>
         )}
         {!quizCompleted ? (
-          <button onClick={handleNextButtonClick} className={styles.button} disabled={!answerSelected}>
+          <button onClick={handleNextButtonClick} className={styles.nextButton} disabled={!answerSelected}>
             {currentQuestionIndex < totalQuestions - 1 ? "Next" : "Finish"}
           </button>
         ) : (

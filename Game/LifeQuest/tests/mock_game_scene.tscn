@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://drxa8uyww2f3h"]
+
+[ext_resource type="Script" path="res://tests/mock_game_scene.gd" id="1_a3bh3"]
+[ext_resource type="PackedScene" uid="uid://b5obbjcfduj5e" path="res://player.tscn" id="2_srmjf"]
+[ext_resource type="PackedScene" uid="uid://cho08lfqs6qrk" path="res://enemy.tscn" id="3_wo41g"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_a3bh3")
+
+[node name="player" parent="." instance=ExtResource("2_srmjf")]
+position = Vector2(293, 355)
+
+[node name="enemy" parent="." instance=ExtResource("3_wo41g")]
+position = Vector2(966, 360)
+
+[node name="UI" type="Node" parent="."]
+
+[node name="Win" type="Label" parent="UI"]
+offset_left = 556.0
+offset_top = 346.0
+offset_right = 629.0
+offset_bottom = 369.0
+text = "You Win!!"
+
+[node name="Lose" type="Label" parent="UI"]
+offset_left = 542.0
+offset_top = 346.0
+offset_right = 642.0
+offset_bottom = 369.0
+text = "you suck!! >:("

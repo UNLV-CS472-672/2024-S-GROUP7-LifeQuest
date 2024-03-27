@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5obbjcfduj5e"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_xkigp"]
-[ext_resource type="Texture2D" uid="uid://ccbnpm3ng1huq" path="res://tempChar.png" id="2_jk87f"]
+[ext_resource type="Texture2D" uid="uid://ccbnpm3ng1huq" path="res://Sprites/tempChar.png" id="2_jk87f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kyxv3"]
 radius = 226.08
@@ -19,5 +19,8 @@ texture = ExtResource("2_jk87f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerHitbox"]
 shape = SubResource("CircleShape2D_kyxv3")
 
+[node name="cooldown" type="Timer" parent="."]
+
 [connection signal="body_entered" from="playerHitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="playerHitbox" to="." method="_on_player_hitbox_body_exited"]
+[connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]

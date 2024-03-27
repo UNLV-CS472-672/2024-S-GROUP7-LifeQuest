@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cptyomp81xx1f"
-path="res://.godot/imported/tempCharOutline.png-da1471d592e63cb08ba099150ad056e4.ctex"
+uid="uid://sp5sqsqilkte"
+path="res://.godot/imported/tilemap_Floor_spaced_smaller.png-2cc6992b4588d99a0a52281ae21f1c7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tempCharOutline.png"
-dest_files=["res://.godot/imported/tempCharOutline.png-da1471d592e63cb08ba099150ad056e4.ctex"]
+source_file="res://Sprites/tilemap_Floor_spaced_smaller.png"
+dest_files=["res://.godot/imported/tilemap_Floor_spaced_smaller.png-2cc6992b4588d99a0a52281ae21f1c7a.ctex"]
 
 [params]
 
