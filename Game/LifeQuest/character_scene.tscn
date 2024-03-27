@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://f83w1j385c0o"]
 
 [ext_resource type="Script" path="res://character_scene.gd" id="1_emrmp"]
-[ext_resource type="Texture2D" uid="uid://cptyomp81xx1f" path="res://tempCharOutline.png" id="1_yabyc"]
+[ext_resource type="Texture2D" uid="uid://cptyomp81xx1f" path="res://Sprites/tempCharOutline.png" id="1_yabyc"]
 
 [node name="characterScene" type="Node2D"]
 position = Vector2(550, 350)
