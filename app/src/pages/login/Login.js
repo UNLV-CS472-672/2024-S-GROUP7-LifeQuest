@@ -27,20 +27,6 @@ const Login = () => {
             .finally(function () {
             // always executed
             });
-
-            //Login, needs to be tested
-            /*
-            await axios.post("http//localhost:9000/login",{
-                email, password
-            })
-            .then(result => {
-                console.log(result)
-                if(result.data === "Success") {
-                    navigate('/home')
-                }
-            })
-            .catch(err => console.log(err))
-            */
         }
         catch(foo){
             console.log(foo)

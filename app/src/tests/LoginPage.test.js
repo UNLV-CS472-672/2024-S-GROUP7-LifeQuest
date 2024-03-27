@@ -1,6 +1,6 @@
+import '@testing-library/jest-dom';
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import LoginPage from '../pages/login/Login.js';
 import {
     Routes,
@@ -18,14 +18,9 @@ describe('LoginPage', () => {
             </Routes>
         </BrowserRouter>
         );
-        
-
       
         const emailLabel = getByText(/Email/i)
         const passwordLabel = getByText(/Password/i)
-
-        //expect(emailLabel).toBeInDocument()
-        //expect(passwordLabel).toBeInDocument()
 
         const emailInput = getByLabelText(/Email/i);
         expect(emailInput).toHaveAttribute('type', 'email');
