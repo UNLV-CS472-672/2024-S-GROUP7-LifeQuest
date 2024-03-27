@@ -4,8 +4,12 @@ import Frame from "../../components/TopPanel";
 import PageContent from "../../components/PageContent";
 import styles from "./QuizPage.module.css";
 import questionsData from "./quiz_questions.json"; 
+import { useFontSize } from '../../contexts/FontSizeContext'; 
 
 const QuizPage = () => {
+  const { fontSize, darkMode } = useFontSize();
+  const pageClassName = darkMode ? `${styles.quizPage} ${styles.darkMode}` : styles.quizPage;	
+	
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState({});
   const [quizCompleted, setQuizCompleted] = useState(false); 
@@ -62,7 +66,7 @@ const QuizPage = () => {
   const relationshipsPercentage = (relationshipsScore / totalPossiblePoints) * 100;
 
   return (
-    <div className={styles.quizPage}>
+    <div className={pageClassName} style={{ fontSize: `${fontSize}px` }} data-testid="quiz-page">
       <NavigationPanel />
       <Frame />
       <PageContent

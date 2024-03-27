@@ -21,6 +21,8 @@ const PageContent = ({
       className={styles.pageContent}
       id="page_content"
       style={pageContentStyle}
+      data-testid="page-content" // testing purpose
+
     />
   );
 };

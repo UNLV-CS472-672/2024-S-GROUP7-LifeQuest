@@ -9,6 +9,7 @@ const BackButton = ({ backButtonPosition }) => {
   }, [backButtonPosition]);
 
   return (
+    <a href="/home">
     <button
       className={styles.backButton}
       id="back_button"
@@ -16,6 +17,7 @@ const BackButton = ({ backButtonPosition }) => {
     >
       <img className={styles.groupIcon} alt="" src="/group.svg" />
     </button>
+    </a>
   );
 };
 
