@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import NavigationPanel from "../components/NavigationPanel";
-import Frame from "../components/TopPanel";
-import PageContent from "../components/PageContent";
+import NavigationPanel from "../../components/NavigationPanel";
+import Frame from "../../components/TopPanel";
+import PageContent from "../../components/PageContent";
 import styles from "./QuestsPage.module.css";
+import { useFontSize } from '../../contexts/FontSizeContext'; 
 
 const QuestsPage = () => {
   // State to manage available quests
