@@ -13,7 +13,7 @@ const BackButton = ({ backButtonPosition }) => {
       className={styles.backButton}
       id="back_button"
       style={backButtonStyle}
-      onClick={() => { window.location.href = "/home"; }} // Navigate programmatically on button click
+      onClick={() => { window.location.href = "/home"; }} // Navigate on button click, back to home?
     >
       <img className={styles.groupIcon} alt="" src="/group.svg" />
     </button>
