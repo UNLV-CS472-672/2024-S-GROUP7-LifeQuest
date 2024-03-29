@@ -9,15 +9,14 @@ const BackButton = ({ backButtonPosition }) => {
   }, [backButtonPosition]);
 
   return (
-    <a href="/home">
     <button
       className={styles.backButton}
       id="back_button"
       style={backButtonStyle}
+      onClick={() => { window.location.href = "/home"; }} // Navigate programmatically on button click
     >
       <img className={styles.groupIcon} alt="" src="/group.svg" />
     </button>
-    </a>
   );
 };
 
