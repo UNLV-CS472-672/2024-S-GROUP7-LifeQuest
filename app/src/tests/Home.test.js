@@ -6,6 +6,14 @@ import NavigationPanel from '../components/NavigationPanel';
 import Frame from '../components/TopPanel';
 import LifeQuestFormTriangle from '../components/LifeQuestFormTriangle';
 
+// Mock the useFontSize hook to return specific values
+jest.mock('../contexts/FontSizeContext', () => ({
+  useFontSize: () => ({
+    fontSize: 16, // Sample font size
+    darkMode: false, // Sample dark mode value
+  }),
+}));
+
 jest.mock('../components/NavigationPanel', () => {
   return function DummyNavigationPanel() {
     return <div data-testid="navigation-panel" />;

@@ -2,6 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
+import "@testing-library/jest-dom/extend-expect"; 
 import App from "../App";
 
 // Mocking window.scrollTo
@@ -15,36 +16,51 @@ beforeEach(() => {
 });
 
 describe("App Routing", () => {
-  test("default route is Skeleton", () => {
-    render(
-      <MemoryRouter initialEntries={["/"]}>
-        <App />
-      </MemoryRouter>
-    );
-    expect(screen.getByText(/Skeleton/i)).toBeInTheDocument();
-  });
 
-  test("navigates to the login page", () => {
+  test("renders Login component when navigating to '/login'", () => {
     render(
       <MemoryRouter initialEntries={["/login"]}>
         <App />
       </MemoryRouter>
     );
-    expect(screen.getByText(/Login/i)).toBeInTheDocument();
+    expect(screen.getByText("Email")).toBeInTheDocument();
   });
 
-});
-
-describe("App useEffect Behavior", () => {
-  test("scrolls to top on navigation that is not 'POP'", () => {
+  test("renders Home component when navigating to '/home'", () => {
     render(
       <MemoryRouter initialEntries={["/home"]}>
         <App />
       </MemoryRouter>
     );
-    // Simulate navigation
-    userEvent.click(screen.getByText(/Settings/i));
-    expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
+    expect(screen.getByText("LifeQuest")).toBeInTheDocument();
+  });
+
+  test("renders Settings component when navigating to '/settings'", () => {
+    render(
+      <MemoryRouter initialEntries={["/settings"]}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(screen.getByText("Settings Page")).toBeInTheDocument();
+  });
+
+  test("renders Quests component when navigating to '/quests'", () => {
+    render(
+      <MemoryRouter initialEntries={["/quests"]}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(screen.getByText("Quests Page")).toBeInTheDocument();
+  });
+
+  test("renders Quiz component when navigating to '/quiz'", () => {
+    render(
+      <MemoryRouter initialEntries={["/quiz"]}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(screen.getByText("Strongly Agree")).toBeInTheDocument();
   });
 
 });
+

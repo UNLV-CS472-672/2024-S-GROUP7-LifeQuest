@@ -52,7 +52,7 @@ function App() {
   return (
     <FontSizeProvider>
       <Routes>
-        <Route path="/" element={<Skeleton />} />
+        <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="/settings" element={<SettingsPage />} /> 
