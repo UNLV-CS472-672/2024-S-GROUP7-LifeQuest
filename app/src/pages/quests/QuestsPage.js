@@ -112,7 +112,8 @@ const QuestsPage = () => {
           {/* Render completed quests */}
           {completedQuests.length === 0 && <p>No completed quests</p>}
           {completedQuests.map((quest, index) => (
-            <div key={index} className={styles.questBlock}>
+            // added data-testid to resolve testing
+            <div key={index} className={styles.questBlock} data-testid="quest-block">
               <h3 className={styles.questBlockTitle}>{quest.title}</h3>
               <p className={styles.questBlockText}>{quest.text}</p>
             </div>
