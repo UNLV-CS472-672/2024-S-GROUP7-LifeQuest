@@ -74,7 +74,7 @@ const QuestsPage = () => {
           {/* Render quests in progress */}
           {inProgressQuests.length === 0 && <p>No quests in progress</p>}
           {inProgressQuests.map((quest, index) => (
-            <div key={index} className={styles.questBlock}>
+            <div key={index} className={styles.questBlock} data-testid="quest-block">
               <h3 className={styles.questBlockTitle}>{quest.title}</h3>
               <p className={styles.questBlockText}>{quest.text}</p>
               {/* Button to complete quest */}
@@ -93,7 +93,7 @@ const QuestsPage = () => {
           {/* Render available quests */}
           {availableQuests.length === 0 && <p>No available quests</p>}
           {availableQuests.map((quest) => (
-            <div key={quest.id} className={styles.questBlock}>
+            <div key={quest.id} className={styles.questBlock} data-testid="quest-block">
               <h3 className={styles.questBlockTitle}>{quest.title}</h3>
               <p className={styles.questBlockText}>{quest.text}</p>
               {/* Button to start quest */}

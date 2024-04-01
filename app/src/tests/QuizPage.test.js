@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import QuizPage from '../pages/QuizPage';
+import QuizPage from '../pages/quiz/QuizPage';
 import '@testing-library/jest-dom/extend-expect';
 import renderer from 'react-test-renderer';
 

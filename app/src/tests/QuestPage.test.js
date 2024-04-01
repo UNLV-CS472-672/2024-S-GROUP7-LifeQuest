@@ -41,6 +41,11 @@ describe('QuestsPage', () => {
     // Complete the quest
     fireEvent.click(getAllByText('Complete Quest')[0]);
 
+    // Added debugging lines:
+    console.log(document.body.innerHTML);
+    console.log(screen.queryByText('Completed Quests'));
+    console.log(screen.queryByText('Quest 1'));
+
     // Ensure the quest is moved to completed
     expect(queryByText('Quest 1')).not.toBeInTheDocument(); // Ensure the quest is not in in-progress
     expect(queryByText('Completed Quests')).toBeInTheDocument(); // Ensure the completed quests section is visible
