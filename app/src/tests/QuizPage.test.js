@@ -45,5 +45,5 @@ describe('QuizPage', () => {
 //     expect(getByText('Health Score:')).toBeInTheDocument();
 //     expect(getByText('Professional Score:')).toBeInTheDocument();
 //     expect(getByText('Relationships Score:')).toBeInTheDocument();
-  });
+//   });
 });
