@@ -38,8 +38,11 @@ describe('QuizPage', () => {
     const { getByText } = render(<QuizPage />);
 
     // Clicking the finish button
-    fireEvent.click(await findByText('Finish')); // Use findByText to wait for the button to appear
-    
+    fireEvent.click(new Promise(resolve => {
+        const finishButton = getByText('Finish');
+        finishButton.onclick = resolve;
+      }));
+      
     // Verify that user scores are displayed
     expect(getByText('Health Score:')).toBeInTheDocument();
     expect(getByText('Professional Score:')).toBeInTheDocument();

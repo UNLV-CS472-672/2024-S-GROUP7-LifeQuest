@@ -39,6 +39,8 @@ describe('QuestsPage', () => {
     fireEvent.click(getAllByText('Start Quest')[0]);
     fireEvent.click(getAllByText('Complete Quest')[0]);
 
+
+    
   });
 
   // Test case to ensure that the visibility of completed quests toggles correctly when button is clicked
