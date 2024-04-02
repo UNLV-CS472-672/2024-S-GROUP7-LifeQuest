@@ -9,6 +9,6 @@ const root = createRoot(container);
 
 root.render(
   <BrowserRouter>
-    <App />
+    <App data-testid="app-root" />
   </BrowserRouter>
 );
