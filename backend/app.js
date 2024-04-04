@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -5,11 +7,19 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require("cors")
 
+// enviroment variables
+require('dotenv').config();
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 
 var app = express();
+
+// MongoDB connection
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('Connected to MongoDB database...'))
+  .catch(err => console.error('Could not connect to MongoDB database', err));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
