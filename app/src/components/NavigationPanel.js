@@ -5,7 +5,7 @@ import styles from "./NavigationPanel.module.css";
 
 const NavigationPanel = () => {
   return (
-    <div className={styles.navigationpanel}>
+    <div className={styles.navigationpanel} data-testid="navigation-panel">
       <Settings />
       <Quests />
       <Game />
