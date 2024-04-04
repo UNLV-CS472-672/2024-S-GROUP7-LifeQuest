@@ -3,6 +3,7 @@ import NavigationPanel from "../../components/NavigationPanel";
 import Frame from "../../components/TopPanel";
 import PageContent from "../../components/PageContent";
 import styles from "./QuestsPage.module.css";
+import questsData from "./quests.json"; 
 import { useFontSize } from '../../contexts/FontSizeContext'; 
 
 const QuestsPage = () => {
@@ -15,6 +16,10 @@ const QuestsPage = () => {
     { id: 2, title: "Quest 2", text: "Quest 2 Description" },
     { id: 3, title: "Quest 3", text: "Quest 3 Description" }
   ]);
+
+  //TO CHANGE TO FOR INCLUSION OF quests.json:
+  // const [availableQuests, setAvailableQuests] = useState(questsData);
+
   // State to manage quests in progress
   const [inProgressQuests, setInProgressQuests] = useState([]);
   // State to manage completed quests
