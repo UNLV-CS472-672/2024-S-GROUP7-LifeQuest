@@ -40,6 +40,14 @@ jobs:
                cd app
                yarn install  # <- yarn manages caching
                npm install
+               
+        # Create Env file
+        - name: 'Create env file'
+          run: |
+            touch .env
+            echo MONGO_URI=${{ secrets.MONGO_DB_CI }} >> .env
+            echo DATABASE_NAME=${{ secrets.DB_NAME }} >> .env
+            cat .env
       
         # Print Coverage Reports
         - name: Print coverage reports
