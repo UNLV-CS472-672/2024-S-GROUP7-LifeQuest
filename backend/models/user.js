@@ -3,9 +3,8 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
   // user info
-  username: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
   email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
   completedQuiz: { type: Boolean, default: false },
   // life stats
   stats: {
