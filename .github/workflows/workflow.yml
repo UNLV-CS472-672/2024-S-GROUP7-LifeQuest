@@ -41,8 +41,14 @@ jobs:
                yarn install  # <- yarn manages caching
                npm install
       
-        # Print Coverage Report
-        - name: Print coverage report
+        # Print Coverage Reports
+        - name: Print coverage reports
           run: |
             cd app
             npm run coverage
+            cd ../backend
+            npm run coverage
+
+            
+
+
