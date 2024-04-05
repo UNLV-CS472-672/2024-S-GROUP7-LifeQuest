@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckd8jvik4ymei"]
+
+[ext_resource type="Script" path="res://Scripts/Items.gd" id="1_3jq06"]
+[ext_resource type="Texture2D" uid="uid://2hcra8yo8sn2" path="res://Sprites/Equipment Icons/Iron Sword.png" id="2_wijr2"]
+
+[node name="Item" type="Node2D"]
+z_index = 1
+script = ExtResource("1_3jq06")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+offset_right = 7.0
+offset_bottom = 15.2069
+mouse_filter = 2
+texture = ExtResource("2_wijr2")
+expand_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 63.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 40.0
+offset_right = 40.0
+offset_bottom = 63.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "99"

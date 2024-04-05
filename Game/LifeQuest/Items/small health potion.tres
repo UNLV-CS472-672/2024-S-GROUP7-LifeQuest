@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://8hgtl3bn8lig"]
+
+[ext_resource type="Texture2D" uid="uid://dhuxo31oaolsq" path="res://Sprites/Equipment Icons/small health potion.png" id="1_kq2oc"]
+[ext_resource type="Script" path="res://Scripts/Items/item.gd" id="1_p4ifm"]
+
+[resource]
+script = ExtResource("1_p4ifm")
+name = "Small Health Potion"
+description = "Heals a small portion of health"
+stackable = true
+max_stack_size = 99
+itemType = 0
+equipLocation = 0
+damage = 0
+healthBonus = 0
+defenseBonus = 0
+magicBonus = 0
+icon = ExtResource("1_kq2oc")

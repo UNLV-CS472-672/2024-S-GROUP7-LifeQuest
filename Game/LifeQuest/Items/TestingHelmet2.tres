@@ -5,6 +5,9 @@
 [resource]
 script = ExtResource("1_xpd8c")
 name = "Testing Helmet2"
+description = ""
+stackable = false
+max_stack_size = 1
 itemType = 1
 equipLocation = 0
 damage = 0
