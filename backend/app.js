@@ -17,8 +17,8 @@ var loginRouter = require('./routes/login');
 var app = express();
 
 // MongoDB connection
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('Connected to MongoDB database...'))
+mongoose.connect(process.env.MONGO_URI, { dbName: process.env.DATABASE_NAME })
+  .then(() => console.log('Connected to MongoDB database: ' + process.env.DATABASE_NAME))
   .catch(err => console.error('Could not connect to MongoDB database', err));
 
 // view engine setup
