@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://ct3ukdhpt44wv"]
+
+[ext_resource type="Texture2D" uid="uid://2hcra8yo8sn2" path="res://Sprites/Equipment Icons/Iron Sword.png" id="1_ldxdw"]
+[ext_resource type="Script" path="res://Scripts/Items/item.gd" id="1_tq5fs"]
+
+[resource]
+script = ExtResource("1_tq5fs")
+name = "Iron Sword"
+description = ""
+stackable = false
+max_stack_size = 1
+itemType = 1
+equipLocation = 5
+damage = 10
+healthBonus = 0
+defenseBonus = 0
+magicBonus = 0
+icon = ExtResource("1_ldxdw")
