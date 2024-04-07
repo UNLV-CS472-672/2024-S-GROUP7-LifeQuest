@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ccuoxmewdujb4"]
 
 [ext_resource type="Texture2D" uid="uid://sp5sqsqilkte" path="res://Sprites/tilemap_Floor_spaced_smaller.png" id="1_khfqp"]
-[ext_resource type="Script" path="res://Scripts/UserInterface.gd" id="2_rva7x"]
+[ext_resource type="Script" path="res://Scripts/Inventory GUI/UserInterface.gd" id="2_rva7x"]
 [ext_resource type="PackedScene" uid="uid://bqwh0ar8cqyro" path="res://inventory.tscn" id="2_vgroc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_olttd"]

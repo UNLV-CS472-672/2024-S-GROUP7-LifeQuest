@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://ckd8jvik4ymei"]
 
-[ext_resource type="Script" path="res://Scripts/Items.gd" id="1_3jq06"]
+[ext_resource type="Script" path="res://Scripts/Inventory GUI/Items.gd" id="1_gb74t"]
 [ext_resource type="Texture2D" uid="uid://2hcra8yo8sn2" path="res://Sprites/Equipment Icons/Iron Sword.png" id="2_wijr2"]
 
 [node name="Item" type="Node2D"]
 z_index = 1
-script = ExtResource("1_3jq06")
+script = ExtResource("1_gb74t")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 visible = false

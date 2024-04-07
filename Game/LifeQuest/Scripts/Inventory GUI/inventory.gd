@@ -1,19 +1,20 @@
 extends Node2D
 #need the Slot refrence as it goes hand in hand with inventory
-const SlotClass = preload("res://Scripts/Slot.gd")
+const SlotClass = preload("res://Scripts/Inventory GUI/Slot.gd")
+
 # refrence to the Grid where the slots are at
 @onready var inventoryslot = $GridContainer
 @onready var equipslots = $EquipSlot
 #var for the item that the mouse has
 var holditem = null
-
+var initialized_inventory = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for i in range(inventoryslot.get_child_count()):
 		var invslot = inventoryslot.get_child(i)
 		invslot.gui_input.connect(slotinput.bind(invslot))
 		invslot.slotType = SlotClass.SlotType.INVENTROY
-	initializeinventory()
+	
 	for i in range(equipslots.get_child_count()):
 		var equslot = equipslots.get_child(i)
 		equslot.gui_input.connect(slotinput.bind(equslot))
@@ -35,29 +36,76 @@ func _ready():
 			7:
 				equslot.slotType = SlotClass.SlotType.ACCESSORY
 		#check to see if they are assigned
-		print(equslot.slotType)
+		#print(equslot.slotType)
 		
 	for equipslot in equipslots.get_children():
 		equipslot.gui_input.connect(slotinput.bind(equipslot))
 		#equipslot[i] = SlotClass.SlotType.INVENTROY
-
+		
+#function afor loading inventory after save file
+func loadinventory():
+	var slot = inventoryslot.get_children()
+	var slot2 = equipslots.get_children()
+	for i in range(slot.size()):
+		if(PlayerInventory.inventory[i]):
+			#print("i:",i)
+			#print(PlayerInventory.inventory[i].itemname)
+			#print(PlayerInventory.inventory[i].itemquantity)
+			slot[i].initializeitem(PlayerInventory.inventory[i].itemname,PlayerInventory.inventory[i].itemquantity)
+			
+			
+	for x in range(slot2.size()):
+		if(PlayerInventory.equip[x]):
+			#print("i:",i)
+			#print(PlayerInventory.inventory[i].itemname)
+			#print(PlayerInventory.inventory[i].itemquantity)
+			slot2[x].initializeitem(PlayerInventory.equip[x].itemname,PlayerInventory.equip[x].itemquantity)
+			
+	initialized_inventory = true
 #function for initalizing the inventory
-func initializeinventory():
+func initializeinventory(check):
+	#print("initalized invent:",initialized_inventory)
+	if check:
+		return
+
+	#print("did not skip")
 	var slot = inventoryslot.get_children()
 	for i in range(slot.size()):
 		#print(PlayerInventory.inventory)
 		if PlayerInventory.inventory.has(i):
+			
 			slot[i].initializeitem(PlayerInventory.inventory[i][0],PlayerInventory.inventory[i][1])
+		
+	initialized_inventory = true
+
+	for i in range(slot.size()):
+		PlayerInventory.inventory[i]= slot[i].item
+	var slot2 = equipslots.get_children()
+	for i in range(slot2.size()):
+		PlayerInventory.equip[i]= slot2[i].item
+		
 #function for initalizing the equips
 func initializeequip():
 	pass
 
+#function that updates the players inventory and what the data in slots are
+func _process(delta):
+	if (initialized_inventory):
+		var slot = inventoryslot.get_children()
+		for i in range(slot.size()):
+			PlayerInventory.inventory[i]= slot[i].item
+		var slot2 = equipslots.get_children()
+		for i in range(slot2.size()):
+			PlayerInventory.equip[i]= slot2[i].item
+
+
 
 func slotinput(event:InputEvent, slot:SlotClass):
 	if(slot.item):
-		var item = ItemDatabase.get_item(slot.item.itemname)
+		var item = ItemDatabase.get_item(slot.item.name)
 		_on_item_hovered(slot.item.itemname,get_global_mouse_position())
 		#print(item.equipLocation)
+		
 	else:
 		_on_item_exited()
 	#var item = ItemDatabase.get_item(slot.item.itemname)
@@ -69,9 +117,10 @@ func slotinput(event:InputEvent, slot:SlotClass):
 		if event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
 			if holditem != null:
 				if !slot.item: #place item to slot
+					
 					var item = ItemDatabase.get_item(holditem.itemname)
 					if item.equipLocation  == slot.slotType: 
-						print(item.equipLocation)
+						#print(item.equipLocation)
 						slot.putslot(holditem)
 						holditem = null
 					else:
