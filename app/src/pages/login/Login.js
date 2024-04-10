@@ -2,7 +2,6 @@ import styles from "./Login.css"
 import axios from "axios"
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import logo from "../../images/logo.png"
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -38,7 +37,7 @@ const Login = () => {
     return (
     <div className="login_container">
         {/* Our logo */}
-        <img className="image" src={logo} alt="Logo"></img>
+        <img className="image" src="/logo.png" alt="Logo"></img>
             <h1>LifeQuest</h1>
             {/* The login form which is tied to function sendSubmit() */}
             <form onSubmit={sendSubmit} className="login_form">
