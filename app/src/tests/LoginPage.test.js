@@ -19,13 +19,11 @@ describe('LoginPage', () => {
         </BrowserRouter>
         );
       
-        const emailLabel = getByText(/Email/i)
-        const passwordLabel = getByText(/Password/i)
 
-        const emailInput = getByLabelText(/Email/i);
+        const emailInput = getByPlaceholderText(/Email/i);
         expect(emailInput).toHaveAttribute('type', 'email');
 
-        const passwordInput = getByLabelText(/Password/i);
+        const passwordInput = getByPlaceholderText(/Password/i);
         expect(passwordInput).toHaveAttribute('type', 'password');
 
     });
