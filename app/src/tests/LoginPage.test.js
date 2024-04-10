@@ -11,7 +11,7 @@ import {
 
 describe('LoginPage', () => {
     it('renders without crashing', () => {
-        const {getByText, getByLabelText} = render(
+        const {getByPlaceholderText} = render(
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<LoginPage />} />
