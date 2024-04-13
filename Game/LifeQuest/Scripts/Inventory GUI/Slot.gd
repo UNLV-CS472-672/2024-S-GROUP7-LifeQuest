@@ -4,7 +4,7 @@ var defaulttexture: Texture
 var emptytexture: Texture
 
 # To access the item class vars
-var ItemScene: PackedScene = preload("res://Item.tscn")
+var ItemScene: PackedScene = preload("res://Scripts/Inventory GUI/Item.tscn")
 var item: Node2D = null
 
 

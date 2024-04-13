@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=3 uid="uid://dc481yfgddn04"]
+
+[ext_resource type="Script" path="res://Scripts/Quest/Quest Menu.gd" id="1_b165f"]
+[ext_resource type="PackedScene" uid="uid://b7j3ja0t2exec" path="res://Scripts/Quest/quest_details.tscn" id="2_pubpf"]
+[ext_resource type="Texture2D" uid="uid://bay8musuxqgel" path="res://Sprites/Game Panel long.png" id="2_vbc14"]
+[ext_resource type="Texture2D" uid="uid://ulxk4mlhaat5" path="res://Sprites/quit button.png" id="4_hf3aw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ptpsj"]
+texture = ExtResource("2_vbc14")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tlg3j"]
+texture = ExtResource("4_hf3aw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ky5wj"]
+texture = ExtResource("4_hf3aw")
+modulate_color = Color(0.88, 0.88, 0.88, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c1ruu"]
+texture = ExtResource("4_hf3aw")
+modulate_color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="QuestInterface" type="Node2D"]
+script = ExtResource("1_b165f")
+
+[node name="BackGround" type="Panel" parent="."]
+offset_right = 1150.0
+offset_bottom = 642.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ptpsj")
+
+[node name="Quest Menu Title" type="Label" parent="."]
+offset_left = 460.0
+offset_top = 10.0
+offset_right = 648.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 32
+text = "Quest Menu"
+
+[node name="QuestDetails" parent="." instance=ExtResource("2_pubpf")]
+visible = false
+offset_left = 1152.0
+offset_top = 6.0
+offset_right = 1605.0
+offset_bottom = 662.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 5.0
+offset_top = 79.0
+offset_right = 1136.0
+offset_bottom = 626.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 2
+
+[node name="Quest Scetions" type="VBoxContainer" parent="ScrollContainer"]
+custom_minimum_size = Vector2(703, 0)
+layout_mode = 2
+
+[node name="Title In Process Quest" type="Label" parent="ScrollContainer/Quest Scetions"]
+custom_minimum_size = Vector2(703, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "In Process Quest:"
+
+[node name="In Process Quest" type="VBoxContainer" parent="ScrollContainer/Quest Scetions"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Title Completed Quest" type="Label" parent="ScrollContainer/Quest Scetions"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Completed Quest:"
+
+[node name="Completed Quest" type="VBoxContainer" parent="ScrollContainer/Quest Scetions"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(60, 60)
+offset_left = 1046.0
+offset_top = 9.0
+offset_right = 1106.0
+offset_bottom = 69.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_tlg3j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ky5wj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c1ruu")
+
+[node name="MoveArea" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 268.0
+offset_right = 863.0
+offset_bottom = 57.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

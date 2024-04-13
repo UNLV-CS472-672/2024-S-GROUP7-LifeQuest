@@ -1,0 +1,301 @@
+[gd_scene load_steps=27 format=3 uid="uid://dlefoq5yaab4c"]
+
+[ext_resource type="Script" path="res://Scripts/Bottom GUI Buttons/BottomGui.gd" id="1_47ykh"]
+[ext_resource type="Texture2D" uid="uid://gpgc0kpo3stc" path="res://Sprites/Botton Menu/Character stat icon.png" id="1_jgujd"]
+[ext_resource type="Texture2D" uid="uid://bd5da8sg6qpf0" path="res://Sprites/Botton Menu/Quest icon.png" id="2_1lkw4"]
+[ext_resource type="Texture2D" uid="uid://507fp32cdp3w" path="res://Sprites/Botton Menu/Inventory icon.png" id="3_j8sk2"]
+[ext_resource type="Texture2D" uid="uid://b466ykykt8kdm" path="res://Sprites/Botton Menu/Setting icon.png" id="4_bcvrf"]
+[ext_resource type="Texture2D" uid="uid://bs5v2met8bo85" path="res://Sprites/Botton Menu/Shop icon.png" id="4_jlwmn"]
+
+[sub_resource type="MeshTexture" id="MeshTexture_yl3mf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_40ygd"]
+texture = SubResource("MeshTexture_yl3mf")
+modulate_color = Color(0.294118, 0.156863, 0.0901961, 1)
+
+[sub_resource type="MeshTexture" id="MeshTexture_ns864"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_th1la"]
+texture = SubResource("MeshTexture_ns864")
+modulate_color = Color(0, 0.921569, 0.294118, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4fqmp"]
+texture = ExtResource("1_jgujd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_trwnf"]
+texture = ExtResource("1_jgujd")
+modulate_color = Color(0.878431, 0.878431, 0.878431, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hyn4b"]
+texture = ExtResource("1_jgujd")
+modulate_color = Color(0.6, 0.6, 0.6, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6d5lb"]
+font_size = 12
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lwric"]
+texture = ExtResource("3_j8sk2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ih04"]
+texture = ExtResource("3_j8sk2")
+modulate_color = Color(0.88, 0.88, 0.88, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rp5li"]
+texture = ExtResource("3_j8sk2")
+modulate_color = Color(0.6, 0.6, 0.6, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ng1nb"]
+texture = ExtResource("2_1lkw4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lw735"]
+texture = ExtResource("2_1lkw4")
+modulate_color = Color(0.88, 0.88, 0.88, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qhj01"]
+texture = ExtResource("2_1lkw4")
+modulate_color = Color(0.6, 0.6, 0.6, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_im6nj"]
+texture = ExtResource("4_jlwmn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1fdrb"]
+texture = ExtResource("4_jlwmn")
+modulate_color = Color(0.88, 0.88, 0.88, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sm5a4"]
+texture = ExtResource("4_jlwmn")
+modulate_color = Color(0.6, 0.6, 0.6, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nkrkt"]
+texture = ExtResource("4_bcvrf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fj77i"]
+texture = ExtResource("4_bcvrf")
+modulate_color = Color(0.88, 0.88, 0.88, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3tedw"]
+texture = ExtResource("4_bcvrf")
+modulate_color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="Bottom GUI" type="Node2D"]
+
+[node name="control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Ui container" type="HBoxContainer" parent="control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -70.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_47ykh")
+
+[node name="Character Stats" type="Panel" parent="control/Ui container"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="control/Ui container/Character Stats"]
+custom_minimum_size = Vector2(400, 70)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 542.0
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="control/Ui container/Character Stats/VBoxContainer"]
+layout_mode = 2
+
+[node name="Char level" type="Label" parent="control/Ui container/Character Stats/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Level:"
+
+[node name="Level Amount" type="Label" parent="control/Ui container/Character Stats/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "1"
+
+[node name="Character Name" type="Label" parent="control/Ui container/Character Stats/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Sample"
+
+[node name="Center space" type="HBoxContainer" parent="control/Ui container/Character Stats/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Cash" type="Label" parent="control/Ui container/Character Stats/VBoxContainer/HBoxContainer/Center space"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+text = "Cash: "
+horizontal_alignment = 1
+
+[node name="Cash amount" type="Label" parent="control/Ui container/Character Stats/VBoxContainer/HBoxContainer/Center space"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+text = "100"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="control/Ui container/Character Stats/VBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="control/Ui container/Character Stats/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "EXP: "
+
+[node name="ProgressBar" type="ProgressBar" parent="control/Ui container/Character Stats/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/background = SubResource("StyleBoxTexture_40ygd")
+theme_override_styles/fill = SubResource("StyleBoxTexture_th1la")
+
+[node name="Menu 2" type="Panel" parent="control/Ui container"]
+custom_minimum_size = Vector2(415, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button menu Stats" type="Panel" parent="control/Ui container"]
+custom_minimum_size = Vector2(325, 0)
+layout_mode = 2
+
+[node name="Button container" type="HBoxContainer" parent="control/Ui container/Button menu Stats"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -30.0
+offset_right = 316.0
+offset_bottom = 30.0
+grow_vertical = 2
+
+[node name="Character" type="Button" parent="control/Ui container/Button menu Stats/Button container"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_4fqmp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_trwnf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hyn4b")
+
+[node name="Label" type="Label" parent="control/Ui container/Button menu Stats/Button container/Character"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Character"
+label_settings = SubResource("LabelSettings_6d5lb")
+horizontal_alignment = 1
+
+[node name="Inventory" type="Button" parent="control/Ui container/Button menu Stats/Button container"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_lwric")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5ih04")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rp5li")
+
+[node name="Label" type="Label" parent="control/Ui container/Button menu Stats/Button container/Inventory"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Inventory"
+label_settings = SubResource("LabelSettings_6d5lb")
+horizontal_alignment = 1
+
+[node name="Quest" type="Button" parent="control/Ui container/Button menu Stats/Button container"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_ng1nb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lw735")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qhj01")
+
+[node name="Label" type="Label" parent="control/Ui container/Button menu Stats/Button container/Quest"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Quest"
+label_settings = SubResource("LabelSettings_6d5lb")
+horizontal_alignment = 1
+
+[node name="Shop" type="Button" parent="control/Ui container/Button menu Stats/Button container"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_im6nj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1fdrb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sm5a4")
+
+[node name="Label" type="Label" parent="control/Ui container/Button menu Stats/Button container/Shop"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Shop"
+label_settings = SubResource("LabelSettings_6d5lb")
+horizontal_alignment = 1
+
+[node name="Setting" type="Button" parent="control/Ui container/Button menu Stats/Button container"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_nkrkt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fj77i")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3tedw")
+
+[node name="Label" type="Label" parent="control/Ui container/Button menu Stats/Button container/Setting"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Settings"
+label_settings = SubResource("LabelSettings_6d5lb")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="control/Ui container/Button menu Stats/Button container/Character" to="control/Ui container" method="_on_character_pressed"]
+[connection signal="pressed" from="control/Ui container/Button menu Stats/Button container/Inventory" to="control/Ui container" method="_on_inventory_pressed"]
+[connection signal="pressed" from="control/Ui container/Button menu Stats/Button container/Quest" to="control/Ui container" method="_on_quest_pressed"]
+[connection signal="pressed" from="control/Ui container/Button menu Stats/Button container/Shop" to="control/Ui container" method="_on_shop_pressed"]
+[connection signal="pressed" from="control/Ui container/Button menu Stats/Button container/Setting" to="control/Ui container" method="_on_setting_pressed"]
