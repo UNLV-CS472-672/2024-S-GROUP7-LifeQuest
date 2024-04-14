@@ -1,9 +1,9 @@
 [gd_scene load_steps=21 format=3 uid="uid://bqwh0ar8cqyro"]
 
-[ext_resource type="Script" path="res://Scripts/inventory.gd" id="1_b7bqe"]
+[ext_resource type="Script" path="res://Scripts/Inventory GUI/inventory.gd" id="1_b7bqe"]
 [ext_resource type="Texture2D" uid="uid://b7dsw5hv8iwfh" path="res://Sprites/profile empty.png" id="2_8lsk5"]
 [ext_resource type="Texture2D" uid="uid://y821cltturdo" path="res://Sprites/Equipment Icons/empty inventory slot.png" id="2_ynn2e"]
-[ext_resource type="Script" path="res://Scripts/Slot.gd" id="3_xgshx"]
+[ext_resource type="Script" path="res://Scripts/Inventory GUI/Slot.gd" id="3_xgshx"]
 [ext_resource type="Texture2D" uid="uid://b634a7cidtq6h" path="res://Sprites/Equipment Icons/Pants slot GUI.png" id="6_prdaf"]
 [ext_resource type="Texture2D" uid="uid://bc2vgv8p417lg" path="res://Sprites/Equipment Icons/Head slot GUI.png" id="6_qq2ol"]
 [ext_resource type="Texture2D" uid="uid://c8umopaoppk0o" path="res://Sprites/Equipment Icons/Hands slot GUI.png" id="7_gjnxf"]
