@@ -1,8 +1,8 @@
 extends Node
 
 # Preload the scripts for the slot and items
-const SlotClass = preload("res://Scripts/Slot.gd")
-const ItemClass = preload("res://Scripts/Items.gd")
+const SlotClass = preload("res://Scripts/Inventory GUI/Slot.gd")
+const ItemClass = preload("res://Scripts/Inventory GUI/Items.gd")
 #const for inventory slots
 const INVENTORYSLOTS = 15
 #initial inventory data
