@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccuoxmewdujb4"]
+[gd_scene load_steps=11 format=3 uid="uid://ccuoxmewdujb4"]
 
 [ext_resource type="Texture2D" uid="uid://sp5sqsqilkte" path="res://Sprites/tilemap_Floor_spaced_smaller.png" id="1_khfqp"]
 [ext_resource type="Script" path="res://game_scene.gd" id="1_xu6qf"]
 [ext_resource type="Script" path="res://Scripts/Inventory GUI/UserInterface.gd" id="2_rva7x"]
 [ext_resource type="PackedScene" uid="uid://bqwh0ar8cqyro" path="res://inventory.tscn" id="2_vgroc"]
+[ext_resource type="PackedScene" uid="uid://dlefoq5yaab4c" path="res://Scripts/Bottom GUI Buttons/bottom_gui.tscn" id="5_ie0r0"]
+[ext_resource type="PackedScene" uid="uid://dc481yfgddn04" path="res://Scripts/Quest/Quest Menu.tscn" id="6_bdd2w"]
 [ext_resource type="PackedScene" uid="uid://ccwd1ftqobgn8" path="res://in_game_menu.tscn" id="6_satse"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_olttd"]
@@ -169,8 +171,15 @@ layer_0/tile_data = PackedInt32Array(524288, 131072, 2, 524289, 131072, 2, 52429
 [node name="UserInterface" type="CanvasLayer" parent="."]
 script = ExtResource("2_rva7x")
 
+[node name="Bottom GUI" parent="UserInterface" instance=ExtResource("5_ie0r0")]
+
 [node name="Inventory" parent="UserInterface" instance=ExtResource("2_vgroc")]
 visible = false
+
+[node name="QuestInterface" parent="UserInterface" instance=ExtResource("6_bdd2w")]
+visible = false
+position = Vector2(186, 155)
+scale = Vector2(0.45, 0.45)
 
 [node name="Settings" type="Button" parent="."]
 offset_left = 1082.0

@@ -10,6 +10,8 @@ func save_game():
 	
 	saved_game.inventory = PlayerInventory.inventory
 	saved_game.equip = PlayerInventory.equip
+	saved_game.Inprocessarray = PlayerInventory.Inprocessarray
+	saved_game.Completedarray = PlayerInventory.Completedarray
 	ResourceSaver.save(saved_game,"user://LifeQuestsave.tres")
 	
 func load_game():
@@ -18,6 +20,8 @@ func load_game():
 		#print("load_game is running")
 		PlayerInventory.equip = saved_game.equip
 		PlayerInventory.inventory = saved_game.inventory
+		PlayerInventory.Inprocessarray = saved_game.Inprocessarray
+		PlayerInventory.Completedarray = saved_game.Completedarray
 		return true
 	else:
 		return false

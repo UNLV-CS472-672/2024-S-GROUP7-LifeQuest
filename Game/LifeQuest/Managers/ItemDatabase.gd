@@ -4,9 +4,9 @@ var items = Array()
 
 func _ready():
 	#open the resource script in directory
-	var directory = DirAccess.open("res://Items")
+	var directory = DirAccess.open("res://Items/")
 	directory.list_dir_begin()
-	
+
 	var filename = directory.get_next()
 	#add all the item resources to the item array
 	while (filename):

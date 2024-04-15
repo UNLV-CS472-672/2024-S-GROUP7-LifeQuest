@@ -1,7 +1,7 @@
 extends Node2D
 #need the Slot refrence as it goes hand in hand with inventory
 const SlotClass = preload("res://Scripts/Inventory GUI/Slot.gd")
-
+var user_interface
 # refrence to the Grid where the slots are at
 @onready var inventoryslot = $GridContainer
 @onready var equipslots = $EquipSlot
@@ -37,9 +37,11 @@ func _ready():
 				equslot.slotType = SlotClass.SlotType.ACCESSORY
 		#check to see if they are assigned
 		#print(equslot.slotType)
-		
+	
+	#TODO: possible unused function
 	for equipslot in equipslots.get_children():
-		equipslot.gui_input.connect(slotinput.bind(equipslot))
+		pass
+		#equipslot.gui_input.connect(slotinput.bind(equipslot))
 		#equipslot[i] = SlotClass.SlotType.INVENTROY
 		
 #function afor loading inventory after save file
@@ -168,7 +170,30 @@ func _input(event):
 
 #x button to close inventory
 func _on_quit_button_pressed():
+	user_interface= find_node_by_name(get_tree().get_root(),"UserInterface")
 	visible = !visible
+	user_interface.save_game_data()
+
+
+#https://chat.openai.com/share/bad19120-3687-4244-939b-02a263495252
+func find_node_by_name(node: Node, name_to_find: String) -> Node:
+	# Check if the current node's name matches the name we're looking for
+	if node.name == name_to_find:
+		return node
+
+	if node.get_child_count() > 0:
+		# Iterate through each child node
+		for i in range(node.get_child_count()):
+			# Recursively search each child node
+			var child = node.get_child(i)
+			var found_node = find_node_by_name(child, name_to_find)
+			if found_node:
+				# Return the node if found
+				return found_node
+
+	# If the node is not found in this branch, return null
+	return null
+#end of chatGPT
 
 
 # Function to show tooltip when hovering over an item
