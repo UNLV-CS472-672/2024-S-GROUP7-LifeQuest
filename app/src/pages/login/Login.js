@@ -36,14 +36,20 @@ const Login = () => {
 
     return (
     <div className="login_container">
-        <form onSubmit={sendSubmit} className="login_form">
-            <label htmlFor ="Email">Email</label>
-            <input value={email} type="email" onChange={(foo) => setEmail(foo.target.value)} placeholder="Email" name="Email" id="Email" />
-            <label htmlFor ="Password">Password</label>
-            <input value={password} type="password" onChange={(foo) => setPassword(foo.target.value)} placeholder="********" name="Password" id="Password" />
-            <button className="login_button" type="submit">Log In</button>
-        </form>
-        <button className="register_button">Don't have a LifeQuest account? <br/> Register here.</button>
+        {/* Our logo */}
+        <img className="image" src="/logo.png" alt="Logo"></img>
+            <h1>LifeQuest</h1>
+            {/* The login form which is tied to function sendSubmit() */}
+            <form onSubmit={sendSubmit} className="login_form">
+                <input className="oval" value={email} type="email" onChange={(foo) => setEmail(foo.target.value)} placeholder="Email" name="Email" id="Email" />
+                <input className="oval" value={password} type="password" onChange={(foo) => setPassword(foo.target.value)} placeholder="Password" name="Password" id="Password" />
+                {/* The forgot password link */}
+                <a className="forgot_password" href="url">Forgot password?</a>
+                {/* The login button */}
+                <button className="btn" type="submit">Login</button>
+            </form>
+            {/* The signup button */}
+            <button className="btn">Signup</button>
     </div>
   );
 };

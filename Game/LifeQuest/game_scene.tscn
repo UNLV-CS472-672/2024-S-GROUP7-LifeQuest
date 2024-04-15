@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ccuoxmewdujb4"]
+[gd_scene load_steps=9 format=3 uid="uid://ccuoxmewdujb4"]
 
 [ext_resource type="Texture2D" uid="uid://sp5sqsqilkte" path="res://Sprites/tilemap_Floor_spaced_smaller.png" id="1_khfqp"]
+[ext_resource type="Script" path="res://game_scene.gd" id="1_xu6qf"]
 [ext_resource type="Script" path="res://Scripts/Inventory GUI/UserInterface.gd" id="2_rva7x"]
 [ext_resource type="PackedScene" uid="uid://bqwh0ar8cqyro" path="res://inventory.tscn" id="2_vgroc"]
-[ext_resource type="PackedScene" uid="uid://dlefoq5yaab4c" path="res://Scripts/Bottom GUI Buttons/bottom_gui.tscn" id="4_141gg"]
-[ext_resource type="PackedScene" uid="uid://dc481yfgddn04" path="res://Scripts/Quest/Quest Menu.tscn" id="5_nam81"]
+[ext_resource type="PackedScene" uid="uid://ccwd1ftqobgn8" path="res://in_game_menu.tscn" id="6_satse"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_olttd"]
 texture = ExtResource("1_khfqp")
@@ -147,7 +147,12 @@ texture_region_size = Vector2i(65, 65)
 tile_size = Vector2i(64, 65)
 sources/0 = SubResource("TileSetAtlasSource_olttd")
 
+[sub_resource type="GDScript" id="GDScript_uxry2"]
+script/source = "extends Button
+"
+
 [node name="GameScene" type="Node2D"]
+script = ExtResource("1_xu6qf")
 
 [node name="PlaceHolder" type="Label" parent="."]
 offset_left = 375.0
@@ -170,7 +175,19 @@ script = ExtResource("2_rva7x")
 [node name="Inventory" parent="UserInterface" instance=ExtResource("2_vgroc")]
 visible = false
 
-[node name="QuestInterface" parent="UserInterface" instance=ExtResource("5_nam81")]
-visible = false
-position = Vector2(186, 155)
-scale = Vector2(0.48, 0.48)
+[node name="Settings" type="Button" parent="."]
+offset_left = 1082.0
+offset_top = 1.0
+offset_right = 1152.0
+offset_bottom = 32.0
+toggle_mode = true
+text = "Settings"
+script = SubResource("GDScript_uxry2")
+
+[node name="Menu" parent="." instance=ExtResource("6_satse")]
+offset_left = 1088.0
+offset_top = 35.0
+offset_right = 1128.0
+offset_bottom = 71.0
+
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
