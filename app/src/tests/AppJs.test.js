@@ -23,7 +23,7 @@ describe("App Routing", () => {
         <App />
       </MemoryRouter>
     );
-    expect(screen.getByText("Email")).toBeInTheDocument();
+    expect(screen.getByText("LifeQuest")).toBeInTheDocument();
   });
 
   test("renders Home component when navigating to '/home'", () => {
