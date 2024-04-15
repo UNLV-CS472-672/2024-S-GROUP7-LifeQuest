@@ -9,13 +9,20 @@ describe('LoginPage', () => {
     it('renders without crashing', () => {
         const {getByPlaceholderText, getByText} = render(<LoginPage />);
 
+        //Check that the h1 title is there
         expect(getByText('LifeQuest')).toBeInTheDocument();
 
+        //Check that there is an email input field
         const emailInput = getByPlaceholderText(/Email/i);
         expect(emailInput).toHaveAttribute('type', 'email');
 
+        //Check that there is a password input field
         const passwordInput = getByPlaceholderText(/Password/i);
         expect(passwordInput).toHaveAttribute('type', 'password');
+
+        //Check that the login and signup buttons are there
+        expect(getByText('Login')).toBeInTheDocument();
+        expect(getByText('Signup')).toBeInTheDocument();
 
     });
 
