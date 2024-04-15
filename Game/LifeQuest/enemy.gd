@@ -18,7 +18,7 @@ func on_hit():
 		print("Enemy is being hit.")
 		attackCooldown = true
 		$enemyCooldown.start()
-		enemyHealthStat = enemyHealthStat - playerAttack - randi_range(-(playerAttack / 10), (playerAttack / 10)))  # Attack range is playerAttack +/- 10% or +/-1 if too small
+		enemyHealthStat = enemyHealthStat - (playerAttack + randi_range(-(playerAttack / 10), (playerAttack / 10)))  # Attack range is playerAttack +/- 10% or +/-1 if too small
 		print("Enemy health is: " + str(enemyHealthStat))
 		
 	if enemyHealthStat <= 0:
