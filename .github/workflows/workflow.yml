@@ -51,7 +51,6 @@ jobs:
         - name: Install Backend Dependencies
           run: |
             cd backend
-            yarn install  # <- yarn manages caching
             npm install
             
         # Print Coverage Report
