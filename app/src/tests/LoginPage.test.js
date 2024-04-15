@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { getByText, render, screen } from '@testing-library/react';
 import LoginPage from '../pages/login/Login.js';
 import {
     Routes,
@@ -11,14 +11,15 @@ import {
 
 describe('LoginPage', () => {
     it('renders without crashing', () => {
-        const {getByPlaceholderText} = render(
+        const {getByPlaceholderText, getByText} = render(
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<LoginPage />} />
             </Routes>
         </BrowserRouter>
         );
-      
+
+        expect(getByText('LifeQuest')).toBeInTheDocument();
 
         const emailInput = getByPlaceholderText(/Email/i);
         expect(emailInput).toHaveAttribute('type', 'email');
