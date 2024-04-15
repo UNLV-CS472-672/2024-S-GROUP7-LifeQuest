@@ -18,22 +18,24 @@ describe('LoginPage', () => {
         expect(passwordInput).toHaveAttribute('type', 'password');
 
     });
-    
-    // ai-gen start (ChatGPT-3.5, 0)
 
-    it('input variable update with input put in', () => {
-        const {getByRole} = render(<LoginPage />);
+    it('input field updates value with current input', () => {
 
-        const inputField = getByRole('textbox');
+        const {getByPlaceholderText} = render(<LoginPage />);
+        const emailInput = getByPlaceholderText(/Email/i);
+        const passwordInput = getByPlaceholderText(/Password/i);
 
+        // ai-gen start (ChatGPT-3.5, 1)
         // Simulate typing into the input field
-        fireEvent.change(inputField, { target: { value: 'Test input' } });
-      
+        fireEvent.change(emailInput, { target: { value: 'TestUserName' } });
+        fireEvent.change(passwordInput, { target: { value: 'Pa$$w0rd' } });
+
         // Ensure that the state has been updated correctly
-        expect(inputField.value).toBe('Test input');
+        expect(emailInput.value).toBe('TestUserName');
+        expect(passwordInput.value).toBe('Pa$$w0rd');
+
+        // ai-gen end
 
     });
-
-    // ai-gen end
 
 });
