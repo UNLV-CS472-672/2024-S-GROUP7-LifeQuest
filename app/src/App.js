@@ -5,12 +5,13 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import Skeleton from "./pages/Skeleton";
-import Login from "./pages/Login";
+import { FontSizeProvider } from "./contexts/FontSizeContext";
+import Skeleton from "./pages/skeleton/Skeleton";
+import Login from "./pages/login/Login";
 import Home from "./pages/home/Home";
-import SettingsPage from './pages/SettingsPage';
+import SettingsPage from './pages/settings/SettingsPage';
 import QuizPage from "./pages/quiz/QuizPage";
-import QuestsPage from './pages/QuestsPage';
+import QuestsPage from './pages/quests/QuestsPage';
 
 function App() {
   const action = useNavigationType();
@@ -49,14 +50,16 @@ function App() {
   }, [pathname]);
 
   return (
-    <Routes>
-      <Route path="/" element={<Skeleton />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/home" element={<Home />} />
-      <Route path="/settings" element={<SettingsPage />} /> 
-      <Route path="/quiz" element={<QuizPage />} /> 
-      <Route path="/quests" element={<QuestsPage />} /> 
-    </Routes>
+    <FontSizeProvider>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/settings" element={<SettingsPage />} /> 
+        <Route path="/quiz" element={<QuizPage />} /> 
+        <Route path="/quests" element={<QuestsPage />} />
+      </Routes>
+	</FontSizeProvider>
   );
 }
 export default App;

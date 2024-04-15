@@ -9,6 +9,23 @@ jobs:
         - name: Checkout
           uses: actions/checkout@v3
 
+        # Grab Node Version
+        - name: Get Node Version
+          id: node
+          run: |
+            echo "::set-output name=version::$(node -v)"
+
+        # Grab Node Cache
+        - name: Get Node Modules Cache
+          uses: actions/cache@v3
+          id: node_modules
+          with:
+             path: |
+                  **/node_modules
+
+                  key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}-${{ steps.node.outputs.version }}
+                  # ^ If the OS, yarn.lock, Node version doesn't change, this will use the workflow cache
+
         # Set up Node Version
         - name: Setup Node
           uses: actions/setup-node@v3.1.1
@@ -29,4 +46,4 @@ jobs:
           run: |
             cd app
             npm run coverage
-
+            
