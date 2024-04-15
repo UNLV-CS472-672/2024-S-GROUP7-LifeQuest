@@ -55,9 +55,6 @@ jobs:
             
         # Print Coverage Report
         - name: Print Backend coverage report
-          env:
-            MONGODB_URI: ${{ secrets.MONGO_DB_URI }}
-            DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
           run: |
             cd backend
             npm run coverage
