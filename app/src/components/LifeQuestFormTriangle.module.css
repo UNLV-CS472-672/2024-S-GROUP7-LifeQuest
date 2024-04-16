@@ -24,16 +24,15 @@
   font-size: var(--font-size-13xl);
   outline: 0;
   top: 172px;
-  left: 120px;
+  left: 35%;
   color: var(--color-black);
 }
 .meicon {
   height: 15.9%;
   width: 21.01%;
   top: 0;
-  right: 42.45%;
   bottom: 84.1%;
-  left: 36.54%;
+  left: 36%;
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
