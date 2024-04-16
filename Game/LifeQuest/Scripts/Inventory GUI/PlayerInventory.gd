@@ -12,6 +12,7 @@ const EQUIPSLOTS = 8
 @export var Inprocessarray: Array = []
 @export var Completedarray: Array = []
 @export var AddQuest: Array
+
 #initial inventory data
 var inventory ={
 	0: ["Iron Sword", 1],
@@ -21,6 +22,18 @@ var inventory ={
 	3: ["Large Health Potion", 5],
 	#can add more starting items
 }
+
+#level completion data (Each time you beat a level, increment the count)
+
+var levels = {
+	0: ["Level1" , 0],	# Should be unlocked by default
+	1: ["Level2", 0],	# Unlock if Level1 count > 0
+	2: ["Level3", 0],	# Unlock if Level2 count > 0
+
+      # ...
+      # N: ["Level(n+1)", 0],  # Unlock if Leveln count > 0
+}
+
 var equip = {
 	#0: [ , ],
 	
