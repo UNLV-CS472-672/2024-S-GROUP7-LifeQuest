@@ -21,7 +21,7 @@
   width: 83px;
   font-weight: 900;
   font-family: var(--font-roboto);
-  font-size: var(--font-size-13xl);
+  font-size: 2vw;
   outline: 0;
   top: 172px;
   left: 35%;
@@ -44,7 +44,7 @@
   width: 83px;
   font-weight: 900;
   font-family: var(--font-roboto);
-  font-size: var(--font-size-13xl);
+  font-size: 2vw;
   outline: 0;
   position: absolute;
   top: 273px;
@@ -70,7 +70,7 @@
   width: 83px;
   font-weight: 900;
   font-family: var(--font-roboto);
-  font-size: var(--font-size-13xl);
+  font-size: 2vw;
   outline: 0;
   position: absolute;
   top: 273px;

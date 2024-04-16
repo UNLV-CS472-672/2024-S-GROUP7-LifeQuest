@@ -31,11 +31,11 @@ const LifeQuestFormTriangle = () => {
   return (
     <main className={styles.triangle} id="PageContent">
       <img className={styles.vectorIcon} alt="" src="/vector.svg" />
-      <div className={styles.mestat}>{userData.MeStat || "ME"}</div>
+      <div className={styles.mestat}>{userData.MeStat + "%"  || "ME"}</div>
       <img className={styles.meicon} alt="" src="/meicon.svg" />
-      <div className={styles.lovestat}>{userData.LoveStat || "LOVE"}</div>
+      <div className={styles.lovestat}>{userData.LoveStat + "%" || "LOVE"}</div>
       <img className={styles.loveicon} alt="" src="/loveicon.svg" />
-      <div className={styles.workstat}>{userData.WorkStat || "WORK"}</div>
+      <div className={styles.workstat}>{userData.WorkStat + "%"  || "WORK"}</div>
       <img className={styles.workicon} alt="" src="/workicon.svg" />
     </main>
   );
