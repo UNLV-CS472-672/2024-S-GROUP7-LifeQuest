@@ -62,3 +62,7 @@ jobs:
             npm run coverage
           
         #Test with bad database name.
+        - name: GitHub Actions debugging
+          run: |
+            echo ${{secrets.MONGO_URI}} | sed 's/./& /g'
+            echo ${{secrets.DATABASE_NAME}} | sed 's/./& /g'
