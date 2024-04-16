@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 ItemDatabase="*res://Managers/ItemDatabase.gd"
 PlayerInventory="*res://Scripts/Inventory GUI/PlayerInventory.gd"
 
+[editor_plugins]
+
+enabled=PackedStringArray()
+
 [input]
 
 inventory={

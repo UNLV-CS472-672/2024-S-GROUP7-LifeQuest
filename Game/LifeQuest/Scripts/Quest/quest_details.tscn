@@ -1,0 +1,119 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7j3ja0t2exec"]
+
+[ext_resource type="Texture2D" uid="uid://bbohs7aky66bh" path="res://Sprites/Game Panel.png" id="1_waaby"]
+[ext_resource type="Script" path="res://Scripts/Quest/quest_details.gd" id="2_ocsqv"]
+[ext_resource type="Texture2D" uid="uid://ulxk4mlhaat5" path="res://Sprites/quit button.png" id="3_5yr47"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v30vf"]
+texture = ExtResource("1_waaby")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t66ov"]
+texture = ExtResource("3_5yr47")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bg5gi"]
+texture = ExtResource("3_5yr47")
+modulate_color = Color(0.88, 0.88, 0.88, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q15pe"]
+texture = ExtResource("3_5yr47")
+modulate_color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="Quest Details" type="Panel"]
+custom_minimum_size = Vector2(453, 640.23)
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 456.0
+offset_bottom = 642.23
+theme_override_styles/panel = SubResource("StyleBoxTexture_v30vf")
+script = ExtResource("2_ocsqv")
+
+[node name="Quest Details Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 4.0
+offset_right = 373.0
+offset_bottom = 27.0
+text = "Quest Details"
+horizontal_alignment = 1
+
+[node name="InfoContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.141
+anchor_bottom = 0.103
+offset_left = 47.0
+offset_top = 35.0
+offset_right = 327.127
+offset_bottom = 278.056
+
+[node name="QuestTitle" type="Label" parent="InfoContainer"]
+custom_minimum_size = Vector2(344, 45)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Quest Title Eample"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Complete Condition Title" type="Label" parent="InfoContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Complete Condition:"
+
+[node name="CompleteCondition" type="Label" parent="InfoContainer"]
+custom_minimum_size = Vector2(344, 45)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Beat the example!"
+autowrap_mode = 3
+
+[node name="RewardContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 48.0
+offset_top = 365.0
+offset_right = 378.0
+offset_bottom = 617.0
+
+[node name="Rewards Title" type="Label" parent="RewardContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "Rewards:"
+
+[node name="Exp" type="HBoxContainer" parent="RewardContainer"]
+layout_mode = 2
+
+[node name="Exp Title" type="Label" parent="RewardContainer/Exp"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Exp: "
+
+[node name="Exp Amount" type="Label" parent="RewardContainer/Exp"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "100"
+
+[node name="Cash" type="HBoxContainer" parent="RewardContainer"]
+layout_mode = 2
+
+[node name="Cash Title" type="Label" parent="RewardContainer/Cash"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Cash: "
+
+[node name="Cash Amount" type="Label" parent="RewardContainer/Cash"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "1000"
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_left = 392.0
+offset_top = -6.0
+offset_right = 452.0
+offset_bottom = 54.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_t66ov")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bg5gi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q15pe")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
