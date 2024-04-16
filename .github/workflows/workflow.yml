@@ -60,4 +60,5 @@ jobs:
           run: |
             cd backend
             npm run coverage
-            
+          
+        #Test with bad database name.
