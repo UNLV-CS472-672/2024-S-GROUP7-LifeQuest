@@ -25,7 +25,7 @@ const userSchema = new Schema({
 
 //Hashing passwords for security purposes.
 userSchema.pre("save", async function(){
-  this.password = await bcrypt.hash(this.password, 173539);
+  this.password = await bcrypt.hash(this.password, 10);
 });
 
 module.exports = mongoose.model("User", userSchema);
