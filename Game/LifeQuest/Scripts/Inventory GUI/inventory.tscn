@@ -1,0 +1,247 @@
+[gd_scene load_steps=21 format=3 uid="uid://bqwh0ar8cqyro"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory GUI/inventory.gd" id="1_b7bqe"]
+[ext_resource type="Texture2D" uid="uid://b7dsw5hv8iwfh" path="res://Sprites/profile empty.png" id="2_8lsk5"]
+[ext_resource type="Texture2D" uid="uid://y821cltturdo" path="res://Sprites/Equipment Icons/empty inventory slot.png" id="2_ynn2e"]
+[ext_resource type="Script" path="res://Scripts/Inventory GUI/Slot.gd" id="3_xgshx"]
+[ext_resource type="Texture2D" uid="uid://b634a7cidtq6h" path="res://Sprites/Equipment Icons/Pants slot GUI.png" id="6_prdaf"]
+[ext_resource type="Texture2D" uid="uid://bc2vgv8p417lg" path="res://Sprites/Equipment Icons/Head slot GUI.png" id="6_qq2ol"]
+[ext_resource type="Texture2D" uid="uid://c8umopaoppk0o" path="res://Sprites/Equipment Icons/Hands slot GUI.png" id="7_gjnxf"]
+[ext_resource type="Texture2D" uid="uid://cagfuqa8cby11" path="res://Sprites/Equipment Icons/Shoes slot GUI.png" id="8_qkutw"]
+[ext_resource type="Texture2D" uid="uid://bj7l3kkbo4gq" path="res://Sprites/Equipment Icons/Weapon slot GUI.png" id="9_syub5"]
+[ext_resource type="Texture2D" uid="uid://c2mhqes4s1w3c" path="res://Sprites/Equipment Icons/Accessory slot GUI.png" id="10_gdlxb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dhjvw"]
+texture = ExtResource("2_ynn2e")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j2nmi"]
+texture = ExtResource("6_qq2ol")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fdovx"]
+texture = ExtResource("6_prdaf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6mddo"]
+texture = ExtResource("7_gjnxf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jsdwa"]
+texture = ExtResource("8_qkutw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0xnx7"]
+texture = ExtResource("9_syub5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oy42p"]
+texture = ExtResource("10_gdlxb")
+expand_margin_left = 4.0
+expand_margin_right = 9.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j4o14"]
+texture = ExtResource("10_gdlxb")
+expand_margin_left = 4.0
+expand_margin_right = 9.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_xbbud"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4n2pf"]
+texture = SubResource("CanvasTexture_xbbud")
+
+[node name="Inventory" type="Node2D"]
+position = Vector2(415, 707)
+script = ExtResource("1_b7bqe")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 4.0
+offset_top = -704.0
+offset_right = 1622.0
+offset_bottom = 1855.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_8lsk5")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = 35.0
+offset_top = -280.0
+offset_right = 385.375
+offset_bottom = -91.895
+columns = 5
+
+[node name="Slot1" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dhjvw")
+script = ExtResource("3_xgshx")
+
+[node name="Slot2" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dhjvw")
+script = ExtResource("3_xgshx")
+
+[node name="Slot3" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dhjvw")
+script = ExtResource("3_xgshx")
+
+[node name="Slot4" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dhjvw")
+script = ExtResource("3_xgshx")
+
+[node name="Slot5" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dhjvw")
+script = ExtResource("3_xgshx")
+
+[node name="Slot6" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dhjvw")
+script = ExtResource("3_xgshx")
+
+[node name="Slot7" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dhjvw")
+script = ExtResource("3_xgshx")
+
+[node name="Slot8" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dhjvw")
+script = ExtResource("3_xgshx")
+
+[node name="Slot9" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dhjvw")
+script = ExtResource("3_xgshx")
+
+[node name="Slot10" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dhjvw")
+script = ExtResource("3_xgshx")
+
+[node name="Slot11" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dhjvw")
+script = ExtResource("3_xgshx")
+
+[node name="Slot12" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dhjvw")
+script = ExtResource("3_xgshx")
+
+[node name="Slot13" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dhjvw")
+script = ExtResource("3_xgshx")
+
+[node name="Slot14" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dhjvw")
+script = ExtResource("3_xgshx")
+
+[node name="Slot15" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dhjvw")
+script = ExtResource("3_xgshx")
+
+[node name="EquipSlot" type="GridContainer" parent="."]
+offset_left = 27.0
+offset_top = -629.0
+offset_right = 394.0
+offset_bottom = -322.0
+theme_override_constants/h_separation = 248
+theme_override_constants/v_separation = 11
+columns = 2
+
+[node name="HeadSlot" type="Panel" parent="EquipSlot"]
+custom_minimum_size = Vector2(52.655, 63.56)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_j2nmi")
+script = ExtResource("3_xgshx")
+
+[node name="PantsSlot" type="Panel" parent="EquipSlot"]
+custom_minimum_size = Vector2(52.655, 63.56)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_fdovx")
+script = ExtResource("3_xgshx")
+
+[node name="HandsSlot" type="Panel" parent="EquipSlot"]
+custom_minimum_size = Vector2(52.655, 63.56)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6mddo")
+script = ExtResource("3_xgshx")
+
+[node name="ShoesSlot" type="Panel" parent="EquipSlot"]
+custom_minimum_size = Vector2(52.655, 63.56)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jsdwa")
+script = ExtResource("3_xgshx")
+
+[node name="WeaponSlot" type="Panel" parent="EquipSlot"]
+custom_minimum_size = Vector2(52.655, 63.56)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0xnx7")
+script = ExtResource("3_xgshx")
+
+[node name="AccessorySlot" type="Panel" parent="EquipSlot"]
+custom_minimum_size = Vector2(52.655, 63.56)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oy42p")
+script = ExtResource("3_xgshx")
+
+[node name="EmptySlot" type="Panel" parent="EquipSlot"]
+custom_minimum_size = Vector2(52.655, 63.56)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dhjvw")
+script = ExtResource("3_xgshx")
+
+[node name="AccessorySlot2" type="Panel" parent="EquipSlot"]
+custom_minimum_size = Vector2(52.655, 63.56)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_j4o14")
+script = ExtResource("3_xgshx")
+
+[node name="TooltipLabel" type="Label" parent="."]
+visible = false
+z_index = 1
+offset_left = 149.0
+offset_top = -246.0
+offset_right = 215.0
+offset_bottom = -222.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_4n2pf")
+text = "Example"
+
+[node name="QuitButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 374.0
+offset_top = -688.0
+offset_right = 396.0
+offset_bottom = -666.0
+
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

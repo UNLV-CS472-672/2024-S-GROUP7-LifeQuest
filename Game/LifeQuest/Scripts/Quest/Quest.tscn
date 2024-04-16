@@ -1,0 +1,104 @@
+[gd_scene load_steps=10 format=3 uid="uid://dk2u4jb4l8idr"]
+
+[ext_resource type="Script" path="res://Scripts/Quest/Quest.gd" id="1_fg5bu"]
+[ext_resource type="Texture2D" uid="uid://cn0us7kqtw644" path="res://Sprites/Equipment Icons/tool tip.png" id="2_gc03q"]
+[ext_resource type="Texture2D" uid="uid://bud2gg76y4qe7" path="res://Sprites/Equipment Icons/full inventory slot.png" id="3_5uagd"]
+[ext_resource type="Texture2D" uid="uid://e5bjlcnxoair" path="res://Sprites/Botton Menu/button.png" id="4_pjbmd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jsxe5"]
+texture = ExtResource("2_gc03q")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2hqyh"]
+texture = ExtResource("3_5uagd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gf7tv"]
+texture = ExtResource("4_pjbmd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8n2w0"]
+texture = ExtResource("4_pjbmd")
+modulate_color = Color(0.88, 0.88, 0.88, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_servc"]
+texture = ExtResource("4_pjbmd")
+
+[node name="Quest" type="Panel"]
+custom_minimum_size = Vector2(1154, 89)
+offset_right = 1154.0
+offset_bottom = 89.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_jsxe5")
+script = ExtResource("1_fg5bu")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(1056, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -528.0
+offset_top = -30.0
+offset_right = 528.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Quest Name" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Quest name"
+metadata/_edit_use_anchors_ = true
+
+[node name="Rewards" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 32
+text = "Rewards:"
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Slot1" type="Panel" parent="HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2hqyh")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot2" type="Panel" parent="HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2hqyh")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(163.625, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_gf7tv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8n2w0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_servc")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Button"]
+custom_minimum_size = Vector2(100, 23)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "Summary"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]

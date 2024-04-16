@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyfjohh3bf21f"]
+[gd_scene load_steps=7 format=3 uid="uid://cyfjohh3bf21f"]
 
 [ext_resource type="Script" path="res://Scripts/MapScene/Level1.gd" id="2_d7lq7"]
 [ext_resource type="ButtonGroup" uid="uid://bu7cyxjou55h6" path="res://Scripts/MapScene/MapButtons.tres" id="2_hisu1"]
+[ext_resource type="Script" path="res://Scripts/MapScene/Level2.gd" id="3_rjc3v"]
+[ext_resource type="Script" path="res://Scripts/MapScene/Level3.gd" id="4_ffyb0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d8t2f"]
 bg_color = Color(0.239216, 0.662745, 0.756863, 1)
@@ -35,7 +37,7 @@ theme = SubResource("Theme_pyi5q")
 
 [node name="levelDesc" type="Label" parent="Level1/PopMenu/GridContainer"]
 layout_mode = 2
-text = "Goto Level 1"
+text = "Go to Level 1"
 
 [node name="yes" type="Button" parent="Level1/PopMenu/GridContainer"]
 layout_mode = 2
@@ -53,7 +55,7 @@ offset_bottom = 449.0
 toggle_mode = true
 button_group = ExtResource("2_hisu1")
 text = "Level 2"
-script = ExtResource("2_d7lq7")
+script = ExtResource("3_rjc3v")
 
 [node name="PopMenu" type="PanelContainer" parent="Level2"]
 visible = false
@@ -70,7 +72,7 @@ theme = SubResource("Theme_pyi5q")
 
 [node name="levelDesc" type="Label" parent="Level2/PopMenu/GridContainer"]
 layout_mode = 2
-text = "Goto Level 2"
+text = "Go to Level 2"
 
 [node name="yes" type="Button" parent="Level2/PopMenu/GridContainer"]
 layout_mode = 2
@@ -88,7 +90,7 @@ offset_bottom = 335.0
 toggle_mode = true
 button_group = ExtResource("2_hisu1")
 text = "Level 3"
-script = ExtResource("2_d7lq7")
+script = ExtResource("4_ffyb0")
 
 [node name="PopMenu" type="PanelContainer" parent="Level3"]
 visible = false
@@ -105,7 +107,7 @@ theme = SubResource("Theme_pyi5q")
 
 [node name="levelDesc" type="Label" parent="Level3/PopMenu/GridContainer"]
 layout_mode = 2
-text = "Goto Level 3"
+text = "Go to Level 3"
 
 [node name="yes" type="Button" parent="Level3/PopMenu/GridContainer"]
 layout_mode = 2

@@ -1,0 +1,177 @@
+[gd_scene load_steps=3 format=3 uid="uid://daxc5otdtt5uo"]
+
+[ext_resource type="Texture2D" uid="uid://cxcuihg5ent13" path="res://Sprites/stat panel background.png" id="1_6r2of"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8x042"]
+texture = ExtResource("1_6r2of")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8x042")
+
+[node name="Stats Container" type="VBoxContainer" parent="control/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = 51.0
+offset_right = -64.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Stat 1" type="VBoxContainer" parent="control/Background/Stats Container"]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="HP Container" type="HBoxContainer" parent="control/Background/Stats Container/Stat 1"]
+layout_mode = 2
+
+[node name="HP Name" type="Label" parent="control/Background/Stats Container/Stat 1/HP Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "HP: "
+
+[node name="HP Value" type="Label" parent="control/Background/Stats Container/Stat 1/HP Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "100"
+
+[node name="Attack container" type="HBoxContainer" parent="control/Background/Stats Container/Stat 1"]
+layout_mode = 2
+
+[node name="Attack Name" type="Label" parent="control/Background/Stats Container/Stat 1/Attack container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Attack: "
+
+[node name="Attack Value" type="Label" parent="control/Background/Stats Container/Stat 1/Attack container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "10"
+
+[node name="Magic Attack Container" type="HBoxContainer" parent="control/Background/Stats Container/Stat 1"]
+layout_mode = 2
+
+[node name="Magic Attack Name" type="Label" parent="control/Background/Stats Container/Stat 1/Magic Attack Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Magic Attack:  "
+
+[node name="Magic Attack Value" type="Label" parent="control/Background/Stats Container/Stat 1/Magic Attack Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "10"
+
+[node name="Defence Container" type="HBoxContainer" parent="control/Background/Stats Container/Stat 1"]
+layout_mode = 2
+
+[node name="Defence Name" type="Label" parent="control/Background/Stats Container/Stat 1/Defence Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Defence:  "
+
+[node name="Defence Value" type="Label" parent="control/Background/Stats Container/Stat 1/Defence Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "10"
+
+[node name="Magic Defence Container" type="HBoxContainer" parent="control/Background/Stats Container/Stat 1"]
+layout_mode = 2
+
+[node name="Magic Defence Name" type="Label" parent="control/Background/Stats Container/Stat 1/Magic Defence Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Magic Defence:  "
+
+[node name="Magic Defence Value" type="Label" parent="control/Background/Stats Container/Stat 1/Magic Defence Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "10"
+
+[node name="Critical Chance Container" type="HBoxContainer" parent="control/Background/Stats Container/Stat 1"]
+layout_mode = 2
+
+[node name="Critical Name" type="Label" parent="control/Background/Stats Container/Stat 1/Critical Chance Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Critical Chance: "
+
+[node name="Critical Value" type="Label" parent="control/Background/Stats Container/Stat 1/Critical Chance Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="Percent" type="Label" parent="control/Background/Stats Container/Stat 1/Critical Chance Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "%"
+
+[node name="Critical Damage container" type="HBoxContainer" parent="control/Background/Stats Container/Stat 1"]
+layout_mode = 2
+
+[node name="Critical Damage Name" type="Label" parent="control/Background/Stats Container/Stat 1/Critical Damage container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Critical Damage: "
+
+[node name="Critical Damage Value" type="Label" parent="control/Background/Stats Container/Stat 1/Critical Damage container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "110
+"
+
+[node name="Percent" type="Label" parent="control/Background/Stats Container/Stat 1/Critical Damage container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "%"
+
+[node name="Dodge Container" type="HBoxContainer" parent="control/Background/Stats Container/Stat 1"]
+layout_mode = 2
+
+[node name="Dodge Name" type="Label" parent="control/Background/Stats Container/Stat 1/Dodge Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Dodge Chance: "
+
+[node name="Critical Value" type="Label" parent="control/Background/Stats Container/Stat 1/Dodge Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="Percent" type="Label" parent="control/Background/Stats Container/Stat 1/Dodge Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "%"
+
+[node name="Speed container" type="HBoxContainer" parent="control/Background/Stats Container/Stat 1"]
+layout_mode = 2
+
+[node name="Speed Name" type="Label" parent="control/Background/Stats Container/Stat 1/Speed container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Speed: "
+
+[node name="Speed Value" type="Label" parent="control/Background/Stats Container/Stat 1/Speed container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "110
+"

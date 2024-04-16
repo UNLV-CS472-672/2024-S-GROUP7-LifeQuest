@@ -21,9 +21,13 @@ func setitem(itemname2,itemquantity2):
 	var item = ItemDatabase.get_item(itemname2)
 	itemname = itemname2
 	itemquantity = itemquantity2
+
 	#$TextureRect.texture = load("res://Sprites/Equipment Icons/" + itemname + ".png")
 	
-	$TextureRect.texture = item.icon
+	#$TextureRect.texture = item.icon
+	$TextureRect.set_texture(item.icon)
+	
+	#print(item.icon)
 	#var stacksize = int(Jsonitems.itemdata[itemname]["StackSize"])
 
 	var stacksize = item.max_stack_size
