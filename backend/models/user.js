@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const bcrypt = require("bcryptjs");
 
 const userSchema = new Schema({
   // user info
@@ -20,6 +21,11 @@ const userSchema = new Schema({
   quests: [{ type: Schema.Types.ObjectId, ref: "Quest" }],
   // user's settings
   settings: { type: Schema.Types.ObjectId, ref: "Settings" },
+});
+
+//Hashing passwords for security purposes.
+userSchema.pre("save", async function(){
+  this.password = await bcrypt.hash(this.password, 173539);
 });
 
 module.exports = mongoose.model("User", userSchema);
