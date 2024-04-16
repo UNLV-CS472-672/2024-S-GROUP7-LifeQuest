@@ -12,6 +12,7 @@ const newUser = {
 
 beforeAll(async () => {});
 
+//This is required to close the server connection, Jest will hang without this.
 afterAll(async () => {
   await mongoose.disconnect();
 });
