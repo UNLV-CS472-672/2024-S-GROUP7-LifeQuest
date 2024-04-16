@@ -17,7 +17,7 @@ func on_hit():
 		print("Player is being hit.")
 		attackCooldown = true  # cooldown timer is active, cannot take another hit until timer is up
 		$cooldown.start() # Player cannot be hit for another 3 seconds
-		playerHealthStat = playerHealthStat - enemyAttack
+		playerHealthStat = playerHealthStat - (enemyAttack + randi_range(-(enemyAttack / 10), (enemyAttack / 10)))  # Attack range is enemyAttack +/- 10% or +/-1 if too small
 		print("Player health is: " + str(playerHealthStat))
 		
 	if playerHealthStat <= 0: # If player health is less than or equal to 0, player is no longer alive

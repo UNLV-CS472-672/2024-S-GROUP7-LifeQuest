@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccwd1ftqobgn8"]
+
+[ext_resource type="Script" path="res://InGameMenu.gd" id="1_uhgj4"]
+
+[node name="InGameMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 535.0
+offset_top = 253.0
+offset_right = 575.0
+offset_bottom = 289.0
+script = ExtResource("1_uhgj4")
+
+[node name="Menu" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 56.0
+offset_bottom = 101.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+layout_mode = 2
+
+[node name="Levels" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+text = "Levels"
+
+[node name="Menu" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+text = "Menu"
+
+[node name="Quit" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="Menu/VBoxContainer/Levels" to="." method="_on_levels_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

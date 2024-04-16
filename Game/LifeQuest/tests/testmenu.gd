@@ -12,13 +12,18 @@ func run_tests():
 	test_displayHide() #Tests the displayHide function
 	button_press_test() #Test for the buttons
 func test_displayHide():
-	var mainInstance = Main.new()# Create an instance of the main script
+	var maininstance = Main.new()# Create an instance of the main script
+	maininstance.name = "test_displayHide"
 	# Create instances of nodes to test
 	var menu = Node2D.new()# var for a Node
 	var options = Node2D.new()# var for a Node
-	
+	options.name = "options"
+	menu.name = "menu"
+	add_child(maininstance)
+	maininstance.add_child(menu)
+	maininstance.add_child(options)
 	# Ensure displayHide function works as expected
-	mainInstance.displayHide(menu, options) #runs the function displayHide 
+	maininstance.displayHide(menu, options) #runs the function displayHide 
 	#check with assert that menu is visible and options is not visiable
 	assert(menu.visible && !options.visible, "displayHide function failed menu not visible or options visible")
 	#checks pass the print so we get confirmation that we have ran code pass here
@@ -26,19 +31,28 @@ func test_displayHide():
 	
 	
 	# Reverse the order of nodes and test again
-	mainInstance.displayHide(options, menu)
+	maininstance.displayHide(options, menu)
 	assert(!menu.visible && options.visible, "displayHide function failed menu visible or options not visible")
 	print("Test passed: displayHide(options, menu)")
 
 func button_press_test():
 	# Create an instance of the main script
 	var maininstance = Main.new()
-	
+	maininstance.name = "button_press_test"
+	add_child(maininstance)
 	# Set up nodes for testing
 	var options = Node2D.new()# var for a Node
 	var menu = Node2D.new()# var for a Node
 	var audio = Node2D.new()
 	var video = Node2D.new()
+	options.name = "options"
+	menu.name = "menu"
+	audio.name = "audio"
+	video.name = "video"
+	maininstance.add_child(menu)
+	maininstance.add_child(options)
+	maininstance.add_child(audio)
+	maininstance.add_child(video)
 	
 	# Set the nodes in the main script instance
 	maininstance.Options = options
@@ -91,3 +105,4 @@ func button_press_test():
 	print("Test passed: _on_audio_pressed()")
 	
 	# Add more assertions here for Menu: 
+

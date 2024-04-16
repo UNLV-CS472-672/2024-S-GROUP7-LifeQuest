@@ -12,10 +12,10 @@ func _on_toggled(toggled_on):
 	if $PopMenu.visible == false:
 		$PopMenu.visible = true
 	else:
-		$PopMenu.visible = false
-		
+		$PopMenu.visible = false	
+
 func _on_yes_pressed():
-	get_tree().change_scene_to_file("res://level_one.tscn")
+	get_tree().change_scene_to_file("res://level_three.tscn")
 
 func _on_no_pressed():
 	button_pressed = false
