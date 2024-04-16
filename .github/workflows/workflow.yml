@@ -2,9 +2,12 @@ name: CI workflow
 on:
   push:
   pull_request_target:
-    types: [opened]
+    types: 
+      - opened
+    branches:
+      - main
   pull_request:
-    
+
 jobs:
     build:
         runs-on: ubuntu-latest    
