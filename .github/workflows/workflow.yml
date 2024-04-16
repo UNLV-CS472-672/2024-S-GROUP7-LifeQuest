@@ -51,5 +51,6 @@ jobs:
           with:
             token: ${{ secrets.CODECOV_TOKEN }}
             slug: dusek2/LifeQuest
-            npm run coverage
+              npm run coverage
+            
             
