@@ -25,10 +25,22 @@ mongoose.connect(process.env.MONGO_URI, { dbName: process.env.DATABASE_NAME })
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.use(cors());
+/* 
+CORS (Cross origin resource sharing):
+Allows for requests from other domains to be used on server
+*/
+app.use(cors({
+  origin: ["http://localhost:9000"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
+}));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+/* 
+Cookie-parser middleware for cookie-based sessions, allows
+for extraction of information from cookies
+*/
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
