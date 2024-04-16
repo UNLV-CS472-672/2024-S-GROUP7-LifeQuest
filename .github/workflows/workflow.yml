@@ -1,7 +1,13 @@
 name: CI workflow
 on:
   push:
+  pull_request_target:
+    types: 
+      - opened
+    branches:
+      - main
   pull_request:
+
 jobs:
     build:
         runs-on: ubuntu-latest    
@@ -34,16 +40,29 @@ jobs:
             cache: 'yarn'
             cache-dependency-path: app/yarn.lock  # <- This is needed for some reason, but the file is empty when I open it (Antonio)
 
-        # Install yarn and npm
-        - name: Install Dependencies
+        # Install yarn and npm for frontend
+        - name: Install Frontend Dependencies
           run: |
                cd app
                yarn install  # <- yarn manages caching
                npm install
-      
+
         # Print Coverage Report
-        - name: Print coverage report
+        - name: Print Frontend coverage report
           run: |
             cd app
             npm run coverage
+        # Install yarn and npm for backend
+        - name: Install Backend Dependencies
+          run: |
+            cd backend
+            npm install
             
+        # Print Coverage Report
+        - name: Print Backend coverage report
+          env:
+            MONGO_URI: ${{ secrets.MONGO_URI }}
+            DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
+          run: |
+            cd backend
+            npm run coverage
