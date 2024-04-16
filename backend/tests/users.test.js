@@ -1,5 +1,6 @@
 const request = require("supertest");
 const app = require("../app");
+const mongoose = require('mongoose');
 
 let userEmail = "john" + Math.random() + "@testing.com";
 let userPassword = "ABC" + Math.random();
@@ -11,7 +12,9 @@ const newUser = {
 
 beforeAll(async () => {});
 
-afterAll(async () => {});
+afterAll(async () => {
+  await mongoose.disconnect();
+});
 
 /* ChatGPT4 assistance >> */
 
