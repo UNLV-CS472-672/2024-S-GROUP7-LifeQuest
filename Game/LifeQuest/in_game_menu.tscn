@@ -5,11 +5,19 @@
 [node name="InGameMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 535.0
-offset_top = 253.0
-offset_right = 575.0
-offset_bottom = 289.0
+offset_left = 1082.0
+offset_top = 43.0
+offset_right = 1122.0
+offset_bottom = 79.0
 script = ExtResource("1_uhgj4")
+
+[node name="Settings" type="Button" parent="."]
+layout_mode = 2
+offset_left = -7.0
+offset_top = -36.0
+offset_right = 63.0
+offset_bottom = -4.0
+text = "Settings"
 
 [node name="Menu" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -31,6 +39,7 @@ text = "Menu"
 layout_mode = 2
 text = "Quit"
 
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Levels" to="." method="_on_levels_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
