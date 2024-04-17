@@ -30,8 +30,8 @@ var levels = {
 	1: ["Level2", 0],	# Unlock if Level1 count > 0
 	2: ["Level3", 0],	# Unlock if Level2 count > 0
 
-      # ...
-      # N: ["Level(n+1)", 0],  # Unlock if Leveln count > 0
+	  # ...
+	  # N: ["Level(n+1)", 0],  # Unlock if Leveln count > 0
 }
 
 var equip = {
