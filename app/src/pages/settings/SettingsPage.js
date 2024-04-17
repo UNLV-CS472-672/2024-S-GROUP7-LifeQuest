@@ -4,13 +4,40 @@ import Frame from "../../components/TopPanel";
 import PageContent from "../../components/PageContent";
 import styles from "./SettingsPage.module.css";
 import { useFontSize } from '../../contexts/FontSizeContext';
+import axios from "axios";
 
 const SettingsPage = () => {
   const { fontSize, increaseFontSize, decreaseFontSize, resetFontSize, darkMode, toggleDarkMode } = useFontSize();
   const [showDeleteAccountPopup, setShowDeleteAccountPopup] = useState(false);
 
-  const handleDeleteAccountClick = () => {
+  //THIS IS JUST A TEST FUNCTION, PLEASE FEEL FREE TO MODIFY IT TO ACTUALLY BE A DELETE REQUEST
+
+  async function handleDeleteAccountClick() {
+
     setShowDeleteAccountPopup(true);
+
+    try{
+      //Our back end address
+      axios.defaults.baseURL = 'http://localhost:9000';
+
+      //The POST request
+      const response = await axios.post('/settings/test', {}, { withCredentials: true })
+      .then(function (response) {
+          //handle success
+          console.log(response);
+      })
+      .catch(function (error) {
+          // handle error
+          if (error.response.status == 401){
+            //unauthorized users get booted back to login
+            window.location.href = '/'
+          }
+          console.log(error);
+      })
+    }
+    catch(foo){
+        console.log(foo);
+    }
   };
 
   return (

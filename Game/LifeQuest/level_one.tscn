@@ -1,151 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccuoxmewdujb4"]
+[gd_scene load_steps=10 format=3 uid="uid://ccuoxmewdujb4"]
 
 [ext_resource type="Script" path="res://level_one.gd" id="1_cocsj"]
-[ext_resource type="Texture2D" uid="uid://sp5sqsqilkte" path="res://Sprites/tilemap_Floor_spaced_smaller.png" id="2_7ejom"]
 [ext_resource type="Script" path="res://Scripts/Inventory GUI/UserInterface.gd" id="3_xq1jt"]
 [ext_resource type="PackedScene" uid="uid://bqwh0ar8cqyro" path="res://inventory.tscn" id="4_kvqbx"]
+[ext_resource type="PackedScene" uid="uid://dlefoq5yaab4c" path="res://Scripts/Bottom GUI Buttons/bottom_gui.tscn" id="5_3v875"]
 [ext_resource type="PackedScene" uid="uid://ccwd1ftqobgn8" path="res://in_game_menu.tscn" id="5_o2m2h"]
+[ext_resource type="PackedScene" uid="uid://dc481yfgddn04" path="res://Scripts/Quest/Quest Menu.tscn" id="6_tme8m"]
+[ext_resource type="Texture2D" uid="uid://0600xo15qfis" path="res://Sprites/Battle scene horizontal.png" id="7_ltoce"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_olttd"]
-texture = ExtResource("2_7ejom")
-separation = Vector2i(6, 12)
-texture_region_size = Vector2i(65, 65)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-10:0/0 = 0
-11:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-10:1/0 = 0
-11:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-9:2/0 = 0
-10:2/0 = 0
-11:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-9:3/0 = 0
-10:3/0 = 0
-11:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-8:4/0 = 0
-9:4/0 = 0
-10:4/0 = 0
-11:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-8:5/0 = 0
-9:5/0 = 0
-10:5/0 = 0
-11:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-8:6/0 = 0
-9:6/0 = 0
-10:6/0 = 0
-11:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
-8:7/0 = 0
-9:7/0 = 0
-10:7/0 = 0
-11:7/0 = 0
-0:8/0 = 0
-1:8/0 = 0
-2:8/0 = 0
-3:8/0 = 0
-4:8/0 = 0
-5:8/0 = 0
-6:8/0 = 0
-7:8/0 = 0
-8:8/0 = 0
-9:8/0 = 0
-10:8/0 = 0
-11:8/0 = 0
-0:9/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-3:9/0 = 0
-4:9/0 = 0
-5:9/0 = 0
-6:9/0 = 0
-7:9/0 = 0
-8:9/0 = 0
-9:9/0 = 0
-10:9/0 = 0
-11:9/0 = 0
-0:10/0 = 0
-1:10/0 = 0
-2:10/0 = 0
-3:10/0 = 0
-4:10/0 = 0
-5:10/0 = 0
-6:10/0 = 0
-7:10/0 = 0
-8:10/0 = 0
-9:10/0 = 0
-10:10/0 = 0
-11:10/0 = 0
-2:1/0 = 0
-2:2/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_b1e8q"]
-tile_size = Vector2i(64, 65)
-sources/0 = SubResource("TileSetAtlasSource_olttd")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tfrh8"]
+texture = ExtResource("7_ltoce")
 
 [sub_resource type="GDScript" id="GDScript_uxry2"]
 script/source = "extends Button
@@ -154,6 +18,12 @@ script/source = "extends Button
 [node name="LevelOne" type="Node2D"]
 script = ExtResource("1_cocsj")
 
+[node name="Panel" type="Panel" parent="."]
+clip_contents = true
+offset_right = 1147.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_tfrh8")
+
 [node name="LevelTitle" type="Label" parent="."]
 offset_left = 2.0
 offset_top = 2.0
@@ -161,16 +31,18 @@ offset_right = 265.0
 offset_bottom = 74.0
 text = "LEVEL 1"
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_b1e8q")
-format = 2
-layer_0/tile_data = PackedInt32Array(524288, 131072, 2, 524289, 131072, 2, 524290, 131072, 2, 524291, 131072, 2, 524292, 131072, 2, 524293, 131072, 2, 524294, 131072, 2, 524295, 131072, 2, 524296, 131072, 2, 524297, 131072, 2, 524298, 131072, 2, 524299, 131072, 2, 524300, 131072, 2, 524301, 131072, 2, 524302, 131072, 2, 524303, 131072, 2, 524304, 131072, 2, 524305, 131072, 2, 458762, 327680, 1, 393226, 327680, 1, 327690, 327680, 1, 327691, 327680, 0, 327692, 327680, 0, 327693, 327680, 0, 327694, 327680, 0, 327695, 327680, 0, 327696, 327680, 0)
-
 [node name="UserInterface" type="CanvasLayer" parent="."]
 script = ExtResource("3_xq1jt")
 
+[node name="Bottom GUI" parent="UserInterface" instance=ExtResource("5_3v875")]
+
 [node name="Inventory" parent="UserInterface" instance=ExtResource("4_kvqbx")]
 visible = false
+
+[node name="QuestInterface" parent="UserInterface" instance=ExtResource("6_tme8m")]
+visible = false
+position = Vector2(210, 144)
+scale = Vector2(0.45, 0.45)
 
 [node name="Settings" type="Button" parent="."]
 offset_left = 1082.0
