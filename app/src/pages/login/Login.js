@@ -1,6 +1,7 @@
 import styles from "./Login.css"
 import axios from "axios"
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -59,7 +60,9 @@ const Login = () => {
                 <button className="btn" type="submit">Login</button>
             </form>
             {/* The signup button */}
-            <button className="btn">Signup</button>
+			<Link to="/register">
+			  <button className="btn">Signup</button>
+			</Link>
     </div>
   );
 };

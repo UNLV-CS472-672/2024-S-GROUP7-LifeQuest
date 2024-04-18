@@ -1,0 +1,123 @@
+* {
+    font-family: 'Helvetica';
+}
+
+/* Linear gradient for the entire page */
+body {
+    background-image: linear-gradient(
+        to bottom, 
+        rgb(255 255 255 / 20%) 40%,
+        rgb(91 133 176 / 80%) 100%
+      ), url('../../../public/marblebackground.jpg');
+}
+
+h1 {
+    font-weight: bold;
+    font-family: 'Verdana';
+    font-size: 2.6em;
+    margin: 20px auto;
+}
+
+/* Text inside the input pills */
+input::placeholder {
+    color: white;
+    opacity: 1; /* Firefox */
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.89);
+  }
+
+/* Border when selecting the input pills */
+input:focus {
+    outline: solid 2px black;
+}
+
+/* The input pills (also known as ovals)*/
+.oval {
+    width: 210px;
+    height: 40px;
+    border-radius: 30px;
+    border-width: 0px;
+    background-color: rgba(151, 190, 193, 0.58);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-weight: bolder;
+    margin: 5px;
+    padding-left: 10px;
+  }
+
+/* Our logo */
+.image{
+    padding: 20px auto 0px auto;
+    height: 30vh;
+    display: block;
+    margin: 4vh auto 0;
+    width: 33vh;
+}
+
+.login_container, .login_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login_container {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    align-items: center;
+
+}
+
+.login_form {
+    padding: 10px 20px 5px 20px;
+}
+
+/* The forgot password link */
+.forgot_password{
+    display: block;
+    padding: 10px;
+    margin: auto; 
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 19px;
+    color: rgba(0, 0, 0, 0.33);
+    text-decoration: none;
+}
+
+button{
+    background-color: azure;
+    border-width: 2px;
+}
+
+label {
+    text-align: left;
+}
+
+/* The login and sign up buttons */
+.btn{
+width: 100px;
+margin: 10px auto 0px;
+font-family: sans-serif;
+font-weight: 0;
+font-size: 14px;
+color: #fff;
+background: linear-gradient(90deg, #5a84af 0%, #335e61 100%);
+padding: 10px 30px;
+border: none;
+box-shadow: rgb(0, 0, 0) 0px 5px 6px -3px;
+border-radius: 50px;
+transition : 1000ms;
+display: flex;
+flex-direction: column;
+align-items: center;
+cursor: pointer;
+}
+
+/* The animation that plays when you hover over the login and sign up buttons */
+.btn:hover{
+transition : 1000ms;
+padding: 10px 40px;
+transform : translateY(-1px);
+background: linear-gradient(90deg, #5a84af 0%, #335e61 100%);
+color: #ffffff;
+border: solid 1px #0066cc;
+}
