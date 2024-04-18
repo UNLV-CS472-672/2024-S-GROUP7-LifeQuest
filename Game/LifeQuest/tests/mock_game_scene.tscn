@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://drxa8uyww2f3h"]
+[gd_scene load_steps=6 format=3 uid="uid://drxa8uyww2f3h"]
 
 [ext_resource type="Script" path="res://tests/mock_game_scene.gd" id="1_a3bh3"]
 [ext_resource type="PackedScene" uid="uid://b5obbjcfduj5e" path="res://player.tscn" id="2_srmjf"]
 [ext_resource type="PackedScene" uid="uid://cho08lfqs6qrk" path="res://enemy.tscn" id="3_wo41g"]
+[ext_resource type="PackedScene" uid="uid://cgi4pbiitaqnl" path="res://post_battle.tscn" id="4_bg2it"]
+[ext_resource type="PackedScene" uid="uid://ccwd1ftqobgn8" path="res://in_game_menu.tscn" id="5_s8i5y"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_a3bh3")
@@ -15,16 +17,10 @@ position = Vector2(966, 360)
 
 [node name="UI" type="Node" parent="."]
 
-[node name="Win" type="Label" parent="UI"]
-offset_left = 556.0
-offset_top = 346.0
-offset_right = 629.0
-offset_bottom = 369.0
-text = "You Win!!"
+[node name="PostBattle" parent="." instance=ExtResource("4_bg2it")]
 
-[node name="Lose" type="Label" parent="UI"]
-offset_left = 542.0
-offset_top = 346.0
-offset_right = 642.0
-offset_bottom = 369.0
-text = "you suck!! >:("
+[node name="InGameMenu" parent="." instance=ExtResource("5_s8i5y")]
+offset_left = 1080.0
+offset_top = 48.0
+offset_right = 1120.0
+offset_bottom = 84.0

@@ -9,7 +9,8 @@ var playerIsAlive = true
 var enemyAttack = 5 # Temporary value for enemy attack stat.
 
 func _physics_process(delta):
-	pass
+	if playerHealthStat <= 0: # If player health is less than or equal to 0, player is no longer alive
+		playerIsAlive = false
 
 # Method that handles enemy attacks/health calculations
 func on_hit():
@@ -20,8 +21,6 @@ func on_hit():
 		playerHealthStat = playerHealthStat - (enemyAttack + randi_range(-(enemyAttack / 10), (enemyAttack / 10)))  # Attack range is enemyAttack +/- 10% or +/-1 if too small
 		print("Player health is: " + str(playerHealthStat))
 		
-	if playerHealthStat <= 0: # If player health is less than or equal to 0, player is no longer alive
-		playerIsAlive = false
 
 func _on_cooldown_timeout():
 	attackCooldown = false # Resetting cooldown flag back to false once timer is up
