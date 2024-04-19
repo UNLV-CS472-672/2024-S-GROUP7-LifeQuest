@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
+const bcrypt = require("bcryptjs");
+const { createJWT } = require("../util/jwt.js");
 
 // POST /users request to create a new user
-router.post('/', async (req, res) => {
+router.post('/', async (req, res, next) => {
   try {
     // create new user from request
     const newUser = new User(req.body);
@@ -18,7 +20,7 @@ router.post('/', async (req, res) => {
 });
 
 // GET /users/:email - retrieve a user by email
-router.get('/:email', async (req, res) => {
+router.get('/:email', async (req, res, next) => {
   try {
     // find user in database by email
     const user = await User.findOne({ email: req.params.email });
@@ -35,7 +37,7 @@ router.get('/:email', async (req, res) => {
 });
 
 // DELETE /users/:email - delete user by id
-router.delete('/:email', async (req, res) => {
+router.delete('/:email', async (req, res, next) => {
   try {
     // find user by email and delete
     const user = await User.findOne({ email: req.params.email });
