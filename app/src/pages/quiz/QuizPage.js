@@ -3,20 +3,20 @@ import NavigationPanel from "../../components/NavigationPanel";
 import Frame from "../../components/TopPanel";
 import PageContent from "../../components/PageContent";
 import styles from "./QuizPage.module.css";
-import questionsData from "./quiz_questions.json"; 
-import { useFontSize } from '../../contexts/FontSizeContext'; 
+import questionsData from "./quiz_questions.json";
+import { useFontSize } from '../../contexts/FontSizeContext';
 
 const QuizPage = () => {
   const { fontSize, darkMode } = useFontSize();
-  const pageClassName = darkMode ? `${styles.quizPage} ${styles.darkMode}` : styles.quizPage;	
-	
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const pageClassName = darkMode ? `${styles.quizPage} ${styles.darkMode}` : styles.quizPage;
+
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(-1); // Initialize with -1 for start quiz section
   const [userAnswers, setUserAnswers] = useState({});
-  const [quizCompleted, setQuizCompleted] = useState(false); 
+  const [quizCompleted, setQuizCompleted] = useState(false);
   const [answerSelected, setAnswerSelected] = useState(false);
   const totalQuestions = questionsData.length;
 
-  // Defining seperate scores for the questions here
+  // Defining separate scores for the questions here
   const [healthScore, setHealthScore] = useState(0);
   const [professionalScore, setProfessionalScore] = useState(0);
   const [relationshipsScore, setRelationshipsScore] = useState(0);
@@ -25,11 +25,10 @@ const QuizPage = () => {
     const currentQuestion = questionsData[currentQuestionIndex];
     setUserAnswers({
       ...userAnswers,
-      [currentQuestionIndex]: { answer, category }, 
+      [currentQuestionIndex]: { answer, category },
     });
 
     // Update the user scores, based on the category of question
-    // Note: This does not work for some reason!!!! Will be fixed at a later date.
     switch (category) {
       case "health":
         setHealthScore((prevScore) => prevScore + answer);
@@ -52,13 +51,12 @@ const QuizPage = () => {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setAnswerSelected(false); // Reset answerSelected when moving to the next question
     } else {
-      setQuizCompleted(true); 
+      setQuizCompleted(true);
     }
   };
 
   // Calculate the total possible points for each category
-  // This is not a good solution for determining total possible points, but added as a temporary means
-  const totalPossiblePoints = (totalQuestions/3) * 5; // Assuming each question has a max score of 5
+  const totalPossiblePoints = (totalQuestions / 3) * 5; // Assuming each question has a max score of 5
 
   // Calculate the percentages for each category
   const healthPercentage = (healthScore / totalPossiblePoints) * 100;
@@ -76,12 +74,38 @@ const QuizPage = () => {
         pageContentLeft="26px"
       />
       <div className={styles.questionContainer}>
-        {currentQuestionIndex < totalQuestions && !quizCompleted && (
+        {currentQuestionIndex === -1 && !quizCompleted && (
+          <div>
+          <h1 style={{ fontSize: "23px" }}>Initial Assessment Quiz</h1>
+          <p>
+            This quiz will assess you in the following three categories:
+          </p>
+          <ul>
+            <li>
+              <strong>Health</strong> - Your overall physical and mental well being.
+            </li>
+              <br/>
+            <li>
+              <strong>Relationships</strong> - The strength of your relationships with family, friends, and partners.
+            </li>
+              <br/>
+            <li>
+              <strong>Professional</strong> - Strength of professional endeavors such as employment status, career goals, skill sets, and work satisfaction.
+            </li>
+          </ul>
+          <p>
+            Answers as honestly as possible to get the most accurate results.
+            <br/><br/>Quiz length: ~10 minutes
+          </p>
+          <button onClick={() => setCurrentQuestionIndex(0)} className={styles.nextButton}>Start Quiz</button>
+        </div>        
+        )}
+        {currentQuestionIndex < totalQuestions && !quizCompleted && currentQuestionIndex !== -1 && (
           <div className={styles.question}>
             {questionsData[currentQuestionIndex].question}
           </div>
         )}
-        {!quizCompleted && (
+        {!quizCompleted && currentQuestionIndex !== -1 && (
           <div className={styles.answerOptions}>
             <button className={userAnswers[currentQuestionIndex]?.answer === 1 ? styles.selected : ""} onClick={() => handleAnswerSelection(1, questionsData[currentQuestionIndex].category)}>Strongly Disagree</button>
             <button className={userAnswers[currentQuestionIndex]?.answer === 2 ? styles.selected : ""} onClick={() => handleAnswerSelection(2, questionsData[currentQuestionIndex].category)}>Disagree</button>
@@ -90,11 +114,12 @@ const QuizPage = () => {
             <button className={userAnswers[currentQuestionIndex]?.answer === 5 ? styles.selected : ""} onClick={() => handleAnswerSelection(5, questionsData[currentQuestionIndex].category)}>Strongly Agree</button>
           </div>
         )}
-        {!quizCompleted ? (
+        {!quizCompleted && currentQuestionIndex !== -1 && (
           <button onClick={handleNextButtonClick} className={styles.nextButton} disabled={!answerSelected}>
             {currentQuestionIndex < totalQuestions - 1 ? "Next" : "Finish"}
           </button>
-        ) : (
+        )}
+        {quizCompleted && (
           <div>
             <div>Health Score: {healthPercentage.toFixed(2)}%</div>
             <div>Professional Score: {professionalPercentage.toFixed(2)}%</div>

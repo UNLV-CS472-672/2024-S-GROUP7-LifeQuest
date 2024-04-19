@@ -1,12 +1,20 @@
 extends Button
 
+var level = 2;
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	#minus one for dictionary referencing
+	var dicLevel = level - 1
+	# get the level completing dictionary entry
+	var levelStatus = PlayerInventory.levels
+	# check if unlocked
+	if (levelStatus[dicLevel][1] <= 0):
+		# if not unlocked disable button interactions
+		# and change text to signify its locked and why
+		disabled = true
+		text = "Level " + str(level) + "\nLocked"
+		tooltip_text = "Complete " + levelStatus[dicLevel - 1][0] + " to unlock"
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func _on_toggled(toggled_on):
 	if $PopMenu.visible == false:

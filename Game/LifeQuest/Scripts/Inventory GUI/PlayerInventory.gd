@@ -26,9 +26,9 @@ var inventory ={
 #level completion data (Each time you beat a level, increment the count)
 
 var levels = {
-	0: ["Level1" , 0],	# Should be unlocked by default
-	1: ["Level2", 0],	# Unlock if Level1 count > 0
-	2: ["Level3", 0],	# Unlock if Level2 count > 0
+	0: ["Level 1" , 0],	# Should be unlocked by default
+	1: ["Level 2", 0],	# Unlock if Level1 count > 0
+	2: ["Level 3", 0],	# Unlock if Level2 count > 0
 
 	  # ...
 	  # N: ["Level(n+1)", 0],  # Unlock if Leveln count > 0
