@@ -13,7 +13,7 @@ func _ready():
 	else:
 		$QuestInterface.add_quests()
 		#print(PlayerInventory.inventory)
-		#print("loadgame")
+		print("loadgame not found")
 
 func save_game_data():
 	var Saved = Save.new()

@@ -3,6 +3,15 @@ extends Node
 var items = Array()
 
 func _ready():
+		# Example:
+	#var item1 = preload("res://Items/Iron Sword.tres") # Adjust the resource paths accordingly
+	#var item2 = preload("res://Items/large health potion.tres")
+	# Add more items as needed
+
+	# Now you can use these preloaded items as necessary
+	#items.append(item1)
+	#items.append(item2)
+	# Append more items as needed
 	#open the resource script in directory
 	var directory = DirAccess.open("res://Items/")
 	directory.list_dir_begin()
