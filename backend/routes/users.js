@@ -22,6 +22,8 @@ router.post('/', async (req, res, next) => {
 // GET /users/me - retrieve logged in user
 router.get('/me', async (req, res, next) => {
   try {
+    // access user from request which has been
+    // attached by the userVerification middleware
     const user = req.user;
     // if no user found, send back 404
     if (!user) {

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./LifeQuestFormTriangle.module.css";
 
+// Defining a functional component named LifeQuestFormTriangle.
 const LifeQuestFormTriangle = () => {
   const [userData, setUserData] = useState({
     MeStat: "",
@@ -9,61 +10,41 @@ const LifeQuestFormTriangle = () => {
     LoveStat: "",
   });
 
-  // useEffect(() => {
-  //   const fetchUserData = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         "http://localhost:9000/users/completedquiz@test.com",
-  //         { withCredentials: true }
-  //       );
-  //       const stats = response.data.stats;
-  //       setUserData({
-  //         MeStat: stats.MeStat,
-  //         WorkStat: stats.WorkStat,
-  //         LoveStat: stats.LoveStat,
-  //       });
-  //     } catch (error) {
-  //       console.error("Failed to fetch user data:", error);
-  //       if (error.response.status == 401) {
-  //         console.log("Unauthorized user");
-  //         //unauthorized users get booted back to login
-  //         window.location.href = "/";
-  //       }
-  //     }
-  //   };
-
-  //   fetchUserData();
-  // }, []);
-
-
+  // useEffect to handle side effects, runs only once after the component mounts.
   useEffect(() => {
+    // Async function to fetch user data from the server.
     const fetchUserData = async () => {
       try {
+        // Log to console before sending API request.
         console.log("sending api request to /users/me");
+        // Making GET request to fetch data, with credentials to include cookies, etc.
         const response = await axios.get(
           "http://localhost:9000/users/me",
           { withCredentials: true }
         );
-        console.log(response);
-        const stats = response.data.stats;
+        const stats = response.data.stats; // Destructuring stats from response data.
+        // Updating state with fetched data.
         setUserData({
           MeStat: stats.MeStat,
           WorkStat: stats.WorkStat,
           LoveStat: stats.LoveStat,
         });
       } catch (error) {
+        // Log any errors during the fetch operation.
         console.error("Failed to fetch user data:", error);
+        // Check if the error status is 401 (Unauthorized)
         if (error.response.status == 401) {
           console.log("Unauthorized user");
-          //unauthorized users get booted back to login
+          // Redirect unauthorized users to the login page.
           window.location.href = "/";
         }
       }
     };
-
+    
     fetchUserData();
   }, []);
 
+  // Render method returns JSX to be rendered.
   return (
     <main className={styles.triangle} id="PageContent">
       <img className={styles.vectorIcon} alt="" src="/vector.svg" />
@@ -77,4 +58,5 @@ const LifeQuestFormTriangle = () => {
   );
 };
 
+// Exporting the component to be used in other parts of the application.
 export default LifeQuestFormTriangle;
