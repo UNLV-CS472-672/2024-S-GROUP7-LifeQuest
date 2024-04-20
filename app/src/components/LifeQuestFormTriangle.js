@@ -9,13 +9,42 @@ const LifeQuestFormTriangle = () => {
     LoveStat: "",
   });
 
+  // useEffect(() => {
+  //   const fetchUserData = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         "http://localhost:9000/users/completedquiz@test.com",
+  //         { withCredentials: true }
+  //       );
+  //       const stats = response.data.stats;
+  //       setUserData({
+  //         MeStat: stats.MeStat,
+  //         WorkStat: stats.WorkStat,
+  //         LoveStat: stats.LoveStat,
+  //       });
+  //     } catch (error) {
+  //       console.error("Failed to fetch user data:", error);
+  //       if (error.response.status == 401) {
+  //         console.log("Unauthorized user");
+  //         //unauthorized users get booted back to login
+  //         window.location.href = "/";
+  //       }
+  //     }
+  //   };
+
+  //   fetchUserData();
+  // }, []);
+
+
   useEffect(() => {
     const fetchUserData = async () => {
       try {
+        console.log("sending api request to /users/me");
         const response = await axios.get(
-          "http://localhost:9000/users/completedquiz@test.com",
+          "http://localhost:9000/users/me",
           { withCredentials: true }
         );
+        console.log(response);
         const stats = response.data.stats;
         setUserData({
           MeStat: stats.MeStat,
