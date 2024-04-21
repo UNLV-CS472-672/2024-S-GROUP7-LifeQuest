@@ -15,30 +15,28 @@ const RegistrationPage = () => {
             return;
         }
 
-        try {
-            axios.defaults.baseURL = 'http://localhost:9000';
-            const response = await axios.post('/users', {
-                email: email,
-                password: password
-            },
-            { withCredentials: true })
 
-            //Got a response, now let's handle it
+        axios.defaults.baseURL = 'http://localhost:9000';
+        const response = await axios.post('/users', {
+            email: email,
+            password: password
+        },
+        { withCredentials: true })
 
-            .then(function (response) {
-                // Registration successful! Let's go to the login page.
-                window.location.href = '/login'
-                console.log(response);
+        //Got a response, now let's handle it
 
-            })
-            .catch(function (error) {
-                // Uh oh, bad registration! Let's see what went wrong.
-                console.log(error);
-                
-            })
-        } catch (error) {
+        .then(function (response) {
+            // Registration successful! Let's go to the login page.
+            window.location.href = '/login'
+            console.log(response);
+
+        })
+        .catch(function (error) {
+            // Uh oh, bad registration! Let's see what went wrong.
             console.log(error);
-        }
+            
+        })
+
     }
 
     return (
