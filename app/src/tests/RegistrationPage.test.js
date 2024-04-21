@@ -1,6 +1,8 @@
 // Generated using ChatGPT
 // https://chat.openai.com/share/8500a5b2-a5fd-4bc2-8b69-5823401f8b7c
 
+// ai-gen start (ChatGPT-3.5, 0)
+
 import React from 'react';
 import { render, fireEvent, waitFor, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
@@ -110,3 +112,4 @@ describe('RegistrationPage', () => {
 	});
 	
 });
+// ai-gen end
