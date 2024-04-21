@@ -1,24 +1,47 @@
-import axios from 'axios';
-import MockAdapter from 'axios-mock-adapter';
+import React from 'react';
 import { render, waitFor } from '@testing-library/react';
-import LifeQuestFormTriangle from '../components/LifeQuestFormTriangle';
 import '@testing-library/jest-dom';
+import axios from 'axios';
+import LifeQuestFormTriangle from '../components/LifeQuestFormTriangle';
 
-const mock = new MockAdapter(axios);
+// Mock the axios module
+jest.mock('axios');
 
-// Simulate a successful response assuming the cookie is already there
-mock.onGet("http://localhost:9000/users/completedquiz@test.com").reply(200, {
-  stats: { MeStat: '50', WorkStat: '70', LoveStat: '60' }
-});
+describe('LifeQuestFormTriangle', () => {
+  test('successfully fetches and displays stats', async () => {
+    // Mocking axios.get to resolve with specific data
+    axios.get.mockResolvedValue({
+      data: {
+        stats: {
+          MeStat: '80',
+          WorkStat: '70',
+          LoveStat: '60'
+        }
+      }
+    });
 
-describe('LifeQuestFormTriangle with authenticated cookie', () => {
-  it('fetches and displays data correctly', async () => {
     const { getByText } = render(<LifeQuestFormTriangle />);
     await waitFor(() => {
-      expect(getByText('50%')).toBeInTheDocument();
+      expect(getByText('80%')).toBeInTheDocument();
       expect(getByText('70%')).toBeInTheDocument();
       expect(getByText('60%')).toBeInTheDocument();
     });
   });
-});
 
+  test('handles failure in fetching data', async () => {
+    // Mocking axios.get to reject with an error
+    axios.get.mockRejectedValue({
+      response: {
+        status: 401
+      }
+    });
+
+    delete window.location;
+    window.location = { href: '' }; // Mock window.location for redirect testing
+
+    render(<LifeQuestFormTriangle />);
+    await waitFor(() => {
+      expect(window.location.href).toBe('/');
+    });
+  });
+});

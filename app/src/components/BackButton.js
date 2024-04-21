@@ -15,7 +15,7 @@ const BackButton = ({ backButtonPosition }) => {
       style={backButtonStyle}
       onClick={() => { window.location.href = "/home"; }} // Navigate on button click, back to home?
     >
-      <img className={styles.groupIcon} alt="" src="/group.svg" />
+      <img className={styles.groupIcon} alt="" src="/logo.png" />
     </button>
   );
 };
