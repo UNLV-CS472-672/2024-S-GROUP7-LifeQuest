@@ -38,8 +38,8 @@ const Login = () => {
                 console.log(error);
             })
         }
-        catch(foo){
-            console.log(foo);
+        catch(error){
+            console.log(error);
         }
         
     }
@@ -59,7 +59,7 @@ const Login = () => {
                 <button className="btn" type="submit">Login</button>
             </form>
             {/* The signup button */}
-            <button className="btn">Signup</button>
+            <a className="signup_link" href="/register"><button className="btn">Signup</button></a>
     </div>
   );
 };

@@ -121,3 +121,8 @@ background: linear-gradient(90deg, #5a84af 0%, #335e61 100%);
 color: #ffffff;
 border: solid 1px #0066cc;
 }
+
+/* Gets rid of underline in Signup button text */
+.signup_link{
+text-decoration: none;
+}
