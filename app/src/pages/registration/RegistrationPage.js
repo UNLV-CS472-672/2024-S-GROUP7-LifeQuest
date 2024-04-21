@@ -15,20 +15,28 @@ const RegistrationPage = () => {
             return;
         }
 
-        try {
-            axios.defaults.baseURL = 'http://localhost:9000';
-            const response = await axios.post('/register', {
-                email: email,
-                password: password
-            },
-            { withCredentials: true });
 
+        axios.defaults.baseURL = 'http://localhost:9000';
+        const response = await axios.post('/users', {
+            email: email,
+            password: password
+        },
+        { withCredentials: true })
+
+        //Got a response, now let's handle it
+
+        .then(function (response) {
+            // Registration successful! Let's go to the login page.
+            window.location.href = '/login'
             console.log(response);
-            // window.location.href = '/login';  // Redirect to login after registration
-			navigateTo('/login'); // Use the injected navigation function
-        } catch (error) {
+
+        })
+        .catch(function (error) {
+            // Uh oh, bad registration! Let's see what went wrong.
             console.log(error);
-        }
+            
+        })
+
     }
 
     return (

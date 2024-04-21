@@ -9,6 +9,12 @@ router.post('/', async (req, res, next) => {
   try {
     // create new user from request
     const newUser = new User(req.body);
+    // check if user exists in database
+    const { email } = req.body;
+    const duplicateCheck = await User.findOne({ email });
+    if(duplicateCheck){
+      return res.status(409).json({ message: "Conflict: User already exists"});
+    }
     // save new user
     await newUser.save();
     // send back 201 and the new user
