@@ -1,31 +1,47 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import axios from 'axios';
 import LifeQuestFormTriangle from '../components/LifeQuestFormTriangle';
 
+// Mock the axios module
+jest.mock('axios');
+
 describe('LifeQuestFormTriangle', () => {
-  beforeEach(() => {
+  test('successfully fetches and displays stats', async () => {
+    // Mocking axios.get to resolve with specific data
+    axios.get.mockResolvedValue({
+      data: {
+        stats: {
+          MeStat: '80',
+          WorkStat: '70',
+          LoveStat: '60'
+        }
+      }
+    });
+
+    const { getByText } = render(<LifeQuestFormTriangle />);
+    await waitFor(() => {
+      expect(getByText('80%')).toBeInTheDocument();
+      expect(getByText('70%')).toBeInTheDocument();
+      expect(getByText('60%')).toBeInTheDocument();
+    });
+  });
+
+  test('handles failure in fetching data', async () => {
+    // Mocking axios.get to reject with an error
+    axios.get.mockRejectedValue({
+      response: {
+        status: 401
+      }
+    });
+
+    delete window.location;
+    window.location = { href: '' }; // Mock window.location for redirect testing
+
     render(<LifeQuestFormTriangle />);
-  });
-
-  it('renders MeStat textarea with correct attributes', () => {
-    const meStatTextarea = screen.getByPlaceholderText('MeStat');
-    expect(meStatTextarea).toHaveAttribute('id', 'MeStat');
-    expect(meStatTextarea).toHaveAttribute('rows', '1');
-    expect(meStatTextarea).toHaveAttribute('maxLength', '4');
-  });
-
-  it('renders WorkStat textarea with correct attributes', () => {
-    const workStatTextarea = screen.getByPlaceholderText('WorkStat');
-    expect(workStatTextarea).toHaveAttribute('id', 'WorkStat');
-    expect(workStatTextarea).toHaveAttribute('rows', '1');
-    expect(workStatTextarea).toHaveAttribute('maxLength', '4');
-  });
-
-  it('renders LoveStat textarea with correct attributes', () => {
-    const loveStatTextarea = screen.getByPlaceholderText('LoveStat');
-    expect(loveStatTextarea).toHaveAttribute('id', 'LoveStat');
-    expect(loveStatTextarea).toHaveAttribute('rows', '1');
-    expect(loveStatTextarea).toHaveAttribute('maxLength', '4');
+    await waitFor(() => {
+      expect(window.location.href).toBe('/');
+    });
   });
 });
