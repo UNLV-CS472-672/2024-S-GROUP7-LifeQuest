@@ -1,7 +1,8 @@
 .groupIcon {
   position: absolute;
-  height: 87.14%;
-  width: 87.14%;
+  height: 100%;
+  width: 30%;
+  margin: auto;
   top: 5.71%;
   right: 5.71%;
   bottom: 7.14%;

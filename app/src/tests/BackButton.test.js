@@ -24,7 +24,7 @@ describe('BackButton', () => {
   it('contains the correct icon', () => {
     render(<BackButton backButtonPosition="fixed" />);
     const iconElement = screen.getByRole('img');
-    expect(iconElement).toHaveAttribute('src', '/group.svg');
+    expect(iconElement).toHaveAttribute('src', '/logo.png');
     expect(iconElement).toHaveClass('groupIcon');
   });
 
