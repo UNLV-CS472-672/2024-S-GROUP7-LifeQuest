@@ -10,6 +10,7 @@ import axios from 'axios';
 import RegistrationPage from '../pages/registration/RegistrationPage.js';
 
 jest.mock('axios');
+console.log = jest.fn();
 
 describe('RegistrationPage', () => {
 	afterEach(() => {
@@ -45,7 +46,7 @@ describe('RegistrationPage', () => {
 		fireEvent.click(registerButton);
 
 		await waitFor(() => {
-			expect(axios.post).toHaveBeenCalledWith('/register', {
+			expect(axios.post).toHaveBeenCalledWith('/users', {
 				email: 'test@example.com',
 				password: 'password'
 			}, { withCredentials: true });
@@ -92,7 +93,7 @@ describe('RegistrationPage', () => {
 
         // Check if error is logged
         await waitFor(() => {
-            // expect(console.log).toHaveBeenCalledWith(expect.any(Error));
+            expect(console.log).toHaveBeenCalledWith(new Error('Registration failed'));
         });
     });
 
