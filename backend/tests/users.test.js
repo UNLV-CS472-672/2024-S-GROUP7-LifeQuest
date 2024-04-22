@@ -1,5 +1,7 @@
 const request = require("supertest");
-const app = require("../app");
+const sinon = require('sinon');
+const middleware = require('../middleware/auth.js');
+var app;
 
 let userEmail = "john" + Math.random() + "@testing.com";
 let userPassword = "ABC" + Math.random();
@@ -9,9 +11,19 @@ const newUser = {
   password: userPassword,
 };
 
-beforeAll(async () => {});
+beforeAll(async () => {
+  sinon.stub(middleware, "userVerification")
+  .callsFake(function userVerification(req, res, next) {
+      return next();
+  });
 
-afterAll(async () => {});
+  app = require("../app");
+
+});
+
+afterAll(async () => {
+  middleware.userVerification.restore();
+});
 
 /* ChatGPT4 assistance >> */
 
