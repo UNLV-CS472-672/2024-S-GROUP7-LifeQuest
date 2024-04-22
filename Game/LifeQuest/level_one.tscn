@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ccuoxmewdujb4"]
+[gd_scene load_steps=11 format=3 uid="uid://ccuoxmewdujb4"]
 
 [ext_resource type="Script" path="res://level_one.gd" id="1_cocsj"]
 [ext_resource type="Script" path="res://Scripts/Inventory GUI/UserInterface.gd" id="3_xq1jt"]
@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://ccwd1ftqobgn8" path="res://in_game_menu.tscn" id="5_o2m2h"]
 [ext_resource type="PackedScene" uid="uid://dc481yfgddn04" path="res://Scripts/Quest/Quest Menu.tscn" id="6_tme8m"]
 [ext_resource type="Texture2D" uid="uid://0600xo15qfis" path="res://Sprites/Battle scene horizontal.png" id="7_ltoce"]
-[ext_resource type="PackedScene" uid="uid://cxqo5blx4o71p" path="res://Sprites/Enemys/Slime.tscn" id="8_lvcps"]
+[ext_resource type="PackedScene" uid="uid://cxqo5blx4o71p" path="res://Sprites/Enemys/Slime/Slime.tscn" id="8_lvcps"]
+[ext_resource type="PackedScene" uid="uid://l4ulw4k528e1" path="res://Sprites/Character/backcharacter.tscn" id="9_wj17n"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tfrh8"]
 texture = ExtResource("7_ltoce")
@@ -49,3 +50,6 @@ offset_bottom = 71.0
 
 [node name="Slime" parent="." instance=ExtResource("8_lvcps")]
 position = Vector2(635, 40)
+
+[node name="Character" parent="." instance=ExtResource("9_wj17n")]
+position = Vector2(241, 172)
