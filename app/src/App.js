@@ -12,6 +12,7 @@ import Home from "./pages/home/Home";
 import SettingsPage from './pages/settings/SettingsPage';
 import QuizPage from "./pages/quiz/QuizPage";
 import QuestsPage from './pages/quests/QuestsPage';
+import RegistrationPage from './pages/registration/RegistrationPage';
 
 function App() {
   const action = useNavigationType();
@@ -58,6 +59,7 @@ function App() {
         <Route path="/settings" element={<SettingsPage />} /> 
         <Route path="/quiz" element={<QuizPage />} /> 
         <Route path="/quests" element={<QuestsPage />} />
+		<Route path="/register" element={<RegistrationPage />} />
       </Routes>
 	</FontSizeProvider>
   );

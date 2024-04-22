@@ -19,8 +19,9 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "axios-mock-adapter": "^1.22.0",
     "react-test-renderer": "^18.2.0"
-  }, 
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
