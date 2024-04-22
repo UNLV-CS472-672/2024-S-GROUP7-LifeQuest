@@ -12,16 +12,19 @@ const newUser = {
 };
 
 beforeAll(async () => {
+  //Replace the middleware function with a fake function that passes the request through.
   sinon.stub(middleware, "userVerification")
   .callsFake(function userVerification(req, res, next) {
       return next();
   });
 
+  //You need to declare this after the fake function is made
   app = require("../app");
 
 });
 
 afterAll(async () => {
+  //Restore middleware function to the original state
   middleware.userVerification.restore();
 });
 
