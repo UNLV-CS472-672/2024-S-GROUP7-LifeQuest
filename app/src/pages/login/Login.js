@@ -11,36 +11,31 @@ const Login = () => {
         //No empty values allowed for login.
         foo.preventDefault();
 
-        try{
-            axios.defaults.baseURL = 'http://localhost:9000';
+        axios.defaults.baseURL = 'http://localhost:9000';
 
-            /*
-            Axios makes a post request to the address, feeding in the user inputed
-            credentials. Await for a response.
-            */
-            const response = await axios.post('/login/submit', {
-                email: email,
-                password: password
-            },
-            { withCredentials: true //Required for cookies.
-            })
+        /*
+        Axios makes a post request to the address, feeding in the user inputed
+        credentials. Await for a response.
+        */
+        const response = await axios.post('/login/submit', {
+            email: email,
+            password: password
+        },
+        { withCredentials: true //Required for cookies.
+        })
 
-            //Got a response, now let's handle it
+        //Got a response, now let's handle it
 
-            .then(function (response) {
-                // Login successful! Let's go to the home page.
-                window.location.href = '/home'
-                console.log(response);
+        .then(function (response) {
+            // Login successful! Let's go to the home page.
+            window.location.href = '/home'
+            console.log(response);
 
-            })
-            .catch(function (error) {
-                // Uh oh, bad login! Let's see what went wrong.
-                console.log(error);
-            })
-        }
-        catch(foo){
-            console.log(foo);
-        }
+        })
+        .catch(function (error) {
+            // Uh oh, bad login! Let's see what went wrong.
+            console.log(error);
+        })
         
     }
 
@@ -59,7 +54,7 @@ const Login = () => {
                 <button className="btn" type="submit">Login</button>
             </form>
             {/* The signup button */}
-            <button className="btn">Signup</button>
+            <a className="signup_link" href="/register"><button className="btn">Signup</button></a>
     </div>
   );
 };
