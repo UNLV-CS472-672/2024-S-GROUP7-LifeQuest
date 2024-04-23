@@ -39,6 +39,7 @@ router.post('/changestats', async (req, res) => {
     await user.updateOne({ 'stats.MeStat': req.body.newMeStat });
     await user.updateOne({ 'stats.LoveStat': req.body.newLoveStat });
     await user.updateOne({ 'stats.WorkStat': req.body.newWorkStat });
+    await user.updateOne({ completedQuiz: true });
     return res.status(200).json({ message: 'Stats Updated' });
   } 
   catch (error) {
