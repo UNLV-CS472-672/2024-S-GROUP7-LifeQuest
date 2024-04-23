@@ -20,8 +20,14 @@ func _ready():
 	#add all the item resources to the item array
 	while (filename):
 		if not directory.current_is_dir():
+			#this is to remove the added .remap when exported to web causing files to not be read correctly
+			if filename.ends_with(".remap"):
+				filename = filename.substr(0, filename.length() - 6) # Remove the last 6 characters (.remap)
+			#print(filename)
 			items.append(load("res://Items/%s" % filename))
 			filename = directory.get_next()
+			 # Remove .remap extension if it exists
+
 	
 #loop through all items and return item if found
 func get_item(item_name):
