@@ -32,6 +32,7 @@ func _process(delta):
 func add_quests():
 
 	for i in range(len(PlayerInventory.Inprocessarray)):
+		#print("adding quest")
 		var quest_instance = Quest.instantiate()
 		quest_instance.name = PlayerInventory.Inprocessarray[i].title
 		Inprocess.add_child(quest_instance)

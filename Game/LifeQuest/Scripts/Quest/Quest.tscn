@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://dk2u4jb4l8idr"]
 
 [ext_resource type="Script" path="res://Scripts/Quest/Quest.gd" id="1_fg5bu"]
-[ext_resource type="Texture2D" uid="uid://cn0us7kqtw644" path="res://Sprites/Equipment Icons/tool tip.png" id="2_gc03q"]
-[ext_resource type="Texture2D" uid="uid://bud2gg76y4qe7" path="res://Sprites/Equipment Icons/full inventory slot.png" id="3_5uagd"]
+[ext_resource type="Texture2D" uid="uid://cn0us7kqtw644" path="res://Sprites/Equipment Icons/Equipment UI Sprites/tool tip.png" id="2_gc03q"]
+[ext_resource type="Texture2D" uid="uid://bud2gg76y4qe7" path="res://Sprites/Equipment Icons/Equipment UI Sprites/full inventory slot.png" id="3_5uagd"]
 [ext_resource type="Texture2D" uid="uid://e5bjlcnxoair" path="res://Sprites/Botton Menu/button.png" id="4_pjbmd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jsxe5"]

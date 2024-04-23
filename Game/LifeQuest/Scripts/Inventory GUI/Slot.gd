@@ -21,8 +21,8 @@ enum SlotType {
 var slotType = null
 
 func _ready():
-	defaulttexture = preload("res://Sprites/Equipment Icons/full inventory slot.png")
-	emptytexture = preload("res://Sprites/Equipment Icons/empty inventory slot.png")
+	defaulttexture = preload("res://Sprites/Equipment Icons/Equipment UI Sprites/full inventory slot.png")
+	emptytexture = preload("res://Sprites/Equipment Icons/Equipment UI Sprites/empty inventory slot.png")
 	#if randi() % 2 == 0:
 		#item = ItemScene.instantiate() 
 		#add_child(item)

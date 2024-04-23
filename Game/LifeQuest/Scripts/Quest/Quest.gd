@@ -35,6 +35,7 @@ func initialize_quest(titles, quest_reward_amount, item1_name = "", item1_quanti
 	item = ItemScene.instantiate()
 	complete = false
 	objectives = objective
+	
 # If quest_reward_amount is 1 and item1_name is provided, add the first item
 	if quest_reward_amount >= 1 and item1_name != "":
 		var item1 = ItemScene.instantiate()
@@ -46,6 +47,42 @@ func initialize_quest(titles, quest_reward_amount, item1_name = "", item1_quanti
 		var item2 = ItemScene.instantiate()
 		RewardSlot2.add_child(item2)
 		item2.setitem(item2_name, item2_quantity)
+
+
+
+#setter functions for individual setting vs all at once
+func set_title(new_title: String = "") -> void:
+	QuestName.text = title
+
+func set_objectives(new_objectives: String = "") -> void:
+	objectives = new_objectives
+
+func set_complete(is_complete: bool) -> void:
+	complete = is_complete
+
+func set_quest_reward_amounts(amount: int = 0) -> void:
+	quest_reward_amounts = amount
+
+func set_ExpAmount(amount: String = "0") -> void:
+	ExpAmount = amount
+
+func set_CashAmount(amount: String = "0") -> void:
+	CashAmount = amount
+
+func set_item_name(name: String = "") -> void:
+	item_name = name
+
+func set_item_quantity(quantity: int = 0) -> void:
+	item_quantity = quantity
+
+func set_item_names(name: String = "") -> void:
+	item_names = name
+
+func set_item_quantitys(quantity: int = 0) -> void:
+	item_quantitys = quantity
+
+
+
 
 #start of chatGPT 
 #https://chat.openai.com/share/bad19120-3687-4244-939b-02a263495252
