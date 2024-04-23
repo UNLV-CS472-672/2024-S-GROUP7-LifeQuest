@@ -1,57 +1,90 @@
 [
     {
       "id": 1,
-      "title": "Health Quest 1",
-      "text": "Quest 1 Description",
-      "weight": 0.10
+      "title": "[Health] Eat Green!",
+      "text": "Eat a leafy green snack and submit a picture online!",
+      "weight": 0.10,
+      "complete": -1
     },
     {
       "id": 2,
-      "title": "Health Quest 2",
-      "text": "Quest 2 Description",
-      "weight": 0.20
+      "title": "[Health] Exercise Challenge",
+      "text": "Do a 30-minute exercise routine and share # of calories burned!",
+      "weight": 0.20,
+      "complete": -1
     },
     {
       "id": 3,
-      "title": "Health Quest 3",
-      "text": "Quest 3 Description",
-      "weight": 0.30
+      "title": "[Health] Hydration",
+      "text": "Meet your reccomended glass of water count intake amount today!",
+      "weight": 0.30,
+      "complete": -1
     },
     {
       "id": 4,
-      "title": "Relationship Quest 1",
-      "text": "Quest 4 Description",
-      "weight": 0.10
+      "title": "[Social] Gratitude",
+      "text": "Send a heartfelt message to a family member about how much you appreciate them!",
+      "weight": 0.10,
+      "complete": -1
     },
     {
       "id": 5,
-      "title": "Relationship Quest 2",
-      "text": "Quest 5 Description",
-      "weight": 0.20
+      "title": "[Social] Touch Grass",
+      "text": "Go outside to a park and meet a new person!",
+      "weight": 0.20,
+      "complete": -1
     },
     {
       "id": 6,
-      "title": "Relationship Quest 3",
-      "text": "Quest 6 Description",
-      "weight": 0.30
+      "title": "[Social] Quality Time",
+      "text": "Plan an activity with an old friend.",
+      "weight": 0.30,
+      "complete": -1
     },
     {
       "id": 7,
-      "title": "Professional Quest 1",
-      "text": "Quest 7 Description",
-      "weight": 0.10
+      "title": "[Professional] Presentation!",
+      "text": "Prepare & deliver a presentation on a chosen topic!",
+      "weight": 0.10,
+      "complete": -1
     },
     {
       "id": 8,
-      "title": "Professional Quest 2",
-      "text": "Quest 8 Description",
-      "weight": 0.20
+      "title": "[Professional] Network",
+      "text": "Attend a talk or gathering related to your line of work!",
+      "weight": 0.20,
+      "complete": -1
     },
     {
       "id": 9,
-      "title": "Professional Quest 9",
-      "text": "Quest 9 Description",
-      "weight": 0.30
+      "title": "[Professional] Resume",
+      "text": "Update your resume with your most recently learned skills!",
+      "weight": 0.30,
+      "complete": -1
+    }
+    ,
+    {
+      "id": 10,
+      "title": "[Game] Level 1",
+      "text": "Defeat Level 1!",
+      "weight": 0.10,
+      "complete": -1
+    }
+    ,
+    {
+      "id": 11,
+      "title": "[Game] Level 2",
+      "text": "Defeat Level 2!",
+      "weight": 0.10,
+      "complete": -1
+    }
+    ,
+    {
+      "id": 12,
+      "title": "[Game] Level 3",
+      "text": "Defeat Level 3!",
+      "weight": 0.10,
+      "complete": -1
     }
   ]
   
