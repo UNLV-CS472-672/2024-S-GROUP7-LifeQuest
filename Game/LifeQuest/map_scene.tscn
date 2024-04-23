@@ -1,13 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://cyfjohh3bf21f"]
+[gd_scene load_steps=14 format=3 uid="uid://cyfjohh3bf21f"]
 
 [ext_resource type="Script" path="res://Scripts/MapScene/Level1.gd" id="2_d7lq7"]
 [ext_resource type="ButtonGroup" uid="uid://bu7cyxjou55h6" path="res://Scripts/MapScene/MapButtons.tres" id="2_hisu1"]
+[ext_resource type="StyleBox" uid="uid://cvieolp1b5y87" path="res://Sprites/popStyle.tres" id="3_hc0p4"]
 [ext_resource type="Script" path="res://Scripts/MapScene/Level2.gd" id="3_rjc3v"]
 [ext_resource type="Script" path="res://Scripts/MapScene/Level3.gd" id="4_ffyb0"]
 [ext_resource type="Texture2D" uid="uid://dykywm4ubx0ej" path="res://Sprites/forest-palette01-day.png" id="5_e3qv0"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d8t2f"]
-bg_color = Color(0.239216, 0.662745, 0.756863, 1)
+[ext_resource type="Script" path="res://HomeButton.gd" id="7_wdx5y"]
 
 [sub_resource type="Theme" id="Theme_pyi5q"]
 
@@ -280,7 +279,7 @@ offset_left = -7.0
 offset_top = -87.0
 offset_right = 89.0
 offset_bottom = 6.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_d8t2f")
+theme_override_styles/panel = ExtResource("3_hc0p4")
 
 [node name="GridContainer" type="GridContainer" parent="Level1/PopMenu"]
 layout_mode = 2
@@ -295,6 +294,42 @@ layout_mode = 2
 text = "Yes"
 
 [node name="no" type="Button" parent="Level1/PopMenu/GridContainer"]
+layout_mode = 2
+text = "No"
+
+[node name="HomeButton" type="Button" parent="."]
+offset_left = 564.0
+offset_top = 547.0
+offset_right = 649.0
+offset_bottom = 619.0
+toggle_mode = true
+button_group = ExtResource("2_hisu1")
+text = "Return To
+Main Menu"
+script = ExtResource("7_wdx5y")
+
+[node name="PopMenu" type="PanelContainer" parent="HomeButton"]
+visible = false
+layout_mode = 0
+offset_left = -2.0
+offset_top = -87.0
+offset_right = 98.0
+offset_bottom = 6.0
+theme_override_styles/panel = ExtResource("3_hc0p4")
+
+[node name="GridContainer" type="GridContainer" parent="HomeButton/PopMenu"]
+layout_mode = 2
+theme = SubResource("Theme_pyi5q")
+
+[node name="levelDesc" type="Label" parent="HomeButton/PopMenu/GridContainer"]
+layout_mode = 2
+text = "Main Menu? "
+
+[node name="yes" type="Button" parent="HomeButton/PopMenu/GridContainer"]
+layout_mode = 2
+text = "Yes"
+
+[node name="no" type="Button" parent="HomeButton/PopMenu/GridContainer"]
 layout_mode = 2
 text = "No"
 
@@ -315,7 +350,7 @@ offset_left = -7.0
 offset_top = -87.0
 offset_right = 89.0
 offset_bottom = 6.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_d8t2f")
+theme_override_styles/panel = ExtResource("3_hc0p4")
 
 [node name="GridContainer" type="GridContainer" parent="Level2/PopMenu"]
 layout_mode = 2
@@ -350,7 +385,7 @@ offset_left = -7.0
 offset_top = -87.0
 offset_right = 89.0
 offset_bottom = 6.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_d8t2f")
+theme_override_styles/panel = ExtResource("3_hc0p4")
 
 [node name="GridContainer" type="GridContainer" parent="Level3/PopMenu"]
 layout_mode = 2
@@ -384,6 +419,9 @@ layer_2/tile_data = PackedInt32Array(2031663, 65536, 16, 2097199, 65536, 16, 216
 [connection signal="toggled" from="Level1" to="Level1" method="_on_toggled"]
 [connection signal="pressed" from="Level1/PopMenu/GridContainer/yes" to="Level1" method="_on_yes_pressed"]
 [connection signal="pressed" from="Level1/PopMenu/GridContainer/no" to="Level1" method="_on_no_pressed"]
+[connection signal="toggled" from="HomeButton" to="HomeButton" method="_on_toggled"]
+[connection signal="pressed" from="HomeButton/PopMenu/GridContainer/yes" to="HomeButton" method="_on_yes_pressed"]
+[connection signal="pressed" from="HomeButton/PopMenu/GridContainer/no" to="HomeButton" method="_on_no_pressed"]
 [connection signal="toggled" from="Level2" to="Level2" method="_on_toggled"]
 [connection signal="pressed" from="Level2/PopMenu/GridContainer/yes" to="Level2" method="_on_yes_pressed"]
 [connection signal="pressed" from="Level2/PopMenu/GridContainer/no" to="Level2" method="_on_no_pressed"]
