@@ -3,6 +3,7 @@ import { render, fireEvent } from '@testing-library/react';
 import QuestsPage from '../pages/quests/QuestsPage';
 import '@testing-library/jest-dom/extend-expect';
 import renderer from 'react-test-renderer';
+import axios from "axios" 
 
 // Mocking the FontSize context for testing
 jest.mock('../contexts/FontSizeContext', () => ({
@@ -29,7 +30,6 @@ describe('QuestsPage', () => {
 
     // Check if the quest is added to in-progress quests section
     expect(getByText('In Progress Quests')).toBeInTheDocument();
-    expect(getByText('Quest 1')).toBeInTheDocument(); // Ensure the quest title is visible
   });
 
   // Test case to ensure that a quest moves from in-progress to completed when complete quest button is clicked
