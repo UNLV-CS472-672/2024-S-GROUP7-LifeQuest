@@ -12,6 +12,8 @@ beforeAll(async () => {
   .callsFake(function userVerification(req, res, next) {
       return next();
   });
+
+  //Change secret to something that won't work
   process.env.MONGO_URI = '';
 
   //You need to declare this after the fake function is made
@@ -22,6 +24,7 @@ beforeAll(async () => {
 afterAll(async () => {
   //Restore middleware function to the original state
   middleware.userVerification.restore();
+  //Restore secret
   process.env.MONGO_URI = actualMONGO_URI;
   mongoose.disconnect();
 });
