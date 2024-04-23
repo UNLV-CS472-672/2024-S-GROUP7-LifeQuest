@@ -25,6 +25,29 @@ router.post('/', async (req, res, next) => {
   }
 });
 
+// POST /users/changestats - change stats of logged in user
+router.post('/changestats', async (req, res) => {
+  try {
+    // access user from request which has been
+    // attached by the userVerification middleware
+    const user = req.user;
+    // if no user found, send back 404
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    // send back the user
+    await user.updateOne({ 'stats.MeStat': req.body.newMeStat });
+    await user.updateOne({ 'stats.LoveStat': req.body.newLoveStat });
+    await user.updateOne({ 'stats.WorkStat': req.body.newWorkStat });
+    return res.status(200).json({ message: 'Stats Updated' });
+  } 
+  catch (error) {
+    // send back 500 and error message
+    res.status(500).json({ message: error.message });
+    console.log(error.message);
+  }
+});
+
 // GET /users/me - retrieve logged in user
 router.get('/me', async (req, res, next) => {
   try {

@@ -5,6 +5,7 @@ import PageContent from "../../components/PageContent";
 import styles from "./QuizPage.module.css";
 import questionsData from "./quiz_questions.json";
 import { useFontSize } from '../../contexts/FontSizeContext';
+import axios from "axios";
 
 const QuizPage = () => {
   const { fontSize, darkMode } = useFontSize();
@@ -53,6 +54,35 @@ const QuizPage = () => {
     } else {
       setQuizCompleted(true);
     }
+  };
+
+  async function handleFinishQuizClick() {
+
+    axios.defaults.baseURL = 'http://localhost:9000';
+
+    /*
+    Axios makes a post request to the address, feeding in the user inputed
+    credentials. Await for a response.
+    */
+    const response = await axios.post('/users/changestats', {
+      //These must be rounded. Otherwise expect floating point errors :(
+      newMeStat: Math.floor(healthPercentage),
+      newLoveStat: Math.floor(relationshipsPercentage),
+      newWorkStat: Math.floor(professionalPercentage)
+    },
+    { withCredentials: true //Required for cookies.
+    })
+
+    //Got a response, now let's handle it
+
+    .then(function (response) {
+        //Quiz was successful! Let's go to the home page.
+        window.location.href = '/home';
+    })
+    .catch(function (error) {
+        // Uh oh, bad quiz submission! Let's see what went wrong.
+        console.log(error);
+    })
   };
 
   // Calculate the total possible points for each category
@@ -124,6 +154,7 @@ const QuizPage = () => {
             <div>Health Score: {healthPercentage.toFixed(2)}%</div>
             <div>Professional Score: {professionalPercentage.toFixed(2)}%</div>
             <div>Relationships Score: {relationshipsPercentage.toFixed(2)}%</div>
+            <button onClick={handleFinishQuizClick} className={styles.answerOptions}>Finish Quiz</button>
           </div>
         )}
       </div>
