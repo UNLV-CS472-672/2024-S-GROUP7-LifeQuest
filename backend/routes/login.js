@@ -4,12 +4,7 @@ var router = express.Router();
 const bcrypt = require("bcryptjs");
 const { createJWT } = require("../util/jwt.js");
 
-router.get('/test', (req, res) => {
-    console.log("Hello World")
-    res.send('Response')
-})
-
-//The 'login' function. This
+//The 'login' function. This logs in a user
 router.post('/submit', async (req, res, next) => {
     try {
         //Get the request values, the email and plaintext password

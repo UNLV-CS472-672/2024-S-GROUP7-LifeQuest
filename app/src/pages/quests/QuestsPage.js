@@ -1,31 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavigationPanel from "../../components/NavigationPanel";
 import Frame from "../../components/TopPanel";
 import PageContent from "../../components/PageContent";
 import styles from "./QuestsPage.module.css";
 import questsData from "./quests.json"; 
 import { useFontSize } from '../../contexts/FontSizeContext'; 
+import axios from "axios" 
 
 const QuestsPage = () => {
   // Darkmode and fontSize
   const { fontSize, darkMode} = useFontSize();	  
-	
-  // State to manage available quests
-  const [availableQuests, setAvailableQuests] = useState([
-    { id: 1, title: "Quest 1", text: "Quest 1 Description" },
-    { id: 2, title: "Quest 2", text: "Quest 2 Description" },
-    { id: 3, title: "Quest 3", text: "Quest 3 Description" }
-  ]);
-
-  //TO CHANGE TO FOR INCLUSION OF quests.json:
-  // const [availableQuests, setAvailableQuests] = useState(questsData);
-
+  //Inclusion OF quests.json quests into an array use state:
+  const [availableQuests, setAvailableQuests] = useState([]);
   // State to manage quests in progress
   const [inProgressQuests, setInProgressQuests] = useState([]);
   // State to manage completed quests
   const [completedQuests, setCompletedQuests] = useState([]);
   // State to toggle visibility of completed quests
   const [showCompletedQuests, setShowCompletedQuests] = useState(false);
+
+  // Randomly selecting quests from the quests.json file
+  useEffect(() => {
+    // Shuffle the array of quests
+    const shuffledQuests = shuffle(questsData);
+
+    // Select the first three quests
+    const initialQuests = shuffledQuests.slice(0, 3);
+    setAvailableQuests(initialQuests);
+  }, []);
+
+  // Function to shuffle array elements
+  const shuffle = (array) => {
+    let currentIndex = array.length;
+    let temporaryValue, randomIndex;
+
+    // Randomly selecting 1-12 quests from array of imported quests.json data
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    return array;
+  };
 
   // Function to handle adding a quest to in progress
   const startQuest = (quest) => {
