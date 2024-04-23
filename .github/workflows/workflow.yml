@@ -46,5 +46,9 @@ jobs:
           run: |
             cd app
             npm run coverage
-            
+        - name: Upload coverage reports to Codecov
+          run: |
+            curl -Os https://uploader.codecov.io/latest/linux/codecov
+            chmod +x codecov
+            ./codecov -t ${{ secrets.CODECOV_TOKEN }}
 
