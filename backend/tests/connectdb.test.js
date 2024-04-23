@@ -28,9 +28,9 @@ afterAll(async () => {
 
 describe("Connection to database failed", () => {
     it("it should not connect to database", async () => {
-      // Request a non-existant API
+      // Request an API
       const response = request(app).post("/login/submit").send(null);
-      // Check for a 404 error
+      // Check for an undefined error
       expect(response.statusCode).toBe(undefined);
     });
 });
