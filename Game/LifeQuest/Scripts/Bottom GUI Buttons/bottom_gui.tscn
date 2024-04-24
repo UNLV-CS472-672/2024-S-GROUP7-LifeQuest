@@ -123,11 +123,13 @@ layout_mode = 2
 size_flags_horizontal = 0
 text = "Level:"
 
-[node name="Level Amount" type="Label" parent="control/Ui container/Character Stats/VBoxContainer/HBoxContainer"]
+[node name="LevelAmount" type="Label" parent="control/Ui container/Character Stats/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "1"
+text = "0"
 
-[node name="Character Name" type="Label" parent="control/Ui container/Character Stats/VBoxContainer/HBoxContainer"]
+[node name="CharacterName" type="Label" parent="control/Ui container/Character Stats/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Sample"
@@ -143,7 +145,8 @@ size_flags_vertical = 8
 text = "Cash: "
 horizontal_alignment = 1
 
-[node name="Cash amount" type="Label" parent="control/Ui container/Character Stats/VBoxContainer/HBoxContainer/Center space"]
+[node name="Cashamount" type="Label" parent="control/Ui container/Character Stats/VBoxContainer/HBoxContainer/Center space"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 1
@@ -158,6 +161,7 @@ layout_mode = 2
 text = "EXP: "
 
 [node name="ProgressBar" type="ProgressBar" parent="control/Ui container/Character Stats/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -184,7 +188,7 @@ offset_right = 316.0
 offset_bottom = 30.0
 grow_vertical = 2
 
-[node name="Character" type="Button" parent="control/Ui container/Button menu Stats/Button container"]
+[node name="CharacterButton" type="Button" parent="control/Ui container/Button menu Stats/Button container"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -193,7 +197,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_4fqmp")
 theme_override_styles/hover = SubResource("StyleBoxTexture_trwnf")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_hyn4b")
 
-[node name="Label" type="Label" parent="control/Ui container/Button menu Stats/Button container/Character"]
+[node name="Label" type="Label" parent="control/Ui container/Button menu Stats/Button container/CharacterButton"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -206,7 +210,7 @@ text = "Character"
 label_settings = SubResource("LabelSettings_6d5lb")
 horizontal_alignment = 1
 
-[node name="Inventory" type="Button" parent="control/Ui container/Button menu Stats/Button container"]
+[node name="InventoryButton" type="Button" parent="control/Ui container/Button menu Stats/Button container"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -215,7 +219,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_lwric")
 theme_override_styles/hover = SubResource("StyleBoxTexture_5ih04")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_rp5li")
 
-[node name="Label" type="Label" parent="control/Ui container/Button menu Stats/Button container/Inventory"]
+[node name="Label" type="Label" parent="control/Ui container/Button menu Stats/Button container/InventoryButton"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -228,7 +232,7 @@ text = "Inventory"
 label_settings = SubResource("LabelSettings_6d5lb")
 horizontal_alignment = 1
 
-[node name="Quest" type="Button" parent="control/Ui container/Button menu Stats/Button container"]
+[node name="QuestButton" type="Button" parent="control/Ui container/Button menu Stats/Button container"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -237,7 +241,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ng1nb")
 theme_override_styles/hover = SubResource("StyleBoxTexture_lw735")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_qhj01")
 
-[node name="Label" type="Label" parent="control/Ui container/Button menu Stats/Button container/Quest"]
+[node name="Label" type="Label" parent="control/Ui container/Button menu Stats/Button container/QuestButton"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -250,7 +254,7 @@ text = "Quest"
 label_settings = SubResource("LabelSettings_6d5lb")
 horizontal_alignment = 1
 
-[node name="Shop" type="Button" parent="control/Ui container/Button menu Stats/Button container"]
+[node name="ShopButton" type="Button" parent="control/Ui container/Button menu Stats/Button container"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -259,7 +263,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_im6nj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_1fdrb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_sm5a4")
 
-[node name="Label" type="Label" parent="control/Ui container/Button menu Stats/Button container/Shop"]
+[node name="Label" type="Label" parent="control/Ui container/Button menu Stats/Button container/ShopButton"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -272,7 +276,7 @@ text = "Shop"
 label_settings = SubResource("LabelSettings_6d5lb")
 horizontal_alignment = 1
 
-[node name="Setting" type="Button" parent="control/Ui container/Button menu Stats/Button container"]
+[node name="SettingButton" type="Button" parent="control/Ui container/Button menu Stats/Button container"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -281,7 +285,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_nkrkt")
 theme_override_styles/hover = SubResource("StyleBoxTexture_fj77i")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_3tedw")
 
-[node name="Label" type="Label" parent="control/Ui container/Button menu Stats/Button container/Setting"]
+[node name="Label" type="Label" parent="control/Ui container/Button menu Stats/Button container/SettingButton"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -294,8 +298,8 @@ text = "Settings"
 label_settings = SubResource("LabelSettings_6d5lb")
 horizontal_alignment = 1
 
-[connection signal="pressed" from="control/Ui container/Button menu Stats/Button container/Character" to="control/Ui container" method="_on_character_pressed"]
-[connection signal="pressed" from="control/Ui container/Button menu Stats/Button container/Inventory" to="control/Ui container" method="_on_inventory_pressed"]
-[connection signal="pressed" from="control/Ui container/Button menu Stats/Button container/Quest" to="control/Ui container" method="_on_quest_pressed"]
-[connection signal="pressed" from="control/Ui container/Button menu Stats/Button container/Shop" to="control/Ui container" method="_on_shop_pressed"]
-[connection signal="pressed" from="control/Ui container/Button menu Stats/Button container/Setting" to="control/Ui container" method="_on_setting_pressed"]
+[connection signal="pressed" from="control/Ui container/Button menu Stats/Button container/CharacterButton" to="control/Ui container" method="_on_character_pressed"]
+[connection signal="pressed" from="control/Ui container/Button menu Stats/Button container/InventoryButton" to="control/Ui container" method="_on_inventory_pressed"]
+[connection signal="pressed" from="control/Ui container/Button menu Stats/Button container/QuestButton" to="control/Ui container" method="_on_quest_pressed"]
+[connection signal="pressed" from="control/Ui container/Button menu Stats/Button container/ShopButton" to="control/Ui container" method="_on_shop_pressed"]
+[connection signal="pressed" from="control/Ui container/Button menu Stats/Button container/SettingButton" to="control/Ui container" method="_on_setting_pressed"]

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://dhvsxbugrw5xj"]
+
+[ext_resource type="Script" path="res://Scripts/Items/item.gd" id="1_d2g5o"]
+[ext_resource type="Texture2D" uid="uid://4jrc7m5pb7x2" path="res://Sprites/Equipment Icons/cowboy hat.png" id="1_jf65e"]
+
+[resource]
+script = ExtResource("1_d2g5o")
+name = "Cowboy hat"
+description = "yeeeeeehaaaaw, impressive hat!"
+stackable = false
+max_stack_size = 1
+itemType = 1
+equipLocation = 1
+damage = 5
+healthBonus = 5
+defenseBonus = 3
+magicBonus = 2
+icon = ExtResource("1_jf65e")

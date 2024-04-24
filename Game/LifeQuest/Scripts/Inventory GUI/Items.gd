@@ -26,13 +26,31 @@ func setitem(itemname2,itemquantity2):
 	
 	#$TextureRect.texture = item.icon
 	$TextureRect.set_texture(item.icon)
-	
-	#print(item.icon)
-	#var stacksize = int(Jsonitems.itemdata[itemname]["StackSize"])
+		# Calculate the maximum size for the sprite
+	# Calculate the maximum size for the sprite
+	var max_width = 46
+	var max_height = 63
 
+	var scale_factor = 1.0  # Default scale factor
+
+	# Check if the texture's width or height exceeds the maximum dimensions
+	var texture_width = $TextureRect.texture.get_width()
+	var texture_height = $TextureRect.texture.get_height()
+
+	if texture_width > max_width or texture_height > max_height:
+		# Calculate scale factors for width and height
+		var scale_factor_width = max_width / float(texture_width)
+		var scale_factor_height = max_height / float(texture_height)
+		
+		# Choose the smaller of the two scale factors to maintain aspect ratio
+		scale_factor = min(scale_factor_width, scale_factor_height)
+
+	# Set the scale of the TextureRect
+	$TextureRect.scale = Vector2(scale_factor, scale_factor)
 	var stacksize = item.max_stack_size
 	#print("stacksize:",stacksize)
 	#print("items:",item.name)
+	# Center the TextureRect
 
 	#var stacksize = int(item.max_stack_size)
 	if stacksize == 1:

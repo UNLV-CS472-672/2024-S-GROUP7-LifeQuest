@@ -39,15 +39,17 @@ func initialize_quest(titles, quest_reward_amount, item1_name = "", item1_quanti
 # If quest_reward_amount is 1 and item1_name is provided, add the first item
 	if quest_reward_amount >= 1 and item1_name != "":
 		var item1 = ItemScene.instantiate()
-		RewardSlot1.add_child(item1)
 		item1.setitem(item1_name, item1_quantity)
+		RewardSlot1.add_child(item1)
+		
+		
 
 	# If quest_reward_amount is 2 and item2_name is provided, add the second item
 	if quest_reward_amount == 2 and item2_name != "":
 		var item2 = ItemScene.instantiate()
-		RewardSlot2.add_child(item2)
 		item2.setitem(item2_name, item2_quantity)
-
+		RewardSlot2.add_child(item2)
+		
 
 
 #setter functions for individual setting vs all at once

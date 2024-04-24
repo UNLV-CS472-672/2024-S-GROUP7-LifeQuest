@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://dontevupv0a66"]
+
+[ext_resource type="Script" path="res://Scripts/Items/item.gd" id="1_8lwn5"]
+[ext_resource type="Texture2D" uid="uid://bimg1vr0v5pf3" path="res://Sprites/Equipment Icons/blue cap.png" id="1_iua0d"]
+
+[resource]
+script = ExtResource("1_8lwn5")
+name = "blue cap"
+description = ""
+stackable = false
+max_stack_size = 1
+itemType = 1
+equipLocation = 1
+damage = 3
+healthBonus = 3
+defenseBonus = 1
+magicBonus = 1
+icon = ExtResource("1_iua0d")

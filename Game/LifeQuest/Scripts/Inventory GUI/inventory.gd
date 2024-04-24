@@ -8,6 +8,7 @@ var user_interface
 #var for the item that the mouse has
 var holditem = null
 var initialized_inventory = false
+var is_tracking_mouse = false #the var used for turning the move on and off
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for i in range(inventoryslot.get_child_count()):
@@ -44,7 +45,7 @@ func _ready():
 		#equipslot.gui_input.connect(slotinput.bind(equipslot))
 		#equipslot[i] = SlotClass.SlotType.INVENTROY
 		
-#function afor loading inventory after save file
+#function for loading inventory after save file
 func loadinventory():
 	var slot = inventoryslot.get_children()
 	var slot2 = equipslots.get_children()
@@ -92,14 +93,21 @@ func initializeequip():
 
 #function that updates the players inventory and what the data in slots are
 func _process(delta):
-	if (initialized_inventory):
+	if (initialized_inventory && !PlayerInventory.stop):
 		var slot = inventoryslot.get_children()
 		for i in range(slot.size()):
 			PlayerInventory.inventory[i]= slot[i].item
 		var slot2 = equipslots.get_children()
 		for i in range(slot2.size()):
 			PlayerInventory.equip[i]= slot2[i].item
+			#print("updating")
+	if is_tracking_mouse:
+		# Continuously update the global position while the left mouse button is held down
 
+		var move_area_rect = $MoveArea.get_global_rect()
+		#print("Move:",move_area_rect)
+		#print("Move:",$MoveArea.position)
+		global_position = get_global_mouse_position()  - $MoveArea.position 
 
 
 func slotinput(event:InputEvent, slot:SlotClass):
@@ -167,7 +175,15 @@ func _input(event):
 	if holditem:
 		holditem.global_position = get_global_mouse_position()
 		
-
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed:
+				var mouse_pos = get_global_mouse_position() # var for mouse position
+				var move_area_rect = $MoveArea.get_global_rect() #this is the area the mouse needs to be in
+				if move_area_rect.has_point(mouse_pos): #this checks if the mouse is in the area of the var
+					is_tracking_mouse = true #then we want tracking mouse on
+			else:
+				is_tracking_mouse = false #otherwise tracking off
+				
 #x button to close inventory
 func _on_quit_button_pressed():
 	user_interface= find_node_by_name(get_tree().get_root(),"UserInterface")
@@ -196,11 +212,15 @@ func find_node_by_name(node: Node, name_to_find: String) -> Node:
 #end of chatGPT
 
 
+	
+
+
 # Function to show tooltip when hovering over an item
 func _on_item_hovered(item_name: String, position):
 	# Show tooltip with information about the item
 	$TooltipLabel.global_position = position+ Vector2 (20,10)
-	$TooltipLabel.text = "Item: " + item_name
+	$TooltipLabel.text = "Item: " + item_name + "\n" + "Description:" + ItemDatabase.get_item(item_name).description
+	
 	$TooltipLabel.visible = true
 
 # Function to hide tooltip when not hovering over an item

@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://cyfjohh3bf21f"]
+[gd_scene load_steps=15 format=3 uid="uid://cyfjohh3bf21f"]
 
+[ext_resource type="Script" path="res://map_scene.gd" id="1_ejfmy"]
 [ext_resource type="Script" path="res://Scripts/MapScene/Level1.gd" id="2_d7lq7"]
 [ext_resource type="ButtonGroup" uid="uid://bu7cyxjou55h6" path="res://Scripts/MapScene/MapButtons.tres" id="2_hisu1"]
 [ext_resource type="StyleBox" uid="uid://cvieolp1b5y87" path="res://Sprites/popStyle.tres" id="3_hc0p4"]
@@ -261,6 +262,7 @@ pattern_1 = SubResource("TileMapPattern_ynopy")
 pattern_2 = SubResource("TileMapPattern_631pp")
 
 [node name="map_scene" type="Node2D"]
+script = ExtResource("1_ejfmy")
 
 [node name="Level1" type="Button" parent="."]
 offset_left = 126.0

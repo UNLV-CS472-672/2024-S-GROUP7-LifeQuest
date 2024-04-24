@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://cm73hffpg61s0"]
+
+[ext_resource type="Texture2D" uid="uid://blfsn7aoo4qx" path="res://Sprites/Equipment Icons/greenshoes.png" id="1_6fm8k"]
+[ext_resource type="Script" path="res://Scripts/Items/item.gd" id="1_v1lkk"]
+
+[resource]
+script = ExtResource("1_v1lkk")
+name = "green shoes"
+description = ""
+stackable = false
+max_stack_size = 1
+itemType = 1
+equipLocation = 4
+damage = 2
+healthBonus = 5
+defenseBonus = 5
+magicBonus = 1
+icon = ExtResource("1_6fm8k")

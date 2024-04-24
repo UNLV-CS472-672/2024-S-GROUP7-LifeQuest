@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://c56uv4q2mdkmv"]
+
+[ext_resource type="Script" path="res://Scripts/Items/item.gd" id="1_7x1dh"]
+[ext_resource type="Texture2D" uid="uid://bdp42hgn844l4" path="res://Sprites/Equipment Icons/cap.png" id="1_r751c"]
+
+[resource]
+script = ExtResource("1_7x1dh")
+name = "cap"
+description = "An ordinary hat"
+stackable = false
+max_stack_size = 1
+itemType = 1
+equipLocation = 1
+damage = 1
+healthBonus = 1
+defenseBonus = 1
+magicBonus = 1
+icon = ExtResource("1_r751c")

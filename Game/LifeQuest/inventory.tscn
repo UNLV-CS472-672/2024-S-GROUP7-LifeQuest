@@ -1,15 +1,16 @@
-[gd_scene load_steps=21 format=3 uid="uid://bqwh0ar8cqyro"]
+[gd_scene load_steps=22 format=3 uid="uid://bqwh0ar8cqyro"]
 
 [ext_resource type="Script" path="res://Scripts/Inventory GUI/inventory.gd" id="1_b7bqe"]
-[ext_resource type="Texture2D" uid="uid://b7dsw5hv8iwfh" path="res://Sprites/Equipment Icons/Equipment UI Sprites/profile empty.png" id="2_8lsk5"]
-[ext_resource type="Texture2D" uid="uid://y821cltturdo" path="res://Sprites/Equipment Icons/Equipment UI Sprites/empty inventory slot.png" id="2_ynn2e"]
+[ext_resource type="Texture2D" uid="uid://b7dsw5hv8iwfh" path="res://Sprites/profile empty.png" id="2_8lsk5"]
+[ext_resource type="Texture2D" uid="uid://y821cltturdo" path="res://Sprites/Equipment Icons/empty inventory slot.png" id="2_ynn2e"]
 [ext_resource type="Script" path="res://Scripts/Inventory GUI/Slot.gd" id="3_xgshx"]
-[ext_resource type="Texture2D" uid="uid://b634a7cidtq6h" path="res://Sprites/Equipment Icons/Equipment UI Sprites/Pants slot GUI.png" id="6_prdaf"]
-[ext_resource type="Texture2D" uid="uid://bc2vgv8p417lg" path="res://Sprites/Equipment Icons/Equipment UI Sprites/Head slot GUI.png" id="6_qq2ol"]
-[ext_resource type="Texture2D" uid="uid://c8umopaoppk0o" path="res://Sprites/Equipment Icons/Equipment UI Sprites/Hands slot GUI.png" id="7_gjnxf"]
-[ext_resource type="Texture2D" uid="uid://cagfuqa8cby11" path="res://Sprites/Equipment Icons/Equipment UI Sprites/Shoes slot GUI.png" id="8_qkutw"]
-[ext_resource type="Texture2D" uid="uid://bj7l3kkbo4gq" path="res://Sprites/Equipment Icons/Equipment UI Sprites/Weapon slot GUI.png" id="9_syub5"]
-[ext_resource type="Texture2D" uid="uid://c2mhqes4s1w3c" path="res://Sprites/Equipment Icons/Equipment UI Sprites/Accessory slot GUI.png" id="10_gdlxb"]
+[ext_resource type="Texture2D" uid="uid://b634a7cidtq6h" path="res://Sprites/Equipment Icons/Pants slot GUI.png" id="6_prdaf"]
+[ext_resource type="Texture2D" uid="uid://bc2vgv8p417lg" path="res://Sprites/Equipment Icons/Head slot GUI.png" id="6_qq2ol"]
+[ext_resource type="Texture2D" uid="uid://c8umopaoppk0o" path="res://Sprites/Equipment Icons/Hands slot GUI.png" id="7_gjnxf"]
+[ext_resource type="Texture2D" uid="uid://cagfuqa8cby11" path="res://Sprites/Equipment Icons/Shoes slot GUI.png" id="8_qkutw"]
+[ext_resource type="Texture2D" uid="uid://bj7l3kkbo4gq" path="res://Sprites/Equipment Icons/Weapon slot GUI.png" id="9_syub5"]
+[ext_resource type="Texture2D" uid="uid://c2mhqes4s1w3c" path="res://Sprites/Equipment Icons/Accessory slot GUI.png" id="10_gdlxb"]
+[ext_resource type="PackedScene" uid="uid://c8nb2aahwaut" path="res://Sprites/Character/characterfront.tscn" id="11_28o67"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dhjvw"]
 texture = ExtResource("2_ynn2e")
@@ -39,28 +40,27 @@ texture = ExtResource("10_gdlxb")
 expand_margin_left = 4.0
 expand_margin_right = 9.0
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_xbbud"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_1m35l"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4n2pf"]
-texture = SubResource("CanvasTexture_xbbud")
+texture = SubResource("CanvasTexture_1m35l")
 
 [node name="Inventory" type="Node2D"]
-position = Vector2(415, 707)
 script = ExtResource("1_b7bqe")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-offset_left = 4.0
-offset_top = -704.0
-offset_right = 1622.0
-offset_bottom = 1855.0
+offset_left = 409.0
+offset_top = -2.0
+offset_right = 2027.0
+offset_bottom = 2557.0
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_8lsk5")
 
 [node name="GridContainer" type="GridContainer" parent="."]
-offset_left = 35.0
-offset_top = -280.0
-offset_right = 385.375
-offset_bottom = -91.895
+offset_left = 440.0
+offset_top = 422.0
+offset_right = 790.375
+offset_bottom = 610.105
 columns = 5
 
 [node name="Slot1" type="Panel" parent="GridContainer"]
@@ -169,10 +169,10 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_dhjvw")
 script = ExtResource("3_xgshx")
 
 [node name="EquipSlot" type="GridContainer" parent="."]
-offset_left = 27.0
-offset_top = -629.0
-offset_right = 394.0
-offset_bottom = -322.0
+offset_left = 432.0
+offset_top = 73.0
+offset_right = 799.0
+offset_bottom = 380.0
 theme_override_constants/h_separation = 248
 theme_override_constants/v_separation = 11
 columns = 2
@@ -239,9 +239,20 @@ text = "Example"
 
 [node name="QuitButton" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
-offset_left = 374.0
-offset_top = -688.0
-offset_right = 396.0
-offset_bottom = -666.0
+offset_left = 778.0
+offset_top = 8.0
+offset_right = 800.0
+offset_bottom = 30.0
+
+[node name="MoveArea" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 461.0
+offset_top = 6.0
+offset_right = 743.0
+offset_bottom = 28.0
+
+[node name="Characterfront" parent="." instance=ExtResource("11_28o67")]
+position = Vector2(528, 47)
+scale = Vector2(0.765, 0.765)
 
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
