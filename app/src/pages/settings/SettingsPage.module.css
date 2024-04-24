@@ -36,7 +36,7 @@
 
 .darkMode {
 	background-color: var(--background-color-dark); /* Use dark mode background color */
-	color: var(--text-color-dark); /* Use dark mode text color */
+	background-image: url('../../../public/blackmarblebackground.jpg');
 }
 
 @media screen and (max-width: 1200px) {
@@ -128,7 +128,7 @@
 	position: absolute;
 	top: 50%;
 	padding: 8px 15px;
-	background-color: plum;
+	background-color: azure;
 	color: black;
 	font-size: var(--button-font-size);
 }

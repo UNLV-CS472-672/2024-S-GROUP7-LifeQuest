@@ -3,8 +3,15 @@ body {
   margin: 0;
   line-height: normal;
   font-size: var(--dynamic-font-size);
+  background-image: var(--background-image);
 }
 :root {
+	/* Light mode */
+  --background-image-light: url('../public/marblebackground.jpg');
+
+  /* Dark mode */
+  --background-image-dark: url('../public/blackmarblebackground.jpg');
+	
   /* fonts */
   --font-roboto: Roboto;
 
@@ -21,3 +28,14 @@ body {
   --background-color-dark: #333333; /* Dark mode background color */
   --text-color-dark: #ffffff; /* Dark mode text color */
 }
+
+/* Toggle background image based on dark mode state */
+.darkMode {
+  --background-image: var(--background-image-dark);
+}
+
+/* Default to light mode background image */
+:not(.darkMode) {
+  --background-image: var(--background-image-light);
+}
+
