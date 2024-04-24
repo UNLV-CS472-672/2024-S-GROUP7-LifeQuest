@@ -43,9 +43,8 @@ router.post('/changestats', async (req, res) => {
     return res.status(200).json({ message: 'Stats Updated' });
   } 
   catch (error) {
-    // send back 500 and error message
+    // send back 500 status and error message
     res.status(500).json({ message: error.message });
-    console.log(error.message);
   }
 });
 

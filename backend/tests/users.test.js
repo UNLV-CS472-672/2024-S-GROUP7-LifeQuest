@@ -1,6 +1,7 @@
 const request = require("supertest");
 const sinon = require('sinon');
 const middleware = require('../middleware/auth.js');
+const User = require('../models/user');
 const mongoose = require('mongoose');
 var app;
 
@@ -15,7 +16,10 @@ const newUser = {
 beforeAll(async () => {
   //Replace the middleware function with a fake function that passes the request through.
   sinon.stub(middleware, "userVerification")
-  .callsFake(function userVerification(req, res, next) {
+  .callsFake(async function userVerification(req, res, next) {
+      //provide a test user for API to use
+      const user = await User.findOne({ email: "backendtesting3927492130@test.net" });
+      req.user = user;
       return next();
   });
 
@@ -24,6 +28,10 @@ beforeAll(async () => {
 });
 
 afterAll(async () => {
+  
+  const user = await User.findOne({ email: "backendtesting3927492130@test.net" });
+  await user.updateOne({ completedQuiz: false });
+  
   //Restore middleware function to the original state
   middleware.userVerification.restore();
   mongoose.disconnect;
@@ -80,3 +88,24 @@ describe("DELETE /users/:email", () => {
 });
 
 /* << ChatGPT4 assistance */
+
+// test user stat change
+describe("POST /users/changestats", () => {
+  it("it should update a user's stats", async () => {
+    // request stat change
+    const response = await request(app).post("/users/changestats")
+    .send({newMeStat: 100, newLoveStat: 100, newWorkStat: 100});
+    // check for success
+    expect(response.statusCode).toBe(200);
+    expect(response.body.message).toBe('Stats Updated');
+  });
+});
+
+describe("GET /users/me", () => {
+  it("it should get a user's stats", async () => {
+    // request stats
+    const response = await request(app).get("/users/me");
+    // check for success
+    expect(response.statusCode).toBe(200);
+  });
+});

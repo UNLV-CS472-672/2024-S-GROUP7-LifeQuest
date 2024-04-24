@@ -53,8 +53,8 @@ describe("POST /login/submit", () => {
     expect(response.body.message).toBe('Password not found');
   });
 
-  it("it should login the user", async () => {
-    // Check a user email that is in database
+  it("it should login a user with unfinished quiz", async () => {
+    // Check a user that is in database that has not finished quiz
     newUser.email = 'backendtesting3927492130@test.net';
     newUser.password = 'password';
     // Post request to create a new user
@@ -62,6 +62,21 @@ describe("POST /login/submit", () => {
     // check if correct user in reponse
     expect(response.statusCode).toBe(200);
     expect(response.body.message).toBe('Signed in successfully');
+    // check if the request indicated that the quiz needs to be done
+    expect(response.body.doQuiz).toBe(true);
+  });
+
+  it("it should login a user with finished quiz", async () => {
+    // Check a user that is in database that has finished quiz
+    newUser.email = 'login@testing.com';
+    newUser.password = 'password';
+    // Post request to create a new user
+    const response = await request(app).post("/login/submit").send(newUser);
+    // check if correct user in reponse
+    expect(response.statusCode).toBe(200);
+    expect(response.body.message).toBe('Signed in successfully');
+    // check if the request indicated that the quiz has been done
+    expect(response.body.doQuiz).toBe(false);
   });
 
   it("it should throw an error", async () => {
