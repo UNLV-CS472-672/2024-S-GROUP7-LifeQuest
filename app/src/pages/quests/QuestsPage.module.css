@@ -124,5 +124,5 @@
 
 .darkMode {
 	background-color: var(--background-color-dark); /* Use dark mode background color */
-	color: var(--text-color-dark); /* Use dark mode text color */
+	background-image: url('../../../public/blackmarblebackground.jpg');
 }
