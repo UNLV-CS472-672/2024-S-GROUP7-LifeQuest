@@ -16,7 +16,7 @@ func save_game():
 	saved_game.CharCash = PlayerInventory.CharCash
 	saved_game.Name = PlayerInventory.Name
 	saved_game.CharExp = PlayerInventory.CharExp
-	
+	saved_game.CharLevel = PlayerInventory.CharLevel
 	ResourceSaver.save(saved_game,"user://LifeQuestsave.tres")
 	
 func load_game():
@@ -40,6 +40,8 @@ func load_game():
 		if (saved_game.Name != null):
 			PlayerInventory.Name = saved_game.Name
 			
+		if (saved_game.CharLevel != null):
+			PlayerInventory.CharLevel = saved_game.CharLevel
 		return true
 	else:
 		return false

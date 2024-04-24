@@ -9,7 +9,7 @@ class_name SaveGame
 @export var CharCash = PlayerInventory.CharCash
 @export var Name = PlayerInventory.Name
 @export var CharExp = PlayerInventory.CharExp
-
+@export var CharLevel = PlayerInventory.CharLevel
 @export var playerHealthStat: float
 @export var playerAttackStat: float
 
