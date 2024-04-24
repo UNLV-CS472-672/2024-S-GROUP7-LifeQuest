@@ -113,6 +113,9 @@ func questreward(quest):
 				item1.setitem(quest.item_name, quest.item_quantity)
 				PlayerInventory.stop = true
 				PlayerInventory.inventory[i] = item1
+				inventory = find_node_by_name(get_tree().get_root(),"Inventory")
+				inventory.loadinventory()
+				PlayerInventory.stop = false
 				#PlayerInventory.stop = false
 				break  # Exit the loop once reward is added
 	
