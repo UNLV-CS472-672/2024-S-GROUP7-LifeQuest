@@ -27,16 +27,20 @@ const Login = () => {
         //Got a response, now let's handle it
 
         .then(function (response) {
-            // Login successful! Let's go to the home page.
-            window.location.href = '/home'
-            console.log(response);
-
+            // Login successful! 
+            //If quiz is not done yet redirect to it, else go to home page
+            if(response.data.doQuiz){
+                window.location.href = '/quiz';
+                console.log(response);
+            }else{
+                window.location.href = '/home';
+                console.log(response);
+            }
         })
         .catch(function (error) {
             // Uh oh, bad login! Let's see what went wrong.
             console.log(error);
-        })
-        
+        })     
     }
 
     return (
