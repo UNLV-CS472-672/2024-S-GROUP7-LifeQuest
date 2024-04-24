@@ -62,5 +62,24 @@ describe("App Routing", () => {
     expect(screen.getByText("Start Quiz")).toBeInTheDocument();
   });
 
+// Start of AI code (Antonio)
+// Conversation link ->
+
+test("scrolls to top when navigation to a new page", () => {
+  render(
+    <MemoryRouter initialEntries = {["/login"]}>
+      <App />
+    </MemoryRouter>
+  );
+  expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
 });
 
+test("updates document title and meta description", () => {
+  render(
+    <MemoryRouter initialEntries = {["/"]}>
+      <App />
+    </MemoryRouter>
+});  
+// expect calls go here if needed
+
+});
