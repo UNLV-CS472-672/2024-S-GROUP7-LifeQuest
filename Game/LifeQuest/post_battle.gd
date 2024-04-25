@@ -19,4 +19,6 @@ func on_Defeat():
 
 # When "Return to Levels" button is pressed:
 func _on_return_to_levels_pressed():
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://map_scene.tscn") # Fetch map scene (level selection)
+	

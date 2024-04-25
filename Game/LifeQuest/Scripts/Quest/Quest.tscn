@@ -111,6 +111,7 @@ horizontal_alignment = 1
 [node name="TooltipLabel" type="Label" parent="."]
 visible = false
 z_index = 1
+layout_mode = 0
 offset_left = 611.0
 offset_top = 55.0
 offset_right = 677.0

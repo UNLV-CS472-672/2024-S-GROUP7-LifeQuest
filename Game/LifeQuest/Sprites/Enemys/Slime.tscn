@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cdnq6cgiyau3h"]
+[gd_scene load_steps=10 format=3 uid="uid://cdnq6cgiyau3h"]
 
 [ext_resource type="Texture2D" uid="uid://wtblmek8fld3" path="res://Sprites/Enemys/Slime/Slime_Sprite_sheet.png" id="1_i4rjw"]
+[ext_resource type="Script" path="res://Sprites/Enemys/Slime.gd" id="1_ls4t0"]
 [ext_resource type="Script" path="res://Sprites/Enemys/SlimeAnimation.gd" id="2_dyeea"]
 [ext_resource type="Texture2D" uid="uid://dav0aygmln6xu" path="res://Sprites/Enemys/Slime/slimeattack.png" id="2_ingyo"]
 [ext_resource type="Texture2D" uid="uid://b4qbk58y8hbs8" path="res://Sprites/Enemys/Slime/slimedeath.png" id="3_6noh8"]
@@ -62,6 +63,7 @@ _data = {
 }
 
 [node name="Slime" type="Node2D"]
+script = ExtResource("1_ls4t0")
 
 [node name="Idle" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -99,3 +101,6 @@ texture = ExtResource("3_6noh8")
 flip_h = true
 hframes = 5
 vframes = 6
+
+[node name="enemyCooldown" type="Timer" parent="."]
+wait_time = 0.5

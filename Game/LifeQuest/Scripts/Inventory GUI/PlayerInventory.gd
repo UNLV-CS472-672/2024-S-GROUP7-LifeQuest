@@ -29,6 +29,12 @@ var inventory ={
 @export var CharLevel: int = 1
 @export var CharCash: int = 101
 
+
+@export var playerHealthStat = 20 # Temporary health value. Pull value from where player character statistics are stored.
+@export var playerAttackStat = 4 # Temporary attack value. Pull value from where player character statistics are stored.
+
+
+
 # Function to calculate exp required for next level
 func exp_required_for_next_level(level):
 	return EXPLevelUP * level #100 * level for required
@@ -71,6 +77,12 @@ func _process(delta):
 		# Check if the player has enough exp to level up
 	while CharExp >= exp_required_for_next_level(CharLevel):
 		level_up()
+	if(levels[1][1] == 1):
+		for quest in Inprocessarray:
+			if quest.title == "Quest 1":
+				quest.complete = true
+				#print("Quest", quest.title, "marked as complete.")
+				break
 
 # Function to handle level up
 func level_up():

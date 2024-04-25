@@ -7,6 +7,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+
+	
 	var new_size = get_viewport_rect().size
 	var scale_factor_x = new_size.x * reference_size.x
 	var scale_factor_y = new_size.y * reference_size.y
