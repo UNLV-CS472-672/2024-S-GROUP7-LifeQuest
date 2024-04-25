@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ccuoxmewdujb4"]
+[gd_scene load_steps=12 format=3 uid="uid://ccuoxmewdujb4"]
 
 [ext_resource type="Script" path="res://level_one.gd" id="1_cocsj"]
 [ext_resource type="Script" path="res://Scripts/Inventory GUI/UserInterface.gd" id="3_xq1jt"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://0600xo15qfis" path="res://Sprites/Battle scene horizontal.png" id="7_ltoce"]
 [ext_resource type="PackedScene" uid="uid://cxqo5blx4o71p" path="res://Sprites/Enemys/Slime/Slime.tscn" id="8_lvcps"]
 [ext_resource type="PackedScene" uid="uid://l4ulw4k528e1" path="res://Sprites/Character/backcharacter.tscn" id="9_wj17n"]
+[ext_resource type="PackedScene" uid="uid://cgi4pbiitaqnl" path="res://post_battle.tscn" id="10_1uy7y"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tfrh8"]
 texture = ExtResource("7_ltoce")
@@ -28,6 +29,8 @@ offset_top = 2.0
 offset_right = 265.0
 offset_bottom = 74.0
 text = "LEVEL 1"
+
+[node name="PostBattle" parent="." instance=ExtResource("10_1uy7y")]
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
 script = ExtResource("3_xq1jt")

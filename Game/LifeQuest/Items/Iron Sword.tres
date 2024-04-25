@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_tq5fs")
 name = "Iron Sword"
-description = ""
+description = "A trusty and reliable sword"
 stackable = false
 max_stack_size = 1
 itemType = 1

@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://l4ulw4k528e1"]
+[gd_scene load_steps=12 format=3 uid="uid://l4ulw4k528e1"]
 
 [ext_resource type="Texture2D" uid="uid://cu0aq1tnbdah0" path="res://Sprites/Character/Idlebackchar.png" id="1_3idp4"]
+[ext_resource type="Script" path="res://Sprites/Character/backcharacter.gd" id="1_b750p"]
 [ext_resource type="Script" path="res://Sprites/Character/PlayerAnimation.gd" id="2_41cne"]
 [ext_resource type="Texture2D" uid="uid://b1vgmlecpdc75" path="res://Sprites/Character/hitbackchar.png" id="2_yi6mh"]
 [ext_resource type="Texture2D" uid="uid://b4okb1voxriu3" path="res://Sprites/Character/attackbackchar.png" id="3_lkvxi"]
@@ -80,6 +81,7 @@ _data = {
 }
 
 [node name="Characterback" type="Node2D"]
+script = ExtResource("1_b750p")
 
 [node name="IdleBack" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -119,3 +121,7 @@ position = Vector2(68, 204)
 texture = ExtResource("4_sswwg")
 hframes = 5
 vframes = 6
+
+[node name="cooldown" type="Timer" parent="."]
+
+[connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]

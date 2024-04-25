@@ -28,27 +28,27 @@ func _process(delta):
 		
 func playIdle():
 	current_animation = "Idle"
-	%Idle.show()
-	%death.hide()
+	%IdleBack.show()
+	%DeathBack.hide()
 	%AttackBack.hide()
 	%HitBack.hide()
 	
 func playdeath():
 	current_animation = "Death"
-	%Idle.hide()
+	%IdleBack.hide()
 	%HitBack.hide()
 	%AttackBack.hide()
-	%death.show()
+	%DeathBack.show()
 
 func playattack():
 	current_animation = "Attack"
-	%Idle.hide()
+	%IdleBack.hide()
 	%HitBack.hide()
 	%AttackBack.show()
 	
 	
 func playhit():
 	current_animation = "Hit"
-	%Idle.hide()
-	%Attack.hide()
+	%IdleBack.hide()
+	%AttackBack.hide()
 	%HitBack.show()

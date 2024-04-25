@@ -21,6 +21,7 @@ func _ready():
 	while (filename):
 		if not directory.current_is_dir():
 			#this is to remove the added .remap when exported to web causing files to not be read correctly
+			#print(filename)
 			if filename.ends_with(".remap"):
 				filename = filename.substr(0, filename.length() - 6) # Remove the last 6 characters (.remap)
 			#print(filename)
@@ -51,3 +52,4 @@ func get_equip_type(equip_type):
 		if i.equipLocation == equip_type:
 			foundItems.append(i)
 	return foundItems
+

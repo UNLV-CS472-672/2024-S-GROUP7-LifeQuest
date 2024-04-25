@@ -1,15 +1,15 @@
 [gd_scene load_steps=21 format=3 uid="uid://bqwh0ar8cqyro"]
 
 [ext_resource type="Script" path="res://Scripts/Inventory GUI/inventory.gd" id="1_b7bqe"]
-[ext_resource type="Texture2D" uid="uid://b7dsw5hv8iwfh" path="res://Sprites/Equipment Icons/Equipment UI Sprites/profile empty.png" id="2_8lsk5"]
-[ext_resource type="Texture2D" uid="uid://y821cltturdo" path="res://Sprites/Equipment Icons/Equipment UI Sprites/empty inventory slot.png" id="2_ynn2e"]
+[ext_resource type="Texture2D" uid="uid://b7dsw5hv8iwfh" path="res://Sprites/profile empty.png" id="2_8lsk5"]
+[ext_resource type="Texture2D" uid="uid://y821cltturdo" path="res://Sprites/Equipment Icons/empty inventory slot.png" id="2_ynn2e"]
 [ext_resource type="Script" path="res://Scripts/Inventory GUI/Slot.gd" id="3_xgshx"]
-[ext_resource type="Texture2D" uid="uid://b634a7cidtq6h" path="res://Sprites/Equipment Icons/Equipment UI Sprites/Pants slot GUI.png" id="6_prdaf"]
-[ext_resource type="Texture2D" uid="uid://bc2vgv8p417lg" path="res://Sprites/Equipment Icons/Equipment UI Sprites/Head slot GUI.png" id="6_qq2ol"]
-[ext_resource type="Texture2D" uid="uid://c8umopaoppk0o" path="res://Sprites/Equipment Icons/Equipment UI Sprites/Hands slot GUI.png" id="7_gjnxf"]
-[ext_resource type="Texture2D" uid="uid://cagfuqa8cby11" path="res://Sprites/Equipment Icons/Equipment UI Sprites/Shoes slot GUI.png" id="8_qkutw"]
-[ext_resource type="Texture2D" uid="uid://bj7l3kkbo4gq" path="res://Sprites/Equipment Icons/Equipment UI Sprites/Weapon slot GUI.png" id="9_syub5"]
-[ext_resource type="Texture2D" uid="uid://c2mhqes4s1w3c" path="res://Sprites/Equipment Icons/Equipment UI Sprites/Accessory slot GUI.png" id="10_gdlxb"]
+[ext_resource type="Texture2D" uid="uid://b634a7cidtq6h" path="res://Sprites/Equipment Icons/Pants slot GUI.png" id="6_prdaf"]
+[ext_resource type="Texture2D" uid="uid://bc2vgv8p417lg" path="res://Sprites/Equipment Icons/Head slot GUI.png" id="6_qq2ol"]
+[ext_resource type="Texture2D" uid="uid://c8umopaoppk0o" path="res://Sprites/Equipment Icons/Hands slot GUI.png" id="7_gjnxf"]
+[ext_resource type="Texture2D" uid="uid://cagfuqa8cby11" path="res://Sprites/Equipment Icons/Shoes slot GUI.png" id="8_qkutw"]
+[ext_resource type="Texture2D" uid="uid://bj7l3kkbo4gq" path="res://Sprites/Equipment Icons/Weapon slot GUI.png" id="9_syub5"]
+[ext_resource type="Texture2D" uid="uid://c2mhqes4s1w3c" path="res://Sprites/Equipment Icons/Accessory slot GUI.png" id="10_gdlxb"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dhjvw"]
 texture = ExtResource("2_ynn2e")
@@ -243,5 +243,12 @@ offset_left = 374.0
 offset_top = -688.0
 offset_right = 396.0
 offset_bottom = -666.0
+
+[node name="MoveArea" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 56.0
+offset_top = -696.0
+offset_right = 338.0
+offset_bottom = -674.0
 
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

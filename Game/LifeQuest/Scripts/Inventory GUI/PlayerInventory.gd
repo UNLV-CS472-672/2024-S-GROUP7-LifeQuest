@@ -8,6 +8,8 @@ var Quest: PackedScene = preload("res://Scripts/Quest/Quest.tscn") # load our qu
 #const for inventory slots
 const INVENTORYSLOTS = 15
 const EQUIPSLOTS = 8
+const EXPLevelUP = 100
+var stop = false
 
 @export var Inprocessarray: Array = []
 @export var Completedarray: Array = []
@@ -22,9 +24,23 @@ var inventory ={
 	3: ["Large Health Potion", 5],
 	#can add more starting items
 }
+@export var Name: String = "Test"
+@export var CharExp: int = 0
+@export var CharLevel: int = 1
+@export var CharCash: int = 101
+
+
+@export var playerHealthStat = 20 # Temporary health value. Pull value from where player character statistics are stored.
+@export var playerAttackStat = 4 # Temporary attack value. Pull value from where player character statistics are stored.
+
+
+
+# Function to calculate exp required for next level
+func exp_required_for_next_level(level):
+	return EXPLevelUP * level #100 * level for required
+	
 
 #level completion data (Each time you beat a level, increment the count)
-
 var levels = {
 	0: ["Level 1" , 0],	# Should be unlocked by default
 	1: ["Level 2", 0],	# Unlock if Level1 count > 0
@@ -34,6 +50,7 @@ var levels = {
 	  # N: ["Level(n+1)", 0],  # Unlock if Leveln count > 0
 }
 
+#player equipment array
 var equip = {
 	#0: [ , ],
 	
@@ -51,37 +68,56 @@ func _ready():
 		pass
 	else:
 		SetQuest()
-		print("Set quest")
+		#print("Set quest")
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+		# Check if the player has enough exp to level up
+	while CharExp >= exp_required_for_next_level(CharLevel):
+		level_up()
+	if(levels[1][1] == 1):
+		for quest in Inprocessarray:
+			if quest.title == "Quest 1":
+				quest.complete = true
+				#print("Quest", quest.title, "marked as complete.")
+				break
 
-
+# Function to handle level up
+func level_up():
+	CharLevel += 1
+	
+	
+#quest initalization here
 func SetQuest():
 	var quest_data = [
 		{
 			"title": "Quest 1",
 			"reward_amount": 2,
-			"item1_name": "Iron Sword",
+			"item1_name": "hat with ears",
 			"item1_quantity": 1,
 			"item2_name": "Small Health Potion",
 			"item2_quantity": 4,
-			"description": "Complete Level 1 to obtain rewards"
+			"description": "Complete Level 1 to obtain rewards",
+			"ExpAmount" : "80",
+			"CashAmount": "100"
 		},
 		{
 			"title": "Quest 2",
 			"reward_amount": 1,
 			"item1_name": "Large Health Potion",
 			"item1_quantity": 1,
-			"description": "Defeat the boss to obtain the Large Health Potion"
+			"description": "Defeat the boss to obtain the Large Health Potion",
+			"ExpAmount" : "120",
+			"CashAmount": "200"
 		},
 		{
 			"title": "Quest 3",
 			"reward_amount": 0,
-			"description": "Defeat the enemies on Level 3"
+			"description": "Defeat the enemies on Level 3",
+			"ExpAmount" : "50",
+			"CashAmount": "150"
 		},
 		# Add more quests as needed
 
@@ -100,6 +136,8 @@ func SetQuest():
 			quest_info.get("item2_quantity", 0),  #default is 0
 			quest_info["description"]
 		)
+		quest_instance.set_ExpAmount(quest_info.get("ExpAmount", "0"))
+		quest_instance.set_CashAmount(quest_info.get("CashAmount", "0"))
 		#print(quest_instance.title)
 		#print(quest_instance.QuestName.text)
 		PlayerInventory.Inprocessarray.append(quest_instance)

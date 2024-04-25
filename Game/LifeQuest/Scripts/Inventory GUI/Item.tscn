@@ -1,17 +1,21 @@
 [gd_scene load_steps=3 format=3 uid="uid://ckd8jvik4ymei"]
 
 [ext_resource type="Script" path="res://Scripts/Inventory GUI/Items.gd" id="1_5p5hl"]
-[ext_resource type="Texture2D" uid="uid://dhuxo31oaolsq" path="res://Sprites/Equipment Icons/small health potion.png" id="2_4su22"]
+[ext_resource type="Texture2D" uid="uid://cdhog52vtvha0" path="res://Sprites/Equipment Icons/large health potion.png" id="2_6eeto"]
 
 [node name="Item" type="Node2D"]
 z_index = 1
 script = ExtResource("1_5p5hl")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
+custom_minimum_size = Vector2(40, 63)
+offset_right = 46.0
 offset_bottom = 63.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 mouse_filter = 2
-texture = ExtResource("2_4su22")
+texture = ExtResource("2_6eeto")
+stretch_mode = 2
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 3

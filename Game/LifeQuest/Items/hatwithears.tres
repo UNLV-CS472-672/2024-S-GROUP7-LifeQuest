@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://dkij27xwpfei3"]
+
+[ext_resource type="Script" path="res://Scripts/Items/item.gd" id="1_aap7e"]
+[ext_resource type="Texture2D" uid="uid://c83058362iqsi" path="res://Sprites/Equipment Icons/hatwith ears.png" id="1_xekwx"]
+
+[resource]
+script = ExtResource("1_aap7e")
+name = "hat with ears"
+description = "A hat with ears, wonder what it does?"
+stackable = false
+max_stack_size = 1
+itemType = 1
+equipLocation = 1
+damage = 2
+healthBonus = 10
+defenseBonus = 1
+magicBonus = 0
+icon = ExtResource("1_xekwx")

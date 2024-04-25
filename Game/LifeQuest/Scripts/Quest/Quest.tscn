@@ -1,14 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://dk2u4jb4l8idr"]
+[gd_scene load_steps=13 format=3 uid="uid://dk2u4jb4l8idr"]
 
 [ext_resource type="Script" path="res://Scripts/Quest/Quest.gd" id="1_fg5bu"]
-[ext_resource type="Texture2D" uid="uid://cn0us7kqtw644" path="res://Sprites/Equipment Icons/Equipment UI Sprites/tool tip.png" id="2_gc03q"]
-[ext_resource type="Texture2D" uid="uid://bud2gg76y4qe7" path="res://Sprites/Equipment Icons/Equipment UI Sprites/full inventory slot.png" id="3_5uagd"]
+[ext_resource type="Texture2D" uid="uid://cn0us7kqtw644" path="res://Sprites/Equipment Icons/tool tip.png" id="2_gc03q"]
+[ext_resource type="Texture2D" uid="uid://bud2gg76y4qe7" path="res://Sprites/Equipment Icons/full inventory slot.png" id="3_5uagd"]
 [ext_resource type="Texture2D" uid="uid://e5bjlcnxoair" path="res://Sprites/Botton Menu/button.png" id="4_pjbmd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jsxe5"]
 texture = ExtResource("2_gc03q")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2hqyh"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nhg6u"]
+texture = ExtResource("3_5uagd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f60b1"]
 texture = ExtResource("3_5uagd")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gf7tv"]
@@ -20,6 +23,11 @@ modulate_color = Color(0.88, 0.88, 0.88, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_servc"]
 texture = ExtResource("4_pjbmd")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_l2oqk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s46v8"]
+texture = SubResource("CanvasTexture_l2oqk")
 
 [node name="Quest" type="Panel"]
 custom_minimum_size = Vector2(1154, 89)
@@ -61,17 +69,16 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 
 [node name="Slot1" type="Panel" parent="HBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
-size_flags_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_2hqyh")
+theme_override_styles/panel = SubResource("StyleBoxTexture_nhg6u")
 metadata/_edit_use_anchors_ = true
 
 [node name="Slot2" type="Panel" parent="HBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
-size_flags_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_2hqyh")
+theme_override_styles/panel = SubResource("StyleBoxTexture_f60b1")
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="HBoxContainer"]
@@ -100,5 +107,17 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 26
 text = "Summary"
 horizontal_alignment = 1
+
+[node name="TooltipLabel" type="Label" parent="."]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 611.0
+offset_top = 55.0
+offset_right = 677.0
+offset_bottom = 79.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_s46v8")
+text = "Example"
 
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]

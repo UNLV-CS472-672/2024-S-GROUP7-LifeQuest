@@ -4,7 +4,21 @@ extends Node2D
 @onready var Options =$MainMenu/Options
 @onready var Audio =$MainMenu/Audio
 @onready var Video =$MainMenu/Video
+var reference_size = Vector2(1.0 / 1151, 1.0 / 648)
+func _ready():
+	# Connect the window resize event to a method
+	pass
 
+func _process(delta):
+	var new_size = get_viewport_rect().size
+	var scale_factor_x = new_size.x * reference_size.x
+	var scale_factor_y = new_size.y * reference_size.y
+	# Choose the smaller scale factor to maintain aspect ratio
+	var scale_factor = min(scale_factor_x, scale_factor_y)
+	
+	scale = Vector2(scale_factor, scale_factor)
+	#print(scale_factor)
+	
 
 func _on_play_pressed():
 	get_tree().change_scene_to_file("res://map_scene.tscn")
@@ -45,7 +59,6 @@ func _on_video_pressed():
 #function for what happens when the button for audio is pressed
 func _on_audio_pressed():
 	displayHide(Audio,Options)
-
 
 
 

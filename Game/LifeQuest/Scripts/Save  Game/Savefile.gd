@@ -6,5 +6,10 @@ class_name SaveGame
 @export var Inprocessarray = PlayerInventory.Inprocessarray
 @export var Completedarray = PlayerInventory.Completedarray
 @export var levels = PlayerInventory.levels
+@export var CharCash = PlayerInventory.CharCash
+@export var Name = PlayerInventory.Name
+@export var CharExp = PlayerInventory.CharExp
+@export var CharLevel = PlayerInventory.CharLevel
 @export var playerHealthStat: float
 @export var playerAttackStat: float
+

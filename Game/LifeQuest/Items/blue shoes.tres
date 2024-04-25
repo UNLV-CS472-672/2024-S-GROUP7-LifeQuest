@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://dsddmlu01pxos"]
+
+[ext_resource type="Script" path="res://Scripts/Items/item.gd" id="1_7eyrc"]
+[ext_resource type="Texture2D" uid="uid://bj4ttxhmpbnxl" path="res://Sprites/Equipment Icons/blueshoes.png" id="1_kmjdi"]
+
+[resource]
+script = ExtResource("1_7eyrc")
+name = "blue shoes"
+description = ""
+stackable = false
+max_stack_size = 1
+itemType = 1
+equipLocation = 4
+damage = 2
+healthBonus = 5
+defenseBonus = 5
+magicBonus = 1
+icon = ExtResource("1_kmjdi")
