@@ -48,6 +48,7 @@ func process_quest_press():
 
 func savegame():
 	$Inventory.initializeinventory(initialized_inventory)
+	initialized_inventory = true
 	print("savegame")
 	save_game_data()
 	
