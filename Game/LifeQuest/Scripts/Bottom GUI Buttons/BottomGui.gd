@@ -1,5 +1,5 @@
 extends HBoxContainer
-
+var paused = false
 var user_interface
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -72,4 +72,12 @@ func _on_shop_pressed():
 
 
 func _on_setting_pressed():
-	pass # Replace with function body.
+	if (!paused) :
+		%InGameMenu.visible = true
+		paused = true
+		get_tree().paused = true
+	else:
+		paused = false
+		get_tree().paused = false
+		%InGameMenu.visible = false
+

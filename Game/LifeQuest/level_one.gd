@@ -15,7 +15,7 @@ var isBattleOver = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	menu.hide() # Ensure in game menu is hidden when level starts
+	$UserInterface/Menu.hide() # Ensure in game menu is hidden when level starts
 	player.show()
 	enemy.show()
 	$UserInterface.show()

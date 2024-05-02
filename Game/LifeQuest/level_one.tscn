@@ -35,6 +35,12 @@ text = "LEVEL 1"
 [node name="UserInterface" type="CanvasLayer" parent="."]
 script = ExtResource("3_xq1jt")
 
+[node name="Menu" parent="UserInterface" instance=ExtResource("5_o2m2h")]
+offset_left = 1077.0
+offset_top = 480.0
+offset_right = 1117.0
+offset_bottom = 516.0
+
 [node name="Bottom GUI" parent="UserInterface" instance=ExtResource("5_3v875")]
 
 [node name="Inventory" parent="UserInterface" instance=ExtResource("4_kvqbx")]
@@ -44,12 +50,6 @@ visible = false
 visible = false
 position = Vector2(210, 144)
 scale = Vector2(0.45, 0.45)
-
-[node name="Menu" parent="." instance=ExtResource("5_o2m2h")]
-offset_left = 1088.0
-offset_top = 35.0
-offset_right = 1128.0
-offset_bottom = 71.0
 
 [node name="Slime" parent="." instance=ExtResource("8_lvcps")]
 position = Vector2(635, 40)
