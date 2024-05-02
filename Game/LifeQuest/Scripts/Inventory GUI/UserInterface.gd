@@ -1,11 +1,11 @@
 extends CanvasLayer
 var Save = preload("res://Scripts/Save  Game/Save and load.gd")
-
+var paused = false
 var initialized_inventory = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var Saved = Save.new()
-	
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	if(Saved.load_game()):
 		$Inventory.loadinventory()
 		initialized_inventory = true
@@ -45,7 +45,15 @@ func process_quest_press():
 	save_game_data()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
-
+func process_setting():
+	if (!paused) :
+		$Menu.visible = true
+		paused = true
+		get_tree().paused = true
+	else:
+		paused = false
+		get_tree().paused = false
+		$Menu.visible = false
 func savegame():
 	$Inventory.initializeinventory(initialized_inventory)
 	initialized_inventory = true

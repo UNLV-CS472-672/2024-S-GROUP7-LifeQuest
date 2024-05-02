@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://dlefoq5yaab4c"]
+[gd_scene load_steps=28 format=3 uid="uid://dlefoq5yaab4c"]
 
 [ext_resource type="Script" path="res://Scripts/Bottom GUI Buttons/BottomGui.gd" id="1_47ykh"]
 [ext_resource type="Texture2D" uid="uid://gpgc0kpo3stc" path="res://Sprites/Botton Menu/Character stat icon.png" id="1_jgujd"]
+[ext_resource type="PackedScene" uid="uid://ccwd1ftqobgn8" path="res://in_game_menu.tscn" id="1_o17wf"]
 [ext_resource type="Texture2D" uid="uid://bd5da8sg6qpf0" path="res://Sprites/Botton Menu/Quest icon.png" id="2_1lkw4"]
 [ext_resource type="Texture2D" uid="uid://507fp32cdp3w" path="res://Sprites/Botton Menu/Inventory icon.png" id="3_j8sk2"]
 [ext_resource type="Texture2D" uid="uid://b466ykykt8kdm" path="res://Sprites/Botton Menu/Setting icon.png" id="4_bcvrf"]
@@ -90,6 +91,15 @@ offset_right = 1152.0
 offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="InGameMenu" parent="control" instance=ExtResource("1_o17wf")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+offset_left = 1083.0
+offset_top = 482.0
+offset_right = 1083.0
+offset_bottom = 552.0
 
 [node name="Ui container" type="HBoxContainer" parent="control"]
 layout_mode = 1
